@@ -151,8 +151,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="01_Fuhrpark.cpp" />
     <ClCompile Include="LogBook.cpp" />
+    <ClCompile Include="Testdriver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LogBook.h" />

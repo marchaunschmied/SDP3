@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="01_Fuhrpark.cpp">
+    <ClCompile Include="LogBook.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="LogBook.cpp">
+    <ClCompile Include="Testdriver.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
