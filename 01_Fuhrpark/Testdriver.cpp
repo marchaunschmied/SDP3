@@ -7,6 +7,8 @@
 ///////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
+#include "vld.h"
+#include "Fleet.h"
 
 #include "LogBook.h"
 #include "Car.h"
@@ -54,6 +56,37 @@ int main() {
 	c1.Print(cout);
 	t1.Print(cout);
 	m1.Print(cout);
+	cout << endl << endl;
+
+	Fleet f1;
+	cout << f1 << endl;
+	cout << f1.GetTotalDistance() << endl;
+
+	cout << boolalpha << f1.AddVehicle(make_shared<Car>(c1)) << endl;
+	cout << boolalpha << f1.AddVehicle(make_shared<Car>(c1)) << endl;
+	cout << boolalpha << f1.AddVehicle(make_shared<Truck>(t1)) << endl;
+	cout << boolalpha << f1.AddVehicle(make_shared<Motorcycle>(m1)) << endl << endl;
+
+	cout << f1 << endl;
+	cout << f1.GetTotalDistance() << endl;
+
+	Fleet f2(f1);
+	cout << f2 << endl << endl;
+
+	Fleet f3;
+	f3 = f2;
+	cout << f1 << endl;
+
+	f3.RemoveVehicle("FR-123AB");
+	cout << f3 << endl;
+
+	auto a = f1.Find("PE-2WER");
+	a->Print(cout);
+
+	cout << f1 << endl;
+
+
+
 	
 
 	return 0;

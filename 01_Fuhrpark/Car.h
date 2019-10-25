@@ -2,8 +2,8 @@
 // Workfile :		Car.h
 // Author :			Markus Riegler
 // Date :			24.10.2019
-// Description :	Header for thefrom Vehicle derived class Car
-// Revision :
+// Description :	Header for the from Vehicle derived class Car
+// Revision :		1
 ///////////////////////////////////////////////////////////////////////////
 #ifndef CAR_H
 #define CAR_H

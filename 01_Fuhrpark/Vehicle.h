@@ -17,9 +17,12 @@
 //enum for the type of Fuel
 enum class TFuel { DIESEL, PETROL, NATURAL_GAS, ELECTRIC };
 
+
 class Vehicle : public Object
 {
 public:
+	//Typedef for shared pointer
+	typedef std::shared_ptr<Vehicle> SPtr;
 
 	//Everything has to be set while initialising
 	Vehicle(std::string const& brand, std::string const& model,

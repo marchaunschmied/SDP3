@@ -33,6 +33,9 @@
     <ClCompile Include="Motorcycle.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="Fleet.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LogBook.h">
@@ -51,6 +54,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Motorcycle.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Fleet.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
