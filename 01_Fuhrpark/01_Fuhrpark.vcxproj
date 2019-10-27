@@ -151,10 +151,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Entry.cpp" />
     <ClCompile Include="LogBook.cpp" />
     <ClCompile Include="Testdriver.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Entry.h" />
     <ClInclude Include="LogBook.h" />
     <ClInclude Include="Object.h" />
   </ItemGroup>

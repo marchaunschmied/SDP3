@@ -21,12 +21,18 @@
     <ClCompile Include="Testdriver.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="Entry.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LogBook.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Object.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Entry.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
