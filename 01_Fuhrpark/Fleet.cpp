@@ -7,20 +7,6 @@
 ///////////////////////////////////////////////////////////////////////////
 #include "Fleet.h"
 
-//Fleet::Fleet(Fleet const& f)
-//{
-//	Copy(f);
-//}
-//
-//Fleet& Fleet::operator=(Fleet const& f)
-//{
-//	if (&f != this)
-//	{
-//		mFleet.clear();
-//		Copy(f);
-//	}
-//	return *this;
-//}
 
 ///////////////////////////////////////////////////////////////////////////
 //Adds the given Vehicle to the Container, if there isn´t already one
@@ -61,6 +47,7 @@ bool Fleet::RemoveVehicle(std::string const& LicensePlate)
 	if (it != mFleet.cend())
 	{
 		mFleet.erase(it);
+		return true;
 	}
 	else
 	{
@@ -125,13 +112,9 @@ void Fleet::Print(std::ostream& ost) const
 ///////////////////////////////////////////////////////////////////////////
 FleetCont::const_iterator Fleet::FindLP(std::string const& l) const
 {
-	return std::find_if(mFleet.cbegin(), mFleet.cend(), [&l](Vehicle::SPtr const& ptr) { return l == ptr->GetLicensePlate(); });
+	return std::find_if(mFleet.cbegin(), mFleet.cend(), 
+		   [&l](Vehicle::SPtr const& ptr) { return l == ptr->GetLicensePlate(); });
 }
-
-//void Fleet::Copy(Fleet const& f)
-//{
-//	std::for_each(f.mFleet.cbegin(), f.mFleet.cend(), [this](auto v) {mFleet.push_back(v); });
-//}
 
 ///////////////////////////////////////////////////////////////////////////
 //operator<< overloading. Calls Print fouction of Fleet

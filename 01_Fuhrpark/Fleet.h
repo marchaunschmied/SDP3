@@ -23,10 +23,9 @@ public:
 	//When Copy-Ctor is implemented, then no implizit default CTor
 	Fleet() = default;
 
-	//@Mark, werden eventuell nicht benötigt, außer den Test stellts auf
-	//Copy-CTor and operator= are needed for dynamic memory containers
-	//Fleet(Fleet const& f);
-	//Fleet& operator= (Fleet const& f);
+	//Copy-CTor and operator= are deleted
+	Fleet(Fleet const& f) = delete;
+	Fleet& operator= (Fleet const& f) = delete;
 
 	//DTor not needed because of smart pointers
 	~Fleet() override = default;
@@ -52,8 +51,6 @@ private:
 
 	//Function to search for a Vehicle with an given 
 	FleetCont::const_iterator FindLP(std::string const& l) const;
-	//Copies all Vehicles from given Fleet
-	void Copy(Fleet const& f);
 
 };
 

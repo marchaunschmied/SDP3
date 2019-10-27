@@ -70,22 +70,7 @@ int main() {
 	cout << f1 << endl;
 	cout << f1.GetTotalDistance() << endl;
 
-	Fleet f2(f1);
-	cout << f2 << endl << endl;
-
-	Fleet f3;
-	f3 = f2;
-	cout << f1 << endl;
-
-	f3.RemoveVehicle("FR-123AB");
-	cout << f3 << endl;
-
-	auto a = f1.Find("PE-2WER");
-	a->Print(cout);
-
-	cout << f1 << endl;
-
-
+	
 
 	
 
