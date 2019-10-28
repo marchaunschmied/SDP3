@@ -1,0 +1,82 @@
+Fahrzeugart: PKW
+Marke:       Seat Ibiza
+Kennzeichen: FR-123AB
+10.08.19: 5 km
+05.10.19: 123 km
+12.10.19: 56 km
+13.10.19: 14 km
+15.10.19: 33 km
+20.10.19: 213 km
+
+Fahrzeugart: PKW
+Marke:       VW Passat
+Kennzeichen: LL-621UV
+01.01.01: 101 km
+01.01.19: 50 km
+10.02.19: 123 km
+
+Fahrzeugart: PKW
+Marke:       Audi A8
+Kennzeichen: L-8189F
+01.01.20: 91 km
+
+Fahrzeugart: PKW
+Marke:       BMW i8
+Kennzeichen: W-12345X
+10.10.18: 63 km
+30.10.19: 519 km
+
+Fahrzeugart: PKW
+Marke:       Lamborghini Huracan
+Kennzeichen: FR-987DW
+10.10.10: 24 km
+11.11.11: 262 km
+12.12.12: 623 km
+13.03.13: 99 km
+
+Fahrzeugart: LKW
+Marke:       Mercedes Actros
+Kennzeichen: L-456DS
+11.11.11: 585 km
+02.02.12: 975 km
+02.01.18: 567 km
+03.02.18: 788 km
+04.03.18: 123 km
+12.05.18: 89 km
+
+Fahrzeugart: LKW
+Marke:       DAF XF
+Kennzeichen: UU-456IS
+08.08.19: 3521 km
+10.10.19: 1524 km
+
+Fahrzeugart: LKW
+Marke:       Scania V8
+Kennzeichen: LI-67XFA
+
+Fahrzeugart: Motorrad
+Marke:       Vespa GTS 300
+Kennzeichen: PE-2WER
+23.05.19: 12 km
+24.05.19: 74 km
+02.06.19: 86 km
+07.07.19: 129 km
+16.09.19: 176 km
+12.11.19: 84 km
+
+Fahrzeugart: Motorrad
+Marke:       Ducati 998
+Kennzeichen: SR-273OA
+20.07.18: 51 km
+
+Fahrzeugart: Motorrad
+Marke:       Aprilia SX50
+Kennzeichen: LL-9XNM
+02.11.19: 78 km
+
+Fahrzeugart: Motorrad
+Marke:       BMW S1000RR
+Kennzeichen: PE-CHEF1
+02.05.15: 314 km
+14.01.17: 69 km
+
