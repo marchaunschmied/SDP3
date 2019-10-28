@@ -21,7 +21,22 @@
     <ClCompile Include="Testdriver.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+
     <ClCompile Include="Entry.cpp">
+
+    <ClCompile Include="Vehicle.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Car.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Truck.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Motorcycle.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Fleet.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -33,6 +48,20 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Entry.h">
+
+    <ClInclude Include="Vehicle.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Car.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Truck.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Motorcycle.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Fleet.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
