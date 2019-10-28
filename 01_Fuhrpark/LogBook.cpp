@@ -23,7 +23,12 @@ bool LogBook::AddEntry(std::string const& date, size_t const& distance) {
 				return e1.GetDate() < e2.GetDate();
 			});
 
-		mEntries.insert(insertPos, Entry{ date,distance });
+		try {
+			mEntries.insert(insertPos, Entry{ date,distance });
+		}
+		catch (std::bad_alloc & ex) {
+			throw std::string{ "error when trying to insert in vector" };
+		}
 		return true;
 	}
 	else {

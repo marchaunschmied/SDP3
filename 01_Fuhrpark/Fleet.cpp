@@ -100,6 +100,7 @@ void Fleet::Print(std::ostream& ost) const
 		for (auto const& v : mFleet)
 		{
 			v->Print(ost);
+			ost << std::endl;
 		}
 	}
 }

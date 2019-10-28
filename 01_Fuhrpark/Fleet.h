@@ -23,10 +23,6 @@ public:
 	//When Copy-Ctor is implemented, then no implizit default CTor
 	Fleet() = default;
 
-	//Copy-CTor and operator= are deleted
-	Fleet(Fleet const& f) = delete;
-	Fleet& operator= (Fleet const& f) = delete;
-
 	//DTor not needed because of smart pointers
 	~Fleet() override = default;
 
