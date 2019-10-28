@@ -11,7 +11,7 @@
 #include <iostream>
 #include <fstream>
 #include "Fleet.h"
-
+#include "vld.h"
 #include "LogBook.h"
 #include "Car.h"
 #include "Truck.h"
@@ -226,15 +226,23 @@ int main() {
 		Vehicle::SPtr veh = f2.Find("L-456DS");
 		if (veh != nullptr) {
 			veh->Print(cout);
+			//check below if both fleets have new entry
+			veh->AddLogEntry("000101", 333);
 		}
 		cout << endl << "find not exisiting vehicle: " << endl;
 		Vehicle::SPtr veh2 = f2.Find("asdf");
 		if (veh2 != nullptr) {
 			veh2->Print(cout);
+			
 		}
 		else {
 			cerr << "vehicle not found" << endl;
 		}
+
+		//check if added log entry for searched vehicle was added to both fleets
+		cout << endl << f2 << endl;
+		cout << endl << f3 << endl;
+
 	}
 	catch (string const& ex) {
 		cerr << ex << endl;
