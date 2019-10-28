@@ -21,6 +21,9 @@
     <ClCompile Include="Testdriver.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+
+    <ClCompile Include="Entry.cpp">
+
     <ClCompile Include="Vehicle.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
@@ -44,6 +47,8 @@
     <ClInclude Include="Object.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Entry.h">
+
     <ClInclude Include="Vehicle.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
