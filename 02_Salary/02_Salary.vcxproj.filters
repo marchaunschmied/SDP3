@@ -33,6 +33,9 @@
     <ClCompile Include="PieceWorker.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="Company.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Boss.h">
@@ -51,6 +54,12 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Object.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ICompany.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Company.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

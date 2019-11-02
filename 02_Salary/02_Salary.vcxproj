@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="CommissionWorker.cpp" />
+    <ClCompile Include="Company.cpp" />
     <ClCompile Include="Employee.cpp" />
     <ClCompile Include="HourlyWorker.cpp" />
     <ClCompile Include="main.cpp" />
@@ -29,8 +30,10 @@
   <ItemGroup>
     <ClInclude Include="Boss.h" />
     <ClInclude Include="CommissionWorker.h" />
+    <ClInclude Include="Company.h" />
     <ClInclude Include="Employee.h" />
     <ClInclude Include="HourlyWorker.h" />
+    <ClInclude Include="ICompany.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="PieceWorker.h" />
   </ItemGroup>
@@ -88,6 +91,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Visual Leak Detector\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
