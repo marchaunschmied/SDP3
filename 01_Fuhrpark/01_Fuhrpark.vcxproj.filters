@@ -26,8 +26,5 @@
     <ClInclude Include="LogBook.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Object.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
