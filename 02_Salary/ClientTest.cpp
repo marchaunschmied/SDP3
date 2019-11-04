@@ -2,7 +2,7 @@
 // Workfile :		ClientTest.cpp
 // Author :			Marc Haunschmied
 // Date :			2019
-// Description :	
+// Description :	calls several company functions for test purpose
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 

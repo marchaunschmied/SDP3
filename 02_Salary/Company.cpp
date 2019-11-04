@@ -2,7 +2,8 @@
 // Workfile :		Company.cpp
 // Author :			Marc Haunschmied
 // Date :			02.11.2019
-// Description :	
+// Description :	Representation of a company. Employees are held in a 
+//					std::list
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 

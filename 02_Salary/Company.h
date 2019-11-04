@@ -14,7 +14,7 @@
 class Company : public ICompany, public Object {
 
 private:
-	std::list<Employee*> mEmployees;
+	std::list<Employee*> mEmployees;	//polymorphistic container
 
 	std::string mName;
 	std::string mLocation;

@@ -2,7 +2,7 @@
 // Workfile :		main.cpp
 // Author :			Marc Haunschmied
 // Date :			2019
-// Description :	
+// Description :	testdriver for company and client
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 
