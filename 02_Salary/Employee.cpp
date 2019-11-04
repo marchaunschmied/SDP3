@@ -44,6 +44,31 @@ TWorker Employee::GetType() const
 	return mWorker;
 }
 
+std::string Employee::GetInsuranceNr() const {
+	return mInsuranceNr;
+}
+
+size_t Employee::GetEntryYear() const {
+	return mEntryYear;
+}
+
+std::string Employee::GetSname() const {
+	return mShortName;
+}
+
+int Employee::GetBirthYear() const {
+	size_t const yearPos = 8;
+	size_t const yearLen = 2;
+	size_t const insLen = 10;
+	//convert insurance nr to birthyear (10 digit number, the last 2 elements are the birth year)
+	std::string insurance_number = mInsuranceNr;
+	if (CheckInsuranceNr(mInsuranceNr)) {
+		return std::stoi((mInsuranceNr.substr(yearPos, yearLen)), 0);
+	}
+	else {
+		return -1;
+	}
+}
 ///////////////////////////////////////////////////////////////////////////
 //Print Method
 //Throws an exception if stream is corrupted
@@ -59,6 +84,7 @@ void Employee::Print(std::ostream& ost)
 		<< "Name: "						 << mFirstName << " " << mName << std::endl
 		<< "Kuerzel: "					 << mShortName   << std::endl
 		<< "Sozialversicherungsnummer: " << mInsuranceNr << std::endl
+		<< "Einstiegsjahr: "    		 <<	mEntryYear << std::endl	
 		<< "Mitarbeiterklasse: ";		 PrintType(ost);
 	
 	PrintSalary(ost);
@@ -68,9 +94,9 @@ void Employee::Print(std::ostream& ost)
 ///////////////////////////////////////////////////////////////////////////
 //Protected CTor
 ///////////////////////////////////////////////////////////////////////////
-Employee::Employee(std::string const& firstname, std::string const& name,
-				   std::string const& shortname, std::string const& insurance,
-				   size_t const& entryyear, TWorker const worker):
+Employee::Employee(std::string const& firstname, std::string const& name ,
+				   std::string const& shortname, std::string const& insurance ,
+				   size_t const& entryyear , TWorker const worker):
 	mFirstName{firstname}, mName{name}, mEntryYear{entryyear},mWorker{worker}
 {
 	SetSchortName(shortname);

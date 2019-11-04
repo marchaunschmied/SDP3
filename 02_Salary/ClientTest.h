@@ -1,20 +1,20 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile :		Object.h
+// Workfile :		ClientTest.h
 // Author :			Marc Haunschmied
 // Date :			2019
-// Description :	Base class with virtual destructor
+// Description :	
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 
 
-#ifndef Object_H
-#define Object_H
+#ifndef CLIENT_TEST_H
+#define CLIENT_TEST_H
 
-class Object {
+#include "ICompany.h"
+
+class ClientTest : public Object {
 public:
-	//pure virtual
-	virtual ~Object() = default;
-
+	void Test(ICompany* comp);
 };
 
 #endif

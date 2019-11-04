@@ -27,6 +27,12 @@ public:
 	void SetName(std::string const& name);
 	void SetSchortName(std::string const& sname);
 
+
+	std::string GetSname() const;
+	std::string GetInsuranceNr() const;
+	size_t GetEntryYear() const;
+	int GetBirthYear() const;
+
 	virtual double GetSalary() const = 0;
 	TWorker GetType() const;
 

@@ -28,6 +28,10 @@ double PieceWorker::GetSalary() const
 	return mRate * mPieces * 1.0;
 }
 
+size_t PieceWorker::GetPieces() const {
+	return mPieces; 
+}
+
 void PieceWorker::SetPieces(size_t pieces)
 {
 	mPieces = pieces;
@@ -46,10 +50,14 @@ void PieceWorker::SetRate(double rate)
 	}
 }
 
+
+
 ///////////////////////////////////////////////////////////////////////////
 //Template Method to Print the Salary
 ///////////////////////////////////////////////////////////////////////////
 void PieceWorker::PrintSalary(std::ostream& ost) const
 {
-	ost << "Gehalt: " << GetSalary() << Currency << std::endl;
+	ost << "Stueckrate: " << mRate << Currency << std::endl
+		<< "Stueck: " << mPieces << Currency << std::endl
+		<< "Gesamtgehalt: " << GetSalary() << Currency << std::endl;
 }

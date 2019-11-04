@@ -60,12 +60,17 @@ void CommissionWorker::SetRate(double rate)
 	}
 }
 
+
+size_t CommissionWorker::GetPieces() const {
+	return mPieces;
+}
 ///////////////////////////////////////////////////////////////////////////
 //Template Method to Print the Salary
 ///////////////////////////////////////////////////////////////////////////
 void CommissionWorker::PrintSalary(std::ostream& ost) const
 {
 	ost << "Grundgehalt: "	<< mBaseSalary		<< Currency << std::endl
+		<< "Stueck: "		<< mPieces			<< std::endl
 		<< "Provision: "	<< mRate * mPieces	<< Currency << std::endl
 		<< "Gesamtgehalt: " << GetSalary()		<< Currency << std::endl;
 }

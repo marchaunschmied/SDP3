@@ -62,7 +62,9 @@ void HourlyWorker::SetHours(double hours)
 ///////////////////////////////////////////////////////////////////////////
 void HourlyWorker::PrintSalary(std::ostream& ost) const
 {
-	ost << "Gehalt: " << GetSalary() << Currency << std::endl;
+	ost << "Stundenlohn: " << mWagepH << Currency << std::endl
+		<< "Stunden: " << mHours << std::endl
+		<< "Gesamtgehalt: " << GetSalary() << Currency << std::endl;
 }
 
 
