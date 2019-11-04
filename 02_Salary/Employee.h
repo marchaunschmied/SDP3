@@ -27,10 +27,8 @@ public:
 	void SetName(std::string const& name);
 	void SetSchortName(std::string const& sname);
 
-	std::string GetSname() {
-		return mShortName;
-	}
-	
+
+	std::string GetSname() const;
 	std::string GetInsuranceNr() const;
 	size_t GetEntryYear() const;
 

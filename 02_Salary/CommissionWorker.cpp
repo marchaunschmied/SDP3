@@ -70,6 +70,7 @@ size_t CommissionWorker::GetPieces() const {
 void CommissionWorker::PrintSalary(std::ostream& ost) const
 {
 	ost << "Grundgehalt: "	<< mBaseSalary		<< Currency << std::endl
+		<< "Stueck: "		<< mPieces			<< std::endl
 		<< "Provision: "	<< mRate * mPieces	<< Currency << std::endl
 		<< "Gesamtgehalt: " << GetSalary()		<< Currency << std::endl;
 }

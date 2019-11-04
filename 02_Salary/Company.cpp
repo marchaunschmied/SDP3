@@ -23,15 +23,16 @@ bool Company::AddEmployee(Employee* const& emp) {
 }
 
 //removes an employee from the company
-bool Company::DeleteEmployee(std::string const& sname) {
+//returns pointer to the removed employee
+Employee* Company::DeleteEmployee(std::string const& sname) {
 
 	Employee* emp = FindByShortName(sname);
 	if (emp != nullptr) {
 		mEmployees.remove(emp);
-		return true; 
+		return emp;
 	}
 	else {
-		return false;
+		return nullptr;
 	}
 }
 
@@ -49,12 +50,17 @@ size_t Company::CountWorkerType(TWorker const& worker) const {
 
 //counts the pieces produced by all PieceWorkers
 size_t Company::PiecesProduced() const {
-	return std::accumulate(mEmployees.cbegin(), mEmployees.cend(), 0, [](size_t sum, Employee * const & emp) {
+	size_t val =  std::accumulate(mEmployees.cbegin(), mEmployees.cend(), 0, [](size_t sum, Employee * const & emp) {
 		if (emp->GetType() == TWorker::PieceWorker) {
 			PieceWorker* p = dynamic_cast<PieceWorker*>(emp);
 			return sum + p->GetPieces();
 		}
+		else {
+			return sum;
+		}
 	});
+
+	return val;
 }
 
 //counts the pieces sold by all CommissionWorkers
@@ -63,6 +69,9 @@ size_t Company::PiecesSold() const  {
 		if (emp->GetType() == TWorker::CommissionWorker) {
 			CommissionWorker* c = dynamic_cast<CommissionWorker*>(emp);
 			return sum + c->GetPieces();
+		}
+		else {
+			return sum;
 		}
 		});
 }

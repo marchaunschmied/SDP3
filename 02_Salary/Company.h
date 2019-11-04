@@ -11,7 +11,7 @@
 #include<list>
 #include "ICompany.h"
 
-class Company : public ICompany {
+class Company : public ICompany, public Object {
 
 private:
 	std::list<Employee*> mEmployees;
@@ -25,7 +25,7 @@ public:
 	}
 
 	bool AddEmployee(Employee* const& emp);
-	bool DeleteEmployee(std::string const& sname);
+	Employee* DeleteEmployee(std::string const& sname);
 
 	size_t GetNrEmployees() const;
 	size_t CountWorkerType(TWorker const& worker) const;

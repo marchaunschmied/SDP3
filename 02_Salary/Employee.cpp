@@ -51,6 +51,10 @@ std::string Employee::GetInsuranceNr() const {
 size_t Employee::GetEntryYear() const {
 	return mEntryYear;
 }
+
+std::string Employee::GetSname() const {
+	return mShortName;
+}
 ///////////////////////////////////////////////////////////////////////////
 //Print Method
 //Throws an exception if stream is corrupted
