@@ -2,7 +2,7 @@
 // Workfile :		Object.h
 // Author :			Marc Haunschmied
 // Date :			2019
-// Description :	
+// Description :	Base class with virtual destructor
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 
@@ -13,11 +13,8 @@
 class Object {
 public:
 	//pure virtual
-	virtual ~Object() = 0;
+	virtual ~Object() = default;
 
 };
-
-//is needed???
-inline Object::~Object(){}
 
 #endif

@@ -16,7 +16,13 @@
 //adds an existing employee to the company
 bool Company::AddEmployee(Employee* const& emp) {
 	if (emp != nullptr) {
-		mEmployees.emplace_back(emp);
+		try {
+			mEmployees.emplace_back(emp);
+		}
+		catch (std::bad_alloc ex) {
+			throw std::string("error when trying to add an element: ") + ex.what();
+			return false;
+		}
 		return true;
 	}
 	return false;
@@ -78,22 +84,17 @@ size_t Company::PiecesSold() const  {
 
 size_t Company::AmountBornBefore(size_t const& year) const {
 	return std::count_if(mEmployees.cbegin(), mEmployees.cend(), [&year](Employee* const& emp) {
-		size_t const yearPos = 8;
-		size_t const yearLen = 2;
-		//convert insurance nr to birthyear (10 digit number, the last 2 elements are the birth year)
-		size_t empYear = std::stoi((emp->GetInsuranceNr().substr(yearPos,yearLen)),0);
+		//birthday from employee
+		int empYear = emp->GetBirthYear();
 		
 		//calculate current year
-		//this method only works for this century 
 		time_t timer = time(0);
 		tm ti;
 		localtime_s(&ti, &timer);
 
-		
-		//tm_year returns years after 1900 --> 100 needs to get substracted
-		int currentYear =  ti.tm_year - 100;
-		int val = currentYear - empYear;
-		if (val > 0) {
+		//tm_year returns years after 1900 --> 100 needs to get substracted 
+		size_t const substractYears = 100;
+		if (ti.tm_year - substractYears - empYear > 0) {
 			return false;
 		}
 		

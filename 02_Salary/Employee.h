@@ -31,6 +31,7 @@ public:
 	std::string GetSname() const;
 	std::string GetInsuranceNr() const;
 	size_t GetEntryYear() const;
+	int GetBirthYear() const;
 
 	virtual double GetSalary() const = 0;
 	TWorker GetType() const;
