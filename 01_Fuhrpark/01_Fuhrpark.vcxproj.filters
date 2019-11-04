@@ -21,6 +21,9 @@
     <ClInclude Include="Vehicle.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LogBook.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
     <None Include="packages.config" />
   </ItemGroup>
 </Project>

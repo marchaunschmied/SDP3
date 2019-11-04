@@ -18,11 +18,32 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Boss.cpp" />
+    <ClCompile Include="ClientTest.cpp" />
+    <ClCompile Include="CommissionWorker.cpp" />
+    <ClCompile Include="Company.cpp" />
+    <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="HourlyWorker.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="PieceWorker.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Boss.h" />
+    <ClInclude Include="ClientTest.h" />
+    <ClInclude Include="CommissionWorker.h" />
+    <ClInclude Include="Company.h" />
+    <ClInclude Include="Employee.h" />
+    <ClInclude Include="HourlyWorker.h" />
+    <ClInclude Include="ICompany.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="PieceWorker.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{52F49EAE-1652-4391-90AE-8C14E84E0C28}</ProjectGuid>
+    <ProjectGuid>{CA6ED648-B2D6-4663-BDF7-4E0475A322B1}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My01Fuhrpark</RootNamespace>
+    <RootNamespace>My02Salary</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -108,7 +129,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -153,39 +174,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Entry.cpp" />
-    <ClCompile Include="Car.cpp" />
-    <ClCompile Include="Fleet.cpp" />
-    <ClCompile Include="LogBook.cpp" />
-    <ClCompile Include="Motorcycle.cpp" />
-    <ClCompile Include="Testdriver.cpp" />
-    <ClCompile Include="Truck.cpp" />
-    <ClCompile Include="Vehicle.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Entry.h" />
-    <ClInclude Include="Car.h" />
-    <ClInclude Include="Fleet.h" />
-    <ClInclude Include="LogBook.h" />
-
-    <ClInclude Include="Motorcycle.h" />
-    <ClInclude Include="Object.h" />
-    <ClInclude Include="Truck.h" />
-    <ClInclude Include="Vehicle.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\packages\VisualLeakDetector.2.5.0.0\build\native\VisualLeakDetector.targets" Condition="Exists('..\packages\VisualLeakDetector.2.5.0.0\build\native\VisualLeakDetector.targets')" />
   </ImportGroup>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>Dieses Projekt verweist auf mindestens ein NuGet-Paket, das auf diesem Computer fehlt. Verwenden Sie die Wiederherstellung von NuGet-Paketen, um die fehlenden Dateien herunterzuladen. Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=322105". Die fehlende Datei ist "{0}".</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\VisualLeakDetector.2.5.0.0\build\native\VisualLeakDetector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VisualLeakDetector.2.5.0.0\build\native\VisualLeakDetector.targets'))" />
-  </Target>
 </Project>
