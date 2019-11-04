@@ -66,6 +66,7 @@ void Employee::Print(std::ostream& ost)
 		<< "Name: "						 << mFirstName << " " << mName << std::endl
 		<< "Kuerzel: "					 << mShortName   << std::endl
 		<< "Sozialversicherungsnummer: " << mInsuranceNr << std::endl
+		<< "Einstiegsjahr: "    		 <<	mEntryYear << std::endl	
 		<< "Mitarbeiterklasse: ";		 PrintType(ost);
 	
 	PrintSalary(ost);

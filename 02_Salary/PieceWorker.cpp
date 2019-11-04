@@ -57,5 +57,7 @@ void PieceWorker::SetRate(double rate)
 ///////////////////////////////////////////////////////////////////////////
 void PieceWorker::PrintSalary(std::ostream& ost) const
 {
-	ost << "Gehalt: " << GetSalary() << Currency << std::endl;
+	ost << "Stueckrate: " << mRate << Currency << std::endl
+		<< "Stueck: " << mPieces << Currency << std::endl
+		<< "Gesamtgehalt: " << GetSalary() << Currency << std::endl;
 }
