@@ -21,6 +21,8 @@ public:
 
 	//Setter & Getter
 	double GetSalary() const override;
+	size_t GetPieces() const;
+		
 
 	void SetPieces(size_t pieces);
 	void SetRate(double rate);

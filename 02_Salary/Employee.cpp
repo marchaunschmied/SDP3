@@ -44,6 +44,13 @@ TWorker Employee::GetType() const
 	return mWorker;
 }
 
+std::string Employee::GetInsuranceNr() const {
+	return mInsuranceNr;
+}
+
+size_t Employee::GetEntryYear() const {
+	return mEntryYear;
+}
 ///////////////////////////////////////////////////////////////////////////
 //Print Method
 //Throws an exception if stream is corrupted

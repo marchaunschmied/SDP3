@@ -16,7 +16,14 @@ class Company : public ICompany {
 private:
 	std::list<Employee*> mEmployees;
 
+	std::string mName;
+	std::string mLocation;
+
 public:
+
+	Company(std::string const& name, std::string const& location): mName(name), mLocation(location) {
+	}
+
 	bool AddEmployee(Employee* const& emp);
 	bool DeleteEmployee(std::string const& sname);
 
@@ -26,7 +33,7 @@ public:
 	size_t PiecesSold() const;
 	size_t AmountBornBefore(size_t const& year) const;
 	Employee* FindByShortName(std::string const& sname) const;
-	Employee*LongesEmployee() const;
+	Employee*LongestEmployee() const;
 	void PrintAll(std::ostream& ost) const;
 };
 

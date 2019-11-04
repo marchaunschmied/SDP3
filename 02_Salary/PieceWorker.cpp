@@ -28,6 +28,10 @@ double PieceWorker::GetSalary() const
 	return mRate * mPieces * 1.0;
 }
 
+size_t PieceWorker::GetPieces() const {
+	return mPieces; 
+}
+
 void PieceWorker::SetPieces(size_t pieces)
 {
 	mPieces = pieces;
@@ -45,6 +49,8 @@ void PieceWorker::SetRate(double rate)
 		mRate = rate;
 	}
 }
+
+
 
 ///////////////////////////////////////////////////////////////////////////
 //Template Method to Print the Salary
