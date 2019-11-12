@@ -21,6 +21,17 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AdapterEpcos.h" />
+    <ClInclude Include="AdapterNortel.h" />
+    <ClInclude Include="Caesar.h" />
+    <ClInclude Include="ClientEpcos.h" />
+    <ClInclude Include="ClientNortel.h" />
+    <ClInclude Include="Encryption.h" />
+    <ClInclude Include="IEpcos.h" />
+    <ClInclude Include="INortel.h" />
+    <ClInclude Include="RSA.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{818F3A20-14B4-4E39-A2E5-982D63209A26}</ProjectGuid>
