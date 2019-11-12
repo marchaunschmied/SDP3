@@ -9,8 +9,7 @@ private:
 	size_t const mE = 7;
 	size_t const mD = 23;
 
-	void 
-
+	
 protected:
 	virtual void DoCipher(std::string& text) override;
 	virtual void DoDecipher(std::string& text) override;

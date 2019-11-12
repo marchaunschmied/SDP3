@@ -7,9 +7,13 @@
 ///////////////////////////////////////////////////////////////////////////
 
 
-
+#include "Encryption.h"
+#include "RSA.h"
 
 int main() {
+
+	RSA rsa;
+	rsa.Encrypt("test.txt");
 
 	return 0;
 }

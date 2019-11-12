@@ -8,8 +8,8 @@ private:
 	std::string mText;
 	std::string const mEnding;
 
-	std::string ReadFile(std::string const& fileName, std::string& text);
-	void WriteFile(std::string const& fileName, std::string& text);
+	std::string ReadFile(std::string const& fileName);
+	void WriteFile(std::string const& fileName);
 protected:
 	virtual void DoCipher(std::string& text) = 0;
 	virtual void DoDecipher(std::string& text) = 0;

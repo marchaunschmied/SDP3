@@ -27,5 +27,5 @@ void RSA::DoDecipher(std::string& text)
 
 
 
-RSA::RSA():Encryption(".txt.RSA")
+RSA::RSA():Encryption(".RSA")
 {}
