@@ -3,7 +3,7 @@
 #include <string>
 
 enum TEncoding {
-	RSA, Caesar;
+	T_RSA, T_Caesar
 };
 
 class INortel {

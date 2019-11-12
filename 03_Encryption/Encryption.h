@@ -11,9 +11,9 @@ private:
 	std::string ReadFile(std::string const& fileName, std::string& text);
 	void WriteFile(std::string const& fileName, std::string& text);
 protected:
-	virtual void DoCipher() = 0;
-	virtual void DoEncrypt() = 0;
-	Encryption(std::string const& fileName);
+	virtual void DoCipher(std::string& text) = 0;
+	virtual void DoDecipher(std::string& text) = 0;
+	Encryption(std::string const& ending);
 public:
 	void Encrypt(std::string const& fileName);
 	void Decrypt(std::string const& fileName);

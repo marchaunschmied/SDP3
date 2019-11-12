@@ -19,6 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AdapterNortel.cpp" />
+    <ClCompile Include="Caesar.cpp" />
+    <ClCompile Include="Encryption.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RSA.cpp" />
   </ItemGroup>
