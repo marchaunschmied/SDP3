@@ -18,6 +18,9 @@
     <ClCompile Include="main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+
+    <ClCompile Include="RSA.cpp">
+
     <ClCompile Include="AdapterNortel.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
@@ -25,6 +28,7 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Encryption.cpp">
+
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
