@@ -9,7 +9,11 @@ private:
 
 
 public:
-	Caesar() = default;
+	Caesar();
+
+	void DoCipher(std::string& text) override;
+	void DoDecipher(std::string& text) override;
+
 };
 
 #endif

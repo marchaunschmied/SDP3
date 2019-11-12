@@ -6,9 +6,12 @@
 #include "RSA.h"
 #include "Caesar.h"
 
-class AdapterEpcos : public INortel {
+class AdapterNortel : public INortel {
 public:
-	RSA mRSA;
+	//RSA mRSA;
 	Caesar mCaesar;
+
+	void Encipher(std::string const& fileName, TEncoding enc) override;
+	void Decipher(std::string const& fileName, TEncoding enc) override;
 };
 #endif	
