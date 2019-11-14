@@ -13,7 +13,8 @@ std::string Encryption::ReadFile(std::string const& fileName) {
 		std::ifstream file;
 		std::stringstream buffer;
 
-		file.open(fileName, std::ifstream::binary);
+	  file.open(fileName, std::ios::binary);
+
 
 		if (file.good()) {
 			if (buffer.good()) {
