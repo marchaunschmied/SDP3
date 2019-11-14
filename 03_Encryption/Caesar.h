@@ -1,3 +1,12 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile :		Caesar.h
+// Author :			Marc Haunschmied
+// Date :			November 2019
+// Description :	
+// Revision :
+///////////////////////////////////////////////////////////////////////////
+
+
 #ifndef CAESAR_H
 #define CAESAR_H
 
@@ -6,8 +15,6 @@
 class Caesar : public Encryption {
 private:
 	size_t const mKey = 13;
-
-
 public:
 	Caesar();
 
