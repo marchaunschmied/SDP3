@@ -2,7 +2,7 @@
 // Workfile :		ClientNortel.h
 // Author :			Marc Haunschmied
 // Date :			November 2019
-// Description :	
+// Description :	Client for Nortel --> Used for testing implementation
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 

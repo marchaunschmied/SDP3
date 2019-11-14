@@ -1,3 +1,12 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile :		Encryption.cpp
+// Author :			Marc Haunschmied, Markus Riegler
+// Date :			November 2019
+// Description :	
+// Revision :
+///////////////////////////////////////////////////////////////////////////
+
+
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -21,6 +30,9 @@ std::string Encryption::ReadFile(std::string const& fileName) {
 				buffer << file.rdbuf();
 				mText = buffer.str();
 			}
+			else {
+				throw std::string{ "error reading file" };
+			}
 		}
 		file.close();
 	}
@@ -33,6 +45,9 @@ void Encryption::WriteFile(std::string const& fileName){
 		file.open(fileName, std::ostream::binary | std::ofstream::trunc);
 		if (file.good()) {
 			file << mText;
+		}
+		else {
+			throw std::string{ "error writing file" };
 		}
 		file.close();
 	}

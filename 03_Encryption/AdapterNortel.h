@@ -2,7 +2,7 @@
 // Workfile :		AdapterNortel.h
 // Author :			Marc Haunschmied
 // Date :			November 2019
-// Description :	
+// Description :	Adapter calls right function for each TEnconding
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 

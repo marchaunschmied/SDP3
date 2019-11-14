@@ -2,7 +2,7 @@
 // Workfile :		Caesar.h
 // Author :			Marc Haunschmied
 // Date :			November 2019
-// Description :	
+// Description :	Encrypts and Decrypts a given text with Caesar encryption
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 

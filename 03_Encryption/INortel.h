@@ -2,7 +2,7 @@
 // Workfile :		INortel.h
 // Author :			Marc Haunschmied
 // Date :			November 2019
-// Description :	
+// Description :	Interface for Nortel
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 
@@ -17,9 +17,9 @@ enum TEncoding {
 
 class INortel {
 public:
+	//pure virtual
 	virtual void Encipher(std::string const& fileName, TEncoding enc) = 0;
 	virtual void Decipher(std::string const& fileName, TEncoding enc) = 0;
-
 };
 
 #endif
