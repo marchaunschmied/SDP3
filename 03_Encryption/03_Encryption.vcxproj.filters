@@ -6,6 +6,7 @@
     <ClCompile Include="Encryption.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RSA.cpp" />
+    <ClCompile Include="ClientNortel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdapterEpcos.h" />

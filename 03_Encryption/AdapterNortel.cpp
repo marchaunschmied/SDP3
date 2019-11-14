@@ -11,7 +11,7 @@
 
 void AdapterNortel::Encipher(std::string const& fileName, TEncoding enc) {
 	if (enc == T_RSA) {
-
+		mRSA.Encrypt(fileName);
 	}
 	else if (enc == T_Caesar) {
 		mCaesar.Encrypt(fileName);
@@ -22,7 +22,7 @@ void AdapterNortel::Encipher(std::string const& fileName, TEncoding enc) {
 }
 void AdapterNortel::Decipher(std::string const& fileName, TEncoding enc) {
 	if (enc == T_RSA) {
-
+		mRSA.Decrypt(fileName);
 	}
 	else if (enc == T_Caesar) {
 		mCaesar.Decrypt(fileName);

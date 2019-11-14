@@ -22,26 +22,19 @@ Caesar::Caesar() : Encryption::Encryption(".caesar"){
 void Caesar::DoCipher(std::string& text) {
 	//encrpyt
 	for (size_t i = 0; i < text.length(); i++) {
-		//std::cout << 0 + text[i] << " --> ";
 		text[i] = (text[i] + mKey) % 128 ;
-		//std::cout << 0 + text[i] << std::endl;
 	}
-	//std::cout << text << std::endl;
 }
 
 //encrypt a text with caesar encryption
 
 void Caesar::DoDecipher(std::string& text) {
 	//decrypt
-	//std::cout << "==================================" << std::endl;
 	for (size_t i = 0; i < text.length(); i++) {
-		//std::cout << 0 + text[i] << " --> ";
 		//check if rotated over the end
 		if (text[i] < mKey) {
 			text[i] += 128;
 		}
 		text[i] = (text[i] - mKey);
-		//std::cout << 0 + text[i] << std::endl;
 	}
-	//std::cout << text << std::endl;
 }

@@ -16,10 +16,11 @@
 #include "Caesar.h"
 
 class AdapterNortel : public INortel {
-public:
-	//RSA mRSA;
-	Caesar mCaesar;
 
+private:
+	RSA mRSA;
+	Caesar mCaesar;
+public:
 	void Encipher(std::string const& fileName, TEncoding enc) override;
 	void Decipher(std::string const& fileName, TEncoding enc) override;
 };

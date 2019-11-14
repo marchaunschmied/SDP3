@@ -9,16 +9,19 @@
 
 #include "Encryption.h"
 #include "RSA.h"
-#include "Caesar.h"
+
+#include "AdapterNortel.h"
+#include "ClientNortel.h"
 
 int main() {
 
 	//RSA rsa;
 	//rsa.Encrypt("test.txt");
 
-	Caesar c;
-	c.Encrypt("test.txt");
-	c.Decrypt("test.txt.caesar");
+	AdapterNortel nortel;
+
+	ClientNortel nortelTest;
+	nortelTest.TestCaesar(&nortel);
 
 
 
