@@ -14,6 +14,7 @@ int main() {
 
 	RSA rsa;
 	rsa.Encrypt("test.txt");
+	rsa.Decrypt("test1.txt.RSA");
 
 	return 0;
 }
