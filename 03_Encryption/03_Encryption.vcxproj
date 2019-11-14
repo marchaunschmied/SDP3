@@ -39,6 +39,9 @@
   <ItemGroup>
     <Text Include="test.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="test.txt.caesar" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{818F3A20-14B4-4E39-A2E5-982D63209A26}</ProjectGuid>

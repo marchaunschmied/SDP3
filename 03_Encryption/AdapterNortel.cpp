@@ -1,3 +1,12 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile :		AdapterNortel.cpp
+// Author :			Marc Haunschmied
+// Date :			November 2019
+// Description :	
+// Revision :
+///////////////////////////////////////////////////////////////////////////
+
+
 #include "AdapterNortel.h"
 
 void AdapterNortel::Encipher(std::string const& fileName, TEncoding enc) {
