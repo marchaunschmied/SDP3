@@ -17,7 +17,7 @@ private:
 	std::string mText;
 	std::string const mEnding;
 
-	std::string ReadFile(std::string const& fileName);
+	void ReadFile(std::string const& fileName, std::string const& ending);
 	void WriteFile(std::string const& fileName);
 protected:
 	virtual void DoCipher(std::string& text) = 0;

@@ -22,6 +22,7 @@
     <ClCompile Include="AdapterEpcos.cpp" />
     <ClCompile Include="AdapterNortel.cpp" />
     <ClCompile Include="Caesar.cpp" />
+    <ClCompile Include="ClientEpcos.cpp" />
     <ClCompile Include="ClientNortel.cpp" />
     <ClCompile Include="Encryption.cpp" />
     <ClCompile Include="main.cpp" />
@@ -40,9 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="test.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="test.txt.caesar" />
+    <Text Include="test1.txt" />
+    <Text Include="test2.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

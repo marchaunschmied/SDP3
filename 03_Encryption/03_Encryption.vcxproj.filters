@@ -8,6 +8,7 @@
     <ClCompile Include="RSA.cpp" />
     <ClCompile Include="ClientNortel.cpp" />
     <ClCompile Include="AdapterEpcos.cpp" />
+    <ClCompile Include="ClientEpcos.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdapterEpcos.h" />
@@ -22,8 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="test.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="test.txt.caesar" />
+    <Text Include="test1.txt" />
+    <Text Include="test2.txt" />
   </ItemGroup>
 </Project>

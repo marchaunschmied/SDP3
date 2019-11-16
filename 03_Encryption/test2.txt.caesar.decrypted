@@ -1,0 +1,11 @@
+Die jeweiligen Verschlsselungs-Parameter (key bei Caesar; n,e,d bei RSA) knnen intern festge-
+legt werden. Sie brauchen nicht vom Kunden konfigurierbar sein. Whlen Sie fr key selbst einen
+
+beliebigen Wert. Fr RSA knnen folgende Schlssel bentzt werden: n = 187, e = 7, d = 23.
+Schreiben Sie einen Testtreiber, der verschiedene Nachrichtendateien im ASCII-Format (7 Bit) vom
+Dateisystem einliest und ver- bzw. entschlsselt. Verwenden Sie dazu jeweils einen Klienten fr
+Epcos und einen fr Nortel, die das fr sie zur Verfgung gestellte Interface verwenden. Geben Sie
+die Ergebnisse (soweit druckbar) aus!
+
+Treffen Sie fr alle unzureichenden Angaben sinnvolle Annahmen. Verfassen Sie weiters eine Sys-
+temdokumentation (Funktionalitt, Klassendiagramm, Schnittstellen der beteiligten Klassen, etc)!
