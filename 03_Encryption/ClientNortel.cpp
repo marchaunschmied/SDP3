@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////
 // Workfile :		ClientNortel.cpp
-// Author :			Marc Haunschmied
-// Date :			November 2019
-// Description :	Client for Nortel --> Used for testing implementation
+// Author :			Markus Riegler
+// Date :			16. November 2019
+// Description :	Client for Nortel--> Used for testing implementation
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 

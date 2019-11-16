@@ -2,7 +2,7 @@
 // Workfile :		Encryption.cpp
 // Author :			Marc Haunschmied, Markus Riegler
 // Date :			November 2019
-// Description :	
+// Description :	Base Class for encryption algorithms
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 

@@ -1,3 +1,11 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile :		ClientEpcos.cpp
+// Author :			Markus Riegler
+// Date :			16. November 2019
+// Description :	Client for Epcos --> Used for testing implementation
+// Revision :
+///////////////////////////////////////////////////////////////////////////
+
 #include <iostream>
 #include "ClientEpcos.h"
 
