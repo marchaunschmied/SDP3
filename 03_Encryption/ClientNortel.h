@@ -6,13 +6,13 @@
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 
-
 #ifndef CLIENT_NORTEL_H
 #define CLIENT_NORTEL_H
 
+#include "Object.h"
 #include "INortel.h"
 
-class ClientNortel {
+class ClientNortel: public Object {
 public:
 	void TestRSA(INortel* inter);
 	void TestCaesar(INortel* inter);

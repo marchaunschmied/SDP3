@@ -37,6 +37,7 @@
     <ClInclude Include="Encryption.h" />
     <ClInclude Include="IEpcos.h" />
     <ClInclude Include="INortel.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="RSA.h" />
   </ItemGroup>
   <ItemGroup>

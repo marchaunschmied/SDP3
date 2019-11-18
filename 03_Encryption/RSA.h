@@ -18,7 +18,7 @@ private:
 	size_t const mD = 23;	//public Key
 
 	//private help functions
-	unsigned char CalcRSA(unsigned char c, size_t key);
+	unsigned char CalcRSA(unsigned char c, size_t const key);
 	
 protected:
 	//functions for Template Method

@@ -10,12 +10,13 @@
 #ifndef ADAPTER_NORTEL_H
 #define ADAPTER_NORTEL_H
 
+#include "Object.h"
 #include "INortel.h"
 #include "Encryption.h"
 #include "RSA.h"
 #include "Caesar.h"
 
-class AdapterNortel : public INortel {
+class AdapterNortel : public INortel, public Object {
 
 private:
 	RSA mRSA;

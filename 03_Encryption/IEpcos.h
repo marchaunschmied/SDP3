@@ -13,7 +13,7 @@ class IEpcos {
 public:
 	virtual void EncryptRSA(std::string const& fileName) = 0;
 	virtual void DecryptRSA(std::string const& fileName) = 0;
-
+	virtual ~IEpcos() = default;
 };
 
 #endif

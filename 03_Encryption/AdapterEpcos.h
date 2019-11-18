@@ -8,12 +8,13 @@
 #ifndef ADAPTER_EPCOS_H
 #define ADAPTER_EPCOS_H
 
+#include "Object.h"
 #include "IEpcos.h"
 #include "Encryption.h"
 #include "RSA.h"
 
 
-class AdapterEpcos : public IEpcos {
+class AdapterEpcos : public IEpcos, public Object {
 
 public:
 	//override the functions of the Interface

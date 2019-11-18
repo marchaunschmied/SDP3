@@ -19,6 +19,7 @@ public:
 	//pure virtual
 	virtual void Encipher(std::string const& fileName, TEncoding enc) = 0;
 	virtual void Decipher(std::string const& fileName, TEncoding enc) = 0;
+	virtual ~INortel() = default;
 };
 
 #endif

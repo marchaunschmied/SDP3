@@ -20,6 +20,7 @@
     <ClInclude Include="IEpcos.h" />
     <ClInclude Include="INortel.h" />
     <ClInclude Include="RSA.h" />
+    <ClInclude Include="Object.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="test.txt" />
