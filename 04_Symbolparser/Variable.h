@@ -5,12 +5,13 @@
 #include "Type.h"
 
 class Variable : public Symbol {
-private:
+protected:
 	Type::SPtr mType;
 public:
-	std::string ParseFromLine(std::string const& line) override;
-	void SetType(Type::SPtr const& type);
-	void Print(std::ostream& ost) = 0;
+	virtual std::string ParseFromLine(std::string const& line) = 0;
+	virtual void Print(std::ostream& ost) = 0;
+	virtual void SetType(Type::SPtr const& type);
+
 
 	typedef std::unique_ptr<Variable> UPtr;
 };

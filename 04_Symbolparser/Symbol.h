@@ -7,7 +7,7 @@
 #include "Object.h"
 
 class Symbol : public Object {
-private:
+protected:
 	std::string mName;
 
 public:

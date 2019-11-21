@@ -22,10 +22,28 @@
     <Filter Include="Headerdateien\Parser">
       <UniqueIdentifier>{f29dbe31-4469-4670-9697-3bba99697fcc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Quelldateien\Symbol">
+      <UniqueIdentifier>{1e758f80-4326-4b6e-9a88-e502ffaa18a6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="JavaType.cpp">
+      <Filter>Quelldateien\Symbol</Filter>
+    </ClCompile>
+    <ClCompile Include="IECType.cpp">
+      <Filter>Quelldateien\Symbol</Filter>
+    </ClCompile>
+    <ClCompile Include="JavaVariable.cpp">
+      <Filter>Quelldateien\Symbol</Filter>
+    </ClCompile>
+    <ClCompile Include="IECVariable.cpp">
+      <Filter>Quelldateien\Symbol</Filter>
+    </ClCompile>
+    <ClCompile Include="Variable.cpp">
+      <Filter>Quelldateien\Symbol</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

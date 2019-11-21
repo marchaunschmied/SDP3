@@ -5,8 +5,8 @@
 
 class Type : public Symbol {
 public:
-	std::string ParseFromLine(std::string const& line) override;
-	void Print(std::ostream& ost) override;
+	virtual std::string ParseFromLine(std::string const& line) = 0;
+	virtual void Print(std::ostream& ost) = 0;
 	typedef std::shared_ptr<Type> SPtr;
 };
 

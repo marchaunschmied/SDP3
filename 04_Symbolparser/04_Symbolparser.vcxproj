@@ -151,7 +151,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="IECType.cpp" />
+    <ClCompile Include="IECVariable.cpp" />
+    <ClCompile Include="JavaType.cpp" />
+    <ClCompile Include="JavaVariable.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Variable.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IECSymbolFactory.h" />
