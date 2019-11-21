@@ -6,6 +6,7 @@
 class JavaVariable : public Variable {
 public:
 	std::string ParseFromLine(std::string const& line) override;
+	void Print(std::ostream& ost) override;
 };
 
 #endif

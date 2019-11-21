@@ -7,8 +7,8 @@
 
 class JavaSymbolFactory : public SymbolFactory {
 public:
-	JavaType* CreateType();
-	JavaVariable* CreateVariable();
+	Type::SPtr CreateType(std::string const& typeName) override;
+	Variable::UPtr CreateVariable(std::string const& typeName) override;
 };
 
 #endif

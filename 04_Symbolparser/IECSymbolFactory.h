@@ -7,8 +7,8 @@
 
 class IECSymbolFactory : public SymbolFactory {
 public:
-	IECType* CreateType();
-	IECVariable* CreateVariable();
+	Type::SPtr CreateType(std::string const& typeName) override;
+	Variable::UPtr CreateVariable(std::string const& typeName) override;
 };
 
 #endif

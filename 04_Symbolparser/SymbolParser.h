@@ -11,9 +11,9 @@
 
 class SymbolParser : public Object {
 private:
-	std::unique_ptr<SymbolFactory> mFact;
-	std::list<Type*> mTypes;
-	std::list<Variable*> mVariables;
+	SymbolFactory::SPtr mFact;
+	std::list<Type::SPtr> mTypes;
+	std::list<Variable::UPtr> mVariables;
 
 	void ReadVariables(std::string const& path);
 	void ReadTypes(std::string const& path);
@@ -27,7 +27,7 @@ public:
 	void AddType(std::string const& name);
 	void AddVariable(std::string const& name, std::string const& type);
 	void SetFactory(std::unique_ptr<SymbolFactory> fact);
-	Type* CheckType(std::string const& typeName);
+	Type::SPtr CheckType(std::string const& typeName);
 
 };
 

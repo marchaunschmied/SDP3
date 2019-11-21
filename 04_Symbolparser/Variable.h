@@ -6,10 +6,13 @@
 
 class Variable : public Symbol {
 private:
-	Type* mType;
+	Type::SPtr mType;
 public:
-	std::string ParseFromLine(std::string const& line) = 0;
-	void SetType(Type* type);
+	std::string ParseFromLine(std::string const& line) override;
+	void SetType(Type::SPtr const& type);
+	void Print(std::ostream& ost) = 0;
+
+	typedef std::unique_ptr<Variable> UPtr;
 };
 
 #endif

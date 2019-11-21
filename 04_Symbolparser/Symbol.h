@@ -12,7 +12,7 @@ private:
 
 public:
 	virtual std::string ParseFromLine(std::string const& line) = 0;
-	std::ostream& operator<<(std::ostream& ost);
+	virtual void Print(std::ostream& ost) = 0;
 };
 
 #endif
