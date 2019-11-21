@@ -1,0 +1,11 @@
+Die jeweiligen Verschlüsselungs-Parameter (key bei Caesar; n,e,d bei RSA) können intern festge-
+legt werden. Sie brauchen nicht vom Kunden konfigurierbar sein. Wählen Sie für key selbst einen
+
+beliebigen Wert. Für RSA können folgende Schlüssel benützt werden: n = 187, e = 7, d = 23.
+Schreiben Sie einen Testtreiber, der verschiedene Nachrichtendateien im ASCII-Format (7 Bit) vom
+Dateisystem einliest und ver- bzw. entschlüsselt. Verwenden Sie dazu jeweils einen Klienten für
+Epcos und einen für Nortel, die das für sie zur Verfügung gestellte Interface verwenden. Geben Sie
+die Ergebnisse (soweit druckbar) aus!
+
+Treffen Sie für alle unzureichenden Angaben sinnvolle Annahmen. Verfassen Sie weiters eine Sys-
+temdokumentation (Funktionalität, Klassendiagramm, Schnittstellen der beteiligten Klassen, etc)!
