@@ -13,10 +13,57 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Headerdateien\Symbol">
+      <UniqueIdentifier>{ae73d6b9-df4f-473d-9f63-54f3c4721044}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Factory">
+      <UniqueIdentifier>{85e64f1e-d8ec-4674-b885-2bf68f1088b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Parser">
+      <UniqueIdentifier>{f29dbe31-4469-4670-9697-3bba99697fcc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Symbol.h">
+      <Filter>Headerdateien\Symbol</Filter>
+    </ClInclude>
+    <ClInclude Include="Type.h">
+      <Filter>Headerdateien\Symbol</Filter>
+    </ClInclude>
+    <ClInclude Include="Variable.h">
+      <Filter>Headerdateien\Symbol</Filter>
+    </ClInclude>
+    <ClInclude Include="IECSymbolFactory.h">
+      <Filter>Headerdateien\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="JavaSymbolFactory.h">
+      <Filter>Headerdateien\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="SymbolFactory.h">
+      <Filter>Headerdateien\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="JavaType.h">
+      <Filter>Headerdateien\Symbol</Filter>
+    </ClInclude>
+    <ClInclude Include="IECType.h">
+      <Filter>Headerdateien\Symbol</Filter>
+    </ClInclude>
+    <ClInclude Include="JavaVariable.h">
+      <Filter>Headerdateien\Symbol</Filter>
+    </ClInclude>
+    <ClInclude Include="IECVariable.h">
+      <Filter>Headerdateien\Symbol</Filter>
+    </ClInclude>
+    <ClInclude Include="SymbolParser.h">
+      <Filter>Headerdateien\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
