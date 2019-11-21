@@ -18,7 +18,7 @@
 
 class SymbolFactory : public Object {
 public:
-	//typedef std::shared_ptr<SymbolFactory<T>> SPtr;
+	typedef std::shared_ptr<SymbolFactory> SPtr;
 	
 	virtual Type::SPtr CreateType(std::string const& typeName) = 0;
 	virtual Variable::UPtr CreateVariable(std::string const& typeName) = 0;

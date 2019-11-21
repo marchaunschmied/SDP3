@@ -19,6 +19,6 @@ std::string IECVariable::ParseFromLine(std::string const& line) {
 }
 void IECVariable::Print(std::ostream& ost) {
 	if (ost.good()) {
-		ost << mType->GetName() << " " << mName << std::endl;
+		ost << "VAR " << mName << " : " << mType->GetName() << ";" << std::endl;
 	}
 }

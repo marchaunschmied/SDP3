@@ -19,6 +19,6 @@ std::string JavaVariable::ParseFromLine(std::string const& line) {
 }
 void JavaVariable::Print(std::ostream& ost) {
 	if (ost.good()) {
-		ost << mType->GetName() << " " << mName << std::endl;
+		ost << mType->GetName() << " " << mName << ";" << std::endl;
 	}
 }

@@ -33,6 +33,7 @@ int main(){
 	//JavaSymbolFactory::GetInstance().print();
 	
 	JavaSymbolFactory fact;
+	
 
 	JavaType::SPtr test = fact.CreateType("integer");
 	test->Print(cout);
