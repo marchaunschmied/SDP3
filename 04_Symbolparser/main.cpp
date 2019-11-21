@@ -14,6 +14,10 @@
 
 #include "SymbolParser.h"
 
+#include "SymbolFactory.h"
+#include "JavaSymbolFactory.h"
+#include "IECSymbolFactory.h"
+
 #include "Symbol.h"
 #include "JavaType.h"
 #include "IECType.h"
@@ -23,7 +27,31 @@
 using namespace std;
 
 int main(){
-	std::cout << "Hello World!\n"; 
+	
+	//SymbolFactory::SPtr fact = JavaSymbolFactory::GetInstance();
+	
+	//JavaSymbolFactory::GetInstance().print();
+	
+	JavaSymbolFactory fact;
+
+	JavaType::SPtr test = fact.CreateType("integer");
+	test->Print(cout);
+
+	JavaVariable::UPtr var1 = fact.CreateVariable("hallo");
+	var1->SetType(test);
+	var1->Print(cout);
+
+	IECSymbolFactory factIEC;
+
+	IECType::SPtr iecType = factIEC.CreateType("double");
+	iecType->Print(cout);
+
+	IECVariable::UPtr iecVar = factIEC.CreateVariable("radius");
+	iecVar->SetType(iecType);
+	iecVar->Print(cout);
+
+
+	/*std::cout << "Hello World!\n"; 
 	SymbolParser pars;
 
 	std::list<Type::SPtr> l;
@@ -56,6 +84,6 @@ int main(){
 
 	javaVar->Print(cout);
 	iecVar->Print(cout);
-
+	*/
 }
 

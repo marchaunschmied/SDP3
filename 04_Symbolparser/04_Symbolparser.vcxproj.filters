@@ -25,6 +25,9 @@
     <Filter Include="Quelldateien\Symbol">
       <UniqueIdentifier>{1e758f80-4326-4b6e-9a88-e502ffaa18a6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Quelldateien\Factory">
+      <UniqueIdentifier>{e38d1b08-5a71-4b7a-bf3e-f462cce4eca0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -43,6 +46,18 @@
       <Filter>Quelldateien\Symbol</Filter>
     </ClCompile>
     <ClCompile Include="Variable.cpp">
+      <Filter>Quelldateien\Symbol</Filter>
+    </ClCompile>
+    <ClCompile Include="SymbolFactory.cpp">
+      <Filter>Quelldateien\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="JavaSymbolFactory.cpp">
+      <Filter>Quelldateien\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="IECSymbolFactory.cpp">
+      <Filter>Quelldateien\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Symbol.cpp">
       <Filter>Quelldateien\Symbol</Filter>
     </ClCompile>
   </ItemGroup>
@@ -82,6 +97,9 @@
     </ClInclude>
     <ClInclude Include="Object.h">
       <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SingletonBase.h">
+      <Filter>Quelldateien\Factory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
