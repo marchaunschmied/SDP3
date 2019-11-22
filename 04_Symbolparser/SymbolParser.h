@@ -21,7 +21,7 @@
 class SymbolParser : public Object {
 private:
 	//private member
-	SymbolFactory::SPtr mFact = 0;
+	SymbolFactory* mFact = nullptr;
 	std::list<Type::SPtr> mTypes;
 	std::list<Variable::UPtr> mVariables;
 
@@ -33,19 +33,24 @@ private:
 	//opens a file with a given name
 	std::fstream OpenFile(std::string const& path);
 
+	std::string const ERROR_WRITE = "ERROR: in write file";
+
+	///////////////////////////////////////////////////////////////////////////
 	//writes a container into a Filestream
+	///////////////////////////////////////////////////////////////////////////
 	template <typename Cont>
-	void WriteFile(Cont& symbols, std::fstream& ost) {
+	void WriteFile(Cont const& symbols, std::fstream& ost) {
 		for (auto& sym : symbols)
 		{
-			if (!stream.good())
+			if (!ost.good())
 			{
-				std::cerr "ERROR: in write file" << std::endl;
+				std::cerr << ERROR_WRITE << std::endl;
 				return;
 			}
 			ost << *sym << std::endl;
 		}
 	}
+
 	//Checks if the type is known
 	Type::SPtr CheckType(std::string const& typeName);
 	//Checks if a Variable already exists
@@ -54,7 +59,7 @@ private:
 public:
 	void AddType(std::string const& name);
 	void AddVariable(std::string const& name, std::string const& type);
-	void SetFactory(SymbolFactory::SPtr fact);
+	void SetFactory(SymbolFactory* fact);
 
 };
 

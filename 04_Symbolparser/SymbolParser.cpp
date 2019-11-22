@@ -19,7 +19,6 @@ std::string const ERROR_UN_TYPE = "ERROR: Unkwown Type: ";
 std::string const ERROR_VARIABLE = "ERROR: Variablename already exists: ";
 
 
-
 ///////////////////////////////////////////////////////////////////////////
 //Reads Variables from a Filestream and adds them to the Variable Container
 ///////////////////////////////////////////////////////////////////////////
@@ -129,7 +128,7 @@ bool SymbolParser::CheckVariable(std::string const& variableName)
 void SymbolParser::AddType(std::string const& name)
 {
 	//factory set?
-	if (mFact == nullptr)
+	if (mFact != nullptr)
 	{
 		throw std::string(ERROR_NOFACT);
 		return;
@@ -148,7 +147,7 @@ void SymbolParser::AddType(std::string const& name)
 void SymbolParser::AddVariable(std::string const& name, std::string const& type)
 {
 	//factory set?
-	if (mFact == nullptr)
+	if (mFact != nullptr)
 	{
 		throw std::string(ERROR_NOFACT);
 		return;
@@ -177,7 +176,7 @@ void SymbolParser::AddVariable(std::string const& name, std::string const& type)
 ///////////////////////////////////////////////////////////////////////////
 //Changes the factory and saves/loads needed data
 ///////////////////////////////////////////////////////////////////////////
-void SymbolParser::SetFactory(SymbolFactory::SPtr fact)
+void SymbolParser::SetFactory(SymbolFactory* fact)
 {
 	std::fstream file;
 	//when a fyctory is already set, save types and variables
