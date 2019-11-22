@@ -13,17 +13,20 @@
 #include "SymbolFactory.h"
 #include "JavaType.h"
 #include "JavaVariable.h"
+#include "SingletonBase.h"
 #include <iostream>
+#include <memory>
 
-class JavaSymbolFactory : public SymbolFactory/*, public SingletonBase<JavaSymbolFactory>*/ {
+class JavaSymbolFactory : public SymbolFactory, public SingletonBase<JavaSymbolFactory>{
 
 public:
 	Type::SPtr CreateType(std::string const& typeName) override;
 	Variable::UPtr CreateVariable(std::string const& typeName) override;
 
-/*private:
-	friend class SingletonBase<JavaSymbolFactory>;*/
-	JavaSymbolFactory() = default;
+
+private:
+	friend class SingletonBase<JavaSymbolFactory>;
+	JavaSymbolFactory() : SymbolFactory("JavaTypes.sym", "JavaVars.sym") {};
 };
 
 #endif

@@ -15,3 +15,10 @@ std::string SymbolFactory::GetTypeFilename() const {
 std::string SymbolFactory::GetVariableFilename() const {
 	return mVariableFileName;
 }
+
+SymbolFactory::SymbolFactory(std::string const& filenameT, std::string const& filenameV):
+	mTypeFileName{filenameT}, mVariableFileName{filenameV}
+{
+}
+
+

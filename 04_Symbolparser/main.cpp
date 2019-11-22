@@ -32,8 +32,10 @@ int main(){
 	
 	//JavaSymbolFactory::GetInstance().print();
 	
-	JavaSymbolFactory fact;
+	JavaSymbolFactory& fact = JavaSymbolFactory::GetInstance();
 	
+	cout << fact.GetTypeFilename() << endl;
+	cout << fact.GetVariableFilename() << endl;
 
 	JavaType::SPtr test = fact.CreateType("integer");
 	test->Print(cout);
@@ -42,7 +44,10 @@ int main(){
 	var1->SetType(test);
 	var1->Print(cout);
 
-	IECSymbolFactory factIEC;
+	IECSymbolFactory& factIEC = IECSymbolFactory::GetInstance();
+
+	cout << factIEC.GetTypeFilename() << endl;
+	cout << factIEC.GetVariableFilename() << endl;
 
 	IECType::SPtr iecType = factIEC.CreateType("double");
 	iecType->Print(cout);

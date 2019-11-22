@@ -15,3 +15,4 @@ Type::SPtr IECSymbolFactory::CreateType(std::string const& typeName) {
 Variable::UPtr IECSymbolFactory::CreateVariable(std::string const& typeName) {
 	return std::make_unique<IECVariable>(typeName);
 }
+

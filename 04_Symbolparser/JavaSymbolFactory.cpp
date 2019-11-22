@@ -8,6 +8,7 @@
 
 
 #include "JavaSymbolFactory.h"
+#include <memory>
 
 Type::SPtr JavaSymbolFactory::CreateType(std::string const& typeName)  {
 	return std::make_shared<JavaType>(typeName);

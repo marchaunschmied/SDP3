@@ -99,7 +99,7 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="SingletonBase.h">
-      <Filter>Quelldateien\Factory</Filter>
+      <Filter>Headerdateien\Factory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
