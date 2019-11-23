@@ -33,6 +33,8 @@
     <ClCompile Include="main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="SymbolParser.cpp">
+      <Filter>Quelldateien</Filter>
     <ClCompile Include="JavaType.cpp">
       <Filter>Quelldateien\Symbol</Filter>
     </ClCompile>

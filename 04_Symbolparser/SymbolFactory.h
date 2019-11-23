@@ -17,8 +17,8 @@
 class SymbolFactory : public Object {
 public:	
 	virtual Type::SPtr CreateType(std::string const& typeName) = 0;
-	virtual Variable::UPtr CreateVariable(std::string const& typeName) = 0;
-	
+	virtual Variable::UPtr CreateVariable(std::string const& typeName, Type::SPtr type) = 0;
+
 	std::string GetTypeFilename() const;
 	std::string GetVariableFilename() const;
 	
