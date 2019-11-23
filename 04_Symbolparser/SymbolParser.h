@@ -20,8 +20,8 @@
 
 class SymbolParser : public Object {
 private:
-	//private member
-	SymbolFactory* mFact = nullptr;
+
+	//SymbolFactory<T>::SPtr mFact;
 	std::list<Type::SPtr> mTypes;
 	std::list<Variable::UPtr> mVariables;
 
@@ -59,8 +59,8 @@ private:
 public:
 	void AddType(std::string const& name);
 	void AddVariable(std::string const& name, std::string const& type);
-	void SetFactory(SymbolFactory* fact);
-
+	//void SetFactory(std::unique_ptr<SymbolFactory> fact);
+	Type::SPtr CheckType(std::string const& typeName);
 };
 
 #endif
