@@ -1,3 +1,12 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile :		JavaType.h
+// Author :			Marc Haunschmied
+// Date :			21-November-2019
+// Description :	
+// Revision :
+///////////////////////////////////////////////////////////////////////////
+
+
 #ifndef JAVA_TYPE_H
 #define JAVA_TYPE_H
 
@@ -7,6 +16,7 @@ class JavaType : public Type {
 public:
 	std::string ParseFromLine(std::string const& line) override;
 	void Print(std::ostream& ost) override;
+	JavaType(std::string const& name) : Type(name) {};
 };
 
 #endif

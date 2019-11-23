@@ -1,3 +1,12 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile :		Variable.h
+// Author :			Marc Haunschmied
+// Date :			21-November-2019
+// Description :	
+// Revision :
+///////////////////////////////////////////////////////////////////////////
+
+
 #ifndef VARIABLE_H
 #define VARIABLE_H
 
@@ -5,12 +14,14 @@
 #include "Type.h"
 
 class Variable : public Symbol {
-private:
+protected:
 	Type::SPtr mType;
 public:
-	std::string ParseFromLine(std::string const& line) override;
+	virtual std::string ParseFromLine(std::string const& line) = 0;
+	virtual void Print(std::ostream& ost) = 0;
 	void SetType(Type::SPtr const& type);
-	void Print(std::ostream& ost) = 0;
+
+	Variable(std::string const& name) : Symbol(name) {};
 
 	typedef std::unique_ptr<Variable> UPtr;
 };
