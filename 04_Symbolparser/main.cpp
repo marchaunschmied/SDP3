@@ -27,69 +27,73 @@
 using namespace std;
 
 int main(){
-	
-	//SymbolFactory::SPtr fact = JavaSymbolFactory::GetInstance();
-	
-	//JavaSymbolFactory::GetInstance().print();
-	
-	JavaSymbolFactory& fact = JavaSymbolFactory::GetInstance();
-	
-	cout << fact.GetTypeFilename() << endl;
-	cout << fact.GetVariableFilename() << endl;
+	try {
 
-	JavaType::SPtr test = fact.CreateType("integer");
-	test->Print(cout);
+		//SymbolFactory::SPtr fact = JavaSymbolFactory::GetInstance();
 
-	JavaVariable::UPtr var1 = fact.CreateVariable("hallo");
-	var1->SetType(test);
-	var1->Print(cout);
+		//JavaSymbolFactory::GetInstance().print();
 
-	IECSymbolFactory& factIEC = IECSymbolFactory::GetInstance();
+		/*JavaSymbolFactory& fact = JavaSymbolFactory::GetInstance();
 
-	cout << factIEC.GetTypeFilename() << endl;
-	cout << factIEC.GetVariableFilename() << endl;
+		cout << fact.GetTypeFilename() << endl;
+		cout << fact.GetVariableFilename() << endl;
 
-	IECType::SPtr iecType = factIEC.CreateType("double");
-	iecType->Print(cout);
+		JavaType::SPtr test = fact.CreateType("integer");
+		test->Print(cout);
 
-	IECVariable::UPtr iecVar = factIEC.CreateVariable("radius");
-	iecVar->SetType(iecType);
-	iecVar->Print(cout);
+		JavaVariable::UPtr var1 = fact.CreateVariable("hallo");
+		var1->SetType(test);
+		var1->Print(cout);
 
+		IECSymbolFactory& factIEC = IECSymbolFactory::GetInstance();
 
-	/*std::cout << "Hello World!\n"; 
-	SymbolParser pars;
+		cout << factIEC.GetTypeFilename() << endl;
+		cout << factIEC.GetVariableFilename() << endl;
 
-	std::list<Type::SPtr> l;
+		IECType::SPtr iecType = factIEC.CreateType("double");
+		iecType->Print(cout);
 
-	Type::SPtr javaElem = make_shared<JavaType>();
-	Type::SPtr iecElem = make_shared<IECType>();
-	javaElem->ParseFromLine("class double");
-	iecElem->ParseFromLine("TYPE integer");
+		IECVariable::UPtr iecVar = factIEC.CreateVariable("radius");
+		iecVar->SetType(iecType);
+		iecVar->Print(cout);*/
 
-	l.push_back(javaElem);
-	l.push_back(iecElem);
+		SymbolParser parser;
 
+		parser.SetFactory(&JavaSymbolFactory::GetInstance());
+		parser.AddType("Button");
+		parser.AddType("Hugo");
+		parser.AddType("Window");
+		parser.AddVariable("mButton", "Button");
+		parser.AddVariable("mWin", "Window");
 
+		parser.SetFactory(&IECSymbolFactory::GetInstance());
+		parser.AddType("SpeedController");
+		parser.AddType("Hugo");
+		parser.AddType("Nero");
+		parser.AddVariable("mCont", "SpeedController");
+		parser.AddVariable("mHu", "Hugo");
 
-	for (Type::SPtr p : l) {
-		p->Print(cout);
+		parser.SetFactory(&JavaSymbolFactory::GetInstance());
+		parser.AddVariable("b", "Button");
+
+		parser.SetFactory(&IECSymbolFactory::GetInstance());
+		parser.AddType("Hugo");
+		parser.AddVariable("mCont", "Hugo");
 	}
-
-	//==================================
-
-	//std::list<Variable::UPtr> vl;
-
-	Variable::UPtr javaVar = make_unique<JavaVariable>();
-	Variable::UPtr iecVar = make_unique<IECVariable>();
-	javaVar->ParseFromLine("double salary");
-	iecVar->ParseFromLine("integer counter");
-
-	//vl.push_back(javaVar);
-	//vl.push_back(iecVar);
-
-	javaVar->Print(cout);
-	iecVar->Print(cout);
-	*/
+	catch (exception const& ex)
+	{
+		cerr << "Error: " << ex.what() << endl;
+		return 1;
+	}
+	catch (std::string const& s)
+	{
+		cerr << s << endl;
+		return 1;
+	}
+	catch (...)
+	{
+		cerr << "unhandled exception" << endl;
+		return 1;
+	}
 }
 

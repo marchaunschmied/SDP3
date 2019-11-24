@@ -21,25 +21,31 @@
 class SymbolParser : public Object {
 private:
 
-	//SymbolFactory<T>::SPtr mFact;
 	std::list<Type::SPtr> mTypes;
 	std::list<Variable::UPtr> mVariables;
+	SymbolFactory* mFact = nullptr;
 
 	//Help functions
 	//Reads Varibles from a file
-	void ReadVariables(std::fstream& stream);
+	void ReadVariables(std::ifstream& stream);
 	//Reads types from a file
-	void ReadTypes(std::fstream& stream);
+	void ReadTypes(std::ifstream& stream);
 	//opens a file with a given name
-	std::fstream OpenFile(std::string const& path);
+	std::ifstream OpenFileRead(std::string const& path);
+	std::ofstream OpenFileWrite(std::string const& path);
+
+	//Reads Symbol files
+	void LoadSymbols();
+	//Saves Symbol files
+	void SaveSymbols();
 
 	std::string const ERROR_WRITE = "ERROR: in write file";
 
 	///////////////////////////////////////////////////////////////////////////
 	//writes a container into a Filestream
 	///////////////////////////////////////////////////////////////////////////
-	template <typename Cont>
-	void WriteFile(Cont const& symbols, std::fstream& ost) {
+	template <typename Cont, typename stream>
+	void WriteFile(Cont const& symbols, stream& ost) {
 		for (auto& sym : symbols)
 		{
 			if (!ost.good())
@@ -47,7 +53,7 @@ private:
 				std::cerr << ERROR_WRITE << std::endl;
 				return;
 			}
-			ost << *sym << std::endl;
+			sym->Print(ost);
 		}
 	}
 
@@ -56,11 +62,17 @@ private:
 	//Checks if a Variable already exists
 	bool CheckVariable(std::string const& variableName);
 
+	//Copy and = deleted
+	SymbolParser(SymbolParser const& s) = delete;
+	SymbolParser& operator =(SymbolParser const& s) = delete;
+
 public:
 	void AddType(std::string const& name);
 	void AddVariable(std::string const& name, std::string const& type);
-	//void SetFactory(std::unique_ptr<SymbolFactory> fact);
-	Type::SPtr CheckType(std::string const& typeName);
+	void SetFactory(SymbolFactory* fact);
+
+	SymbolParser() = default;
+	~SymbolParser();
 };
 
 #endif

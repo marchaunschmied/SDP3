@@ -18,7 +18,7 @@
 class IECSymbolFactory : public SymbolFactory, public SingletonBase<IECSymbolFactory> {
 public:
 	Type::SPtr CreateType(std::string const& typeName) override;
-	Variable::UPtr CreateVariable(std::string const& typeName) override;
+	Variable::UPtr CreateVariable(std::string const& typeName, Type::SPtr type) override;
 
 private:
 	friend class SingletonBase<IECSymbolFactory>;

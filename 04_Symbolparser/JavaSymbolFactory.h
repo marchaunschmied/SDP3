@@ -21,7 +21,7 @@ class JavaSymbolFactory : public SymbolFactory, public SingletonBase<JavaSymbolF
 
 public:
 	Type::SPtr CreateType(std::string const& typeName) override;
-	Variable::UPtr CreateVariable(std::string const& typeName) override;
+	Variable::UPtr CreateVariable(std::string const& typeName, Type::SPtr type) override;
 
 
 private:

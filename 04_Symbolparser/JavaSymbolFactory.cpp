@@ -13,6 +13,6 @@
 Type::SPtr JavaSymbolFactory::CreateType(std::string const& typeName)  {
 	return std::make_shared<JavaType>(typeName);
 }
-Variable::UPtr JavaSymbolFactory::CreateVariable(std::string const& typeName)  {
-	return std::make_unique<JavaVariable>(typeName);
+Variable::UPtr JavaSymbolFactory::CreateVariable(std::string const& typeName, Type::SPtr type) {
+	return std::make_unique<JavaVariable>(typeName, type);
 }

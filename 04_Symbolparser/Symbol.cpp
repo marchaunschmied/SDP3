@@ -9,6 +9,6 @@
 
 #include "Symbol.h"
 
-std::string Symbol::GetName() {
+std::string Symbol::GetName() const{
 	return mName;
 }

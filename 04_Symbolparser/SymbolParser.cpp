@@ -17,12 +17,13 @@ std::string const ERROR_OPENING = "ERROR in opening of: ";
 std::string const ERROR_NOFACT = "ERROR: No Factory set!";
 std::string const ERROR_UN_TYPE = "ERROR: Unkwown Type: ";
 std::string const ERROR_VARIABLE = "ERROR: Variablename already exists: ";
+std::string const ERROR_NOTYPE_READ = "ERROR: Type for Variable doesn't exist in file!";
 
 
 ///////////////////////////////////////////////////////////////////////////
 //Reads Variables from a Filestream and adds them to the Variable Container
 ///////////////////////////////////////////////////////////////////////////
-void SymbolParser::ReadVariables(std::fstream& stream)
+void SymbolParser::ReadVariables(std::ifstream& stream)
 {
 	//Read until the end of file is reached
 	while (!stream.eof())
@@ -37,22 +38,32 @@ void SymbolParser::ReadVariables(std::fstream& stream)
 		std::string line = { 0 };
 		//read one line
 		std::getline(stream, line);
-		//create empty Variable
-		Variable::UPtr pVar = mFact->CreateVariable("",0);
-		//Let the Variable extract data from line
-		std::string type = pVar->ParseFromLine(line);
-		//Add reference to type
-		pVar->SetType(CheckType(type));
-		//Add variable into the Container
-		mVariables.emplace_back(pVar.release());
+		//overread empty lines
+		if (!line.empty())
+		{
+			//create empty Variable
+			Variable::UPtr pVar = mFact->CreateVariable("", 0);
+			//Let the Variable extract data from line
+			std::string type = pVar->ParseFromLine(line);
+			//Add reference to type
+			Type::SPtr mTyp = CheckType(type);
+			//if the type doesnt exist when reading there is 
+			//a problem with the files.
+			if (mTyp == nullptr)
+			{
+				throw std::string{ERROR_NOTYPE_READ};
+			}
+			pVar->SetType(mTyp);
+			//Add variable into the Container
+			mVariables.emplace_back(pVar.release());
+		}
 	}
 }
-
 
 ///////////////////////////////////////////////////////////////////////////
 //Reads Types from a Filestream and adds them to the Type Container
 ///////////////////////////////////////////////////////////////////////////
-void SymbolParser::ReadTypes(std::fstream& stream)
+void SymbolParser::ReadTypes(std::ifstream& stream)
 {
 	//Read until the end of file
 	while (!stream.eof())
@@ -67,27 +78,80 @@ void SymbolParser::ReadTypes(std::fstream& stream)
 		std::string line = { 0 };
 		//read one line
 		std::getline(stream, line);
-		//create empty type
-		Type::SPtr pTyp = mFact->CreateType("");
-		//let the type extract data from line
-		pTyp->ParseFromLine(line);
-		//add type to container
-		mTypes.emplace_back(pTyp);
+		if (!line.empty())
+		{
+			//create empty type
+			Type::SPtr pTyp = mFact->CreateType("");
+			//let the type extract data from line
+			std::string tmp = pTyp->ParseFromLine(line);
+			//add type to container
+			mTypes.emplace_back(pTyp);
+		}
 	}
 }
 
 ///////////////////////////////////////////////////////////////////////////
 //Opens a file with a given name
 ///////////////////////////////////////////////////////////////////////////
-std::fstream SymbolParser::OpenFile(std::string const& path)
+std::ifstream SymbolParser::OpenFileRead(std::string const& path)
 {
-	std::fstream file;
-	file.open(path);
+	std::ifstream file{ path };
+	return file;
+}
+
+///////////////////////////////////////////////////////////////////////////
+//Opens a file with a given name
+///////////////////////////////////////////////////////////////////////////
+std::ofstream SymbolParser::OpenFileWrite(std::string const& path)
+{
+	std::ofstream file{ path, std::ios::trunc };
 	if (!file.is_open())
 	{
 		std::cerr << ERROR_OPENING << path << std::endl;
 	}
 	return file;
+}
+
+///////////////////////////////////////////////////////////////////////////
+//Loads all data needed for operation
+///////////////////////////////////////////////////////////////////////////
+void SymbolParser::LoadSymbols()
+{
+	std::ifstream file;
+	//Load Types
+	file = OpenFileRead(mFact->GetTypeFilename());
+	//File exists?
+	if (file.is_open())
+	{
+		ReadTypes(file);
+		file.close();
+	}
+
+	//Load Variables
+	file = OpenFileRead(mFact->GetVariableFilename());
+	//File exists?
+	if (file.is_open())
+	{
+		ReadVariables(file);
+		file.close();
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////
+//Saves all Types and Variables
+///////////////////////////////////////////////////////////////////////////
+void SymbolParser::SaveSymbols()
+{
+	std::ofstream file;
+	//Save Types
+	file = OpenFileWrite(mFact->GetTypeFilename());
+	WriteFile(mTypes, file);
+	file.close();
+
+	//Save Variables
+	file = OpenFileWrite(mFact->GetVariableFilename());
+	WriteFile(mVariables, file);
+	file.close();
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -128,7 +192,7 @@ bool SymbolParser::CheckVariable(std::string const& variableName)
 void SymbolParser::AddType(std::string const& name)
 {
 	//factory set?
-	if (mFact != nullptr)
+	if (mFact == nullptr)
 	{
 		throw std::string(ERROR_NOFACT);
 		return;
@@ -147,7 +211,7 @@ void SymbolParser::AddType(std::string const& name)
 void SymbolParser::AddVariable(std::string const& name, std::string const& type)
 {
 	//factory set?
-	if (mFact != nullptr)
+	if (mFact == nullptr)
 	{
 		throw std::string(ERROR_NOFACT);
 		return;
@@ -178,19 +242,11 @@ void SymbolParser::AddVariable(std::string const& name, std::string const& type)
 ///////////////////////////////////////////////////////////////////////////
 void SymbolParser::SetFactory(SymbolFactory* fact)
 {
-	std::fstream file;
+	
 	//when a fyctory is already set, save types and variables
 	if (mFact != nullptr)
 	{
-		//Save Types
-		file = OpenFile(mFact->GetTypeFilename());
-		WriteFile(mTypes, file);
-		file.close();
-
-		//Save Variables
-		file = OpenFile(mFact->GetVariableFilename());
-		WriteFile(mVariables, file);
-		file.close();
+		SaveSymbols();
 	}
 
 	//clear containers for new data
@@ -200,13 +256,16 @@ void SymbolParser::SetFactory(SymbolFactory* fact)
 	//set new Fatory
 	mFact = fact;
 
-	//Load Types
-	file = OpenFile(mFact->GetTypeFilename());
-	ReadTypes(file);
-	file.close();
+	LoadSymbols();
+}
 
-	//Load Variables
-	file = OpenFile(mFact->GetVariableFilename());
-	ReadVariables(file);
-	file.close();
+///////////////////////////////////////////////////////////////////////////
+//CTor: when the class gets destructed all data gets saved
+///////////////////////////////////////////////////////////////////////////
+SymbolParser::~SymbolParser()
+{
+	SaveSymbols();
+	//empty containers
+	mTypes.clear();
+	mVariables.clear();
 }
