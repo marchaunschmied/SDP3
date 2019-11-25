@@ -12,3 +12,5 @@
 std::string Symbol::GetName() const{
 	return mName;
 }
+
+Symbol::Symbol(std::string const& name) : mName(name) {};

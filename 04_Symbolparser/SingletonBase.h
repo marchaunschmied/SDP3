@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile :		IECSymbolFactory.h
+// Workfile :		SingletonBase.h
 // Author :			Markus Riegler
 // Date :			22-November-2019
 // Description :	Template Class for Singleton

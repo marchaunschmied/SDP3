@@ -23,7 +23,7 @@ public:
 	virtual void Print(std::ostream& ost) = 0;
 
 	std::string GetName() const;
-	Symbol(std::string const& name) : mName(name) {};
+	Symbol(std::string const& name);
 
 };
 

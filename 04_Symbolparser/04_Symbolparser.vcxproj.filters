@@ -29,4 +29,7 @@
     <ClInclude Include="Type.h" />
     <ClInclude Include="Variable.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
 </Project>
