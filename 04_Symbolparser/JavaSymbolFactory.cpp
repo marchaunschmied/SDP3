@@ -2,7 +2,7 @@
 // Workfile :		JavaSymbolFactory.cpp
 // Author :			Marc Haunschmied
 // Date :			21-November-2019
-// Description :	
+// Description :	Returns a Java Symbol
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 

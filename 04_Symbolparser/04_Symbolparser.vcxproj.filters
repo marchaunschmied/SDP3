@@ -1,107 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Quelldateien">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Headerdateien">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Ressourcendateien">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Headerdateien\Symbol">
-      <UniqueIdentifier>{ae73d6b9-df4f-473d-9f63-54f3c4721044}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Headerdateien\Factory">
-      <UniqueIdentifier>{85e64f1e-d8ec-4674-b885-2bf68f1088b1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Headerdateien\Parser">
-      <UniqueIdentifier>{f29dbe31-4469-4670-9697-3bba99697fcc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Quelldateien\Symbol">
-      <UniqueIdentifier>{1e758f80-4326-4b6e-9a88-e502ffaa18a6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Quelldateien\Factory">
-      <UniqueIdentifier>{e38d1b08-5a71-4b7a-bf3e-f462cce4eca0}</UniqueIdentifier>
-    </Filter>
+    <ClCompile Include="IECSymbolFactory.cpp" />
+    <ClCompile Include="IECType.cpp" />
+    <ClCompile Include="IECVariable.cpp" />
+    <ClCompile Include="JavaSymbolFactory.cpp" />
+    <ClCompile Include="JavaType.cpp" />
+    <ClCompile Include="JavaVariable.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="SymbolParser.cpp" />
+    <ClCompile Include="Symbol.cpp" />
+    <ClCompile Include="SymbolFactory.cpp" />
+    <ClCompile Include="Variable.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="SymbolParser.cpp">
-      <Filter>Quelldateien</Filter>
-    <ClCompile Include="JavaType.cpp">
-      <Filter>Quelldateien\Symbol</Filter>
-    </ClCompile>
-    <ClCompile Include="IECType.cpp">
-      <Filter>Quelldateien\Symbol</Filter>
-    </ClCompile>
-    <ClCompile Include="JavaVariable.cpp">
-      <Filter>Quelldateien\Symbol</Filter>
-    </ClCompile>
-    <ClCompile Include="IECVariable.cpp">
-      <Filter>Quelldateien\Symbol</Filter>
-    </ClCompile>
-    <ClCompile Include="Variable.cpp">
-      <Filter>Quelldateien\Symbol</Filter>
-    </ClCompile>
-    <ClCompile Include="SymbolFactory.cpp">
-      <Filter>Quelldateien\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="JavaSymbolFactory.cpp">
-      <Filter>Quelldateien\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="IECSymbolFactory.cpp">
-      <Filter>Quelldateien\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Symbol.cpp">
-      <Filter>Quelldateien\Symbol</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Symbol.h">
-      <Filter>Headerdateien\Symbol</Filter>
-    </ClInclude>
-    <ClInclude Include="Type.h">
-      <Filter>Headerdateien\Symbol</Filter>
-    </ClInclude>
-    <ClInclude Include="Variable.h">
-      <Filter>Headerdateien\Symbol</Filter>
-    </ClInclude>
-    <ClInclude Include="IECSymbolFactory.h">
-      <Filter>Headerdateien\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="JavaSymbolFactory.h">
-      <Filter>Headerdateien\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="SymbolFactory.h">
-      <Filter>Headerdateien\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="JavaType.h">
-      <Filter>Headerdateien\Symbol</Filter>
-    </ClInclude>
-    <ClInclude Include="IECType.h">
-      <Filter>Headerdateien\Symbol</Filter>
-    </ClInclude>
-    <ClInclude Include="JavaVariable.h">
-      <Filter>Headerdateien\Symbol</Filter>
-    </ClInclude>
-    <ClInclude Include="IECVariable.h">
-      <Filter>Headerdateien\Symbol</Filter>
-    </ClInclude>
-    <ClInclude Include="SymbolParser.h">
-      <Filter>Headerdateien\Parser</Filter>
-    </ClInclude>
-    <ClInclude Include="Object.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="SingletonBase.h">
-      <Filter>Headerdateien\Factory</Filter>
-    </ClInclude>
+    <ClInclude Include="IECSymbolFactory.h" />
+    <ClInclude Include="IECType.h" />
+    <ClInclude Include="IECVariable.h" />
+    <ClInclude Include="JavaSymbolFactory.h" />
+    <ClInclude Include="JavaType.h" />
+    <ClInclude Include="JavaVariable.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="SingletonBase.h" />
+    <ClInclude Include="Symbol.h" />
+    <ClInclude Include="SymbolFactory.h" />
+    <ClInclude Include="SymbolParser.h" />
+    <ClInclude Include="Type.h" />
+    <ClInclude Include="Variable.h" />
   </ItemGroup>
 </Project>

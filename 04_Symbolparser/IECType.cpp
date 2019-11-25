@@ -2,7 +2,7 @@
 // Workfile :		IECType.cpp
 // Author :			Marc Haunschmied
 // Date :			21-November-2019
-// Description :	
+// Description :	Type in IEC Programming language
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 

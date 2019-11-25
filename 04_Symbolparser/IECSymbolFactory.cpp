@@ -2,7 +2,7 @@
 // Workfile :		IECSymbolFactory.cpp
 // Author :			Marc Haunschmied
 // Date :			21-November-2019
-// Description :	
+// Description :	Returns an IEC Symbol
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 

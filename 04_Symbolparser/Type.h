@@ -2,7 +2,7 @@
 // Workfile :		Type.h
 // Author :			Marc Haunschmied
 // Date :			21-November-2019
-// Description :	
+// Description :	Represents a type in a programming language
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 

@@ -2,7 +2,7 @@
 // Workfile :		Variable.h
 // Author :			Marc Haunschmied
 // Date :			21-November-2019
-// Description :	
+// Description :	Represents a Variable in a programming language
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 

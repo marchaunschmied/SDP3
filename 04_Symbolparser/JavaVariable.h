@@ -2,7 +2,7 @@
 // Workfile :		JavaVariable.h
 // Author :			Marc Haunschmied
 // Date :			21-November-2019
-// Description :	
+// Description :	Variable in Java Programming language
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 

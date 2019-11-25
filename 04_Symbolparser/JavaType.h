@@ -2,7 +2,7 @@
 // Workfile :		JavaType.h
 // Author :			Marc Haunschmied
 // Date :			21-November-2019
-// Description :	
+// Description :	Type in Java programming language
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 

@@ -2,7 +2,7 @@
 // Workfile :		SymbolFactory.h
 // Author :			Marc Haunschmied
 // Date :			21-November-2019
-// Description :	
+// Description :	Returns a programming language symbol
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 #ifndef SYMBOL_FACTORY_H
