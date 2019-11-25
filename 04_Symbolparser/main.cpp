@@ -7,6 +7,7 @@
 ///////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
+#include "vld.h"
 
 #include "SymbolParser.h"
 #include "JavaSymbolFactory.h"
