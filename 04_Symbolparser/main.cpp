@@ -88,7 +88,7 @@ int main(){
 		parser.AddVariable("Counter", "Integer");
 
 		cout << "-----------------------------------------------------------" << endl;
-		cout << "Add more Types and Variables to Java" << endl;
+		cout << "Add more Types and Variables to IEC" << endl;
 		cout << "-----------------------------------------------------------" << endl;
 
 		parser.SetFactory(&IECSymbolFactory::GetInstance());
