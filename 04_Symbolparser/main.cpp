@@ -127,5 +127,12 @@ int main(){
 		cerr << "unhandled exception" << endl;
 		return 1;
 	}
+
+
+	//release factories
+	IECSymbolFactory::Delete();
+	JavaSymbolFactory::Delete();
+
+	return 0;
 }
 
