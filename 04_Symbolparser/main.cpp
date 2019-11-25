@@ -1,28 +1,16 @@
 ///////////////////////////////////////////////////////////////////////////
 // Workfile :		main.cpp
-// Author :			Marc Haunschmied
-// Date :			21-November-2019
+// Author :			Markus Riegler
+// Date :			24-November-2019
 // Description :	
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 
-
-
-
 #include <iostream>
 
-
 #include "SymbolParser.h"
-
-#include "SymbolFactory.h"
 #include "JavaSymbolFactory.h"
 #include "IECSymbolFactory.h"
-
-#include "Symbol.h"
-#include "JavaType.h"
-#include "IECType.h"
-#include "JavaVariable.h"
-#include "IECVariable.h"
 
 using namespace std;
 
