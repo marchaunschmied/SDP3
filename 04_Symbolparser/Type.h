@@ -18,7 +18,7 @@ public:
 	virtual void Print(std::ostream& ost) = 0;
 	typedef std::shared_ptr<Type> SPtr;
 
-	Type(std::string const& name): Symbol(name){};
+	Type(std::string const& name);
 };
 
 #endif

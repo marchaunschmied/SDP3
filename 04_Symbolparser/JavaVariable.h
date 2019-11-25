@@ -17,7 +17,7 @@ public:
 	std::string ParseFromLine(std::string const& line) override;
 	void Print(std::ostream& ost) override;
 
-	JavaVariable(std::string const& name, Type::SPtr type) : Variable(name) { SetType(type); };
+	JavaVariable(std::string const& name, Type::SPtr type);
 };
 
 #endif

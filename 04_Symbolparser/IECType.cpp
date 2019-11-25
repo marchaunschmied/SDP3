@@ -8,6 +8,8 @@
 
 #include "IECType.h"
 
+IECType::IECType(std::string const& name) : Type(name) {};
+
 std::string IECType::ParseFromLine(std::string const& line) {
 	if (!line.empty()) {				
 		//check if TYPE is part of line

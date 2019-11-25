@@ -9,6 +9,8 @@
 
 #include "Variable.h"
 
+Variable::Variable(std::string const& name) : Symbol(name) {};
+
 void Variable::SetType(Type::SPtr const& type) {
 	mType = type;
 }

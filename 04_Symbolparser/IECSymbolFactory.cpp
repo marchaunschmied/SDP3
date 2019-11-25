@@ -9,6 +9,9 @@
 
 #include "IECSymbolFactory.h"
 
+IECSymbolFactory::IECSymbolFactory() : SymbolFactory("IECTypes.sym", "IECVars.sym") {};
+
+
 Type::SPtr IECSymbolFactory::CreateType(std::string const& typeName) {
 	return std::make_shared<IECType>(typeName);
 }

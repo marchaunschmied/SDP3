@@ -12,6 +12,7 @@
     <ClCompile Include="Symbol.cpp" />
     <ClCompile Include="SymbolFactory.cpp" />
     <ClCompile Include="Variable.cpp" />
+    <ClCompile Include="Type.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IECSymbolFactory.h" />
