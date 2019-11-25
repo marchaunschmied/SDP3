@@ -21,7 +21,7 @@ public:
 	virtual void Print(std::ostream& ost) = 0;
 	void SetType(Type::SPtr const& type);
 
-	Variable(std::string const& name) : Symbol(name) {};
+	Variable(std::string const& name);
 
 	typedef std::unique_ptr<Variable> UPtr;
 };

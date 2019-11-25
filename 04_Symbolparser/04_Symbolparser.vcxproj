@@ -165,6 +165,7 @@
     <ClCompile Include="SymbolParser.cpp" />
     <ClCompile Include="Symbol.cpp" />
     <ClCompile Include="SymbolFactory.cpp" />
+    <ClCompile Include="Type.cpp" />
     <ClCompile Include="Variable.cpp" />
   </ItemGroup>
   <ItemGroup>

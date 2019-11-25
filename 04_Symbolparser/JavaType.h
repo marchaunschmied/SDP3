@@ -16,7 +16,7 @@ class JavaType : public Type {
 public:
 	std::string ParseFromLine(std::string const& line) override;
 	void Print(std::ostream& ost) override;
-	JavaType(std::string const& name) : Type(name) {};
+	JavaType(std::string const& name);
 };
 
 #endif

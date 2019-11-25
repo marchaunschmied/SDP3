@@ -8,6 +8,8 @@
 
 #include "JavaType.h"
 
+JavaType::JavaType(std::string const& name) : Type(name) {};
+
 std::string JavaType::ParseFromLine(std::string const& line) {
 	//check if line is empty
 	if (!line.empty()) {	

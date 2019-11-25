@@ -8,6 +8,8 @@
 
 #include "IECVariable.h"
 
+IECVariable::IECVariable(std::string const& name, Type::SPtr type) : Variable(name) { SetType(type); };
+
 std::string IECVariable::ParseFromLine(std::string const& line) {
 	if (!line.empty()) {
 		//substring after first space

@@ -26,7 +26,7 @@ public:
 
 private:
 	friend class SingletonBase<JavaSymbolFactory>;
-	JavaSymbolFactory() : SymbolFactory("JavaTypes.sym", "JavaVars.sym") {};
+	JavaSymbolFactory();
 };
 
 #endif

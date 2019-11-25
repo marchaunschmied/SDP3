@@ -16,7 +16,7 @@ class IECType : public Type {
 public:
 	std::string ParseFromLine(std::string const& line) override;
 	void Print(std::ostream& ost) override;
-	IECType(std::string const& name) : Type(name) {};
+	IECType(std::string const& name);
 
 };
 

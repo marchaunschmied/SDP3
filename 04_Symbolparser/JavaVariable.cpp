@@ -9,6 +9,10 @@
 
 #include "JavaVariable.h"
 
+
+
+JavaVariable::JavaVariable(std::string const& name, Type::SPtr type) : Variable(name) { SetType(type); };
+
 std::string JavaVariable::ParseFromLine(std::string const& line) {
 	if (!line.empty()) {				
 		//get first element before a space

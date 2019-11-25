@@ -22,7 +22,7 @@ public:
 
 private:
 	friend class SingletonBase<IECSymbolFactory>;
-	IECSymbolFactory() : SymbolFactory("IECTypes.sym", "IECVars.sym") {};
+	IECSymbolFactory();
 };
 
 #endif
