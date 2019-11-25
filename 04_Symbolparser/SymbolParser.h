@@ -31,13 +31,13 @@ private:
 	//Reads types from a file
 	void ReadTypes(std::ifstream& stream);
 	//opens a file with a given name
-	std::ifstream OpenFileRead(std::string const& path);
-	std::ofstream OpenFileWrite(std::string const& path);
+	std::ifstream OpenFileRead(std::string const& path) const;
+	std::ofstream OpenFileWrite(std::string const& path) const;
 
 	//Reads Symbol files
 	void LoadSymbols();
 	//Saves Symbol files
-	void SaveSymbols();
+	void SaveSymbols() const;
 
 	std::string const ERROR_WRITE = "ERROR: in write file";
 
@@ -45,7 +45,7 @@ private:
 	//writes a container into a Filestream
 	///////////////////////////////////////////////////////////////////////////
 	template <typename Cont, typename stream>
-	void WriteFile(Cont const& symbols, stream& ost) {
+	void WriteFile(Cont const& symbols, stream& ost) const {
 		for (auto& sym : symbols)
 		{
 			if (!ost.good())
@@ -58,9 +58,9 @@ private:
 	}
 
 	//Checks if the type is known
-	Type::SPtr CheckType(std::string const& typeName);
+	Type::SPtr CheckType(std::string const& typeName) const;
 	//Checks if a Variable already exists
-	bool CheckVariable(std::string const& variableName);
+	bool CheckVariable(std::string const& variableName) const;
 
 	//Copy and = deleted
 	SymbolParser(SymbolParser const& s) = delete;

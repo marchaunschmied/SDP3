@@ -93,7 +93,7 @@ void SymbolParser::ReadTypes(std::ifstream& stream)
 ///////////////////////////////////////////////////////////////////////////
 //Opens a file with a given name to read
 ///////////////////////////////////////////////////////////////////////////
-std::ifstream SymbolParser::OpenFileRead(std::string const& path)
+std::ifstream SymbolParser::OpenFileRead(std::string const& path) const
 {
 	std::ifstream file{ path };
 	return file;
@@ -102,7 +102,7 @@ std::ifstream SymbolParser::OpenFileRead(std::string const& path)
 ///////////////////////////////////////////////////////////////////////////
 //Opens a file with a given name
 ///////////////////////////////////////////////////////////////////////////
-std::ofstream SymbolParser::OpenFileWrite(std::string const& path)
+std::ofstream SymbolParser::OpenFileWrite(std::string const& path) const
 {
 	//open file and remove old content
 	std::ofstream file{ path, std::ios::trunc };
@@ -141,7 +141,7 @@ void SymbolParser::LoadSymbols()
 ///////////////////////////////////////////////////////////////////////////
 //Saves all Types and Variables
 ///////////////////////////////////////////////////////////////////////////
-void SymbolParser::SaveSymbols()
+void SymbolParser::SaveSymbols() const
 {
 	std::ofstream file;
 	//Save Types
@@ -165,7 +165,7 @@ void SymbolParser::SaveSymbols()
 //Searches in mTypes for a spedific Type
 //return a shared pointer to it if found, nullpointer if not
 ///////////////////////////////////////////////////////////////////////////
-Type::SPtr SymbolParser::CheckType(std::string const& typeName)
+Type::SPtr SymbolParser::CheckType(std::string const& typeName) const
 {
 	auto it = std::find_if(mTypes.cbegin(), mTypes.cend(),
 					[typeName](auto t) {return t->GetName() == typeName; });
@@ -185,7 +185,7 @@ Type::SPtr SymbolParser::CheckType(std::string const& typeName)
 //Searches in mVariable if a Variable already exists
 //returns true if found, false if not found
 ///////////////////////////////////////////////////////////////////////////
-bool SymbolParser::CheckVariable(std::string const& variableName)
+bool SymbolParser::CheckVariable(std::string const& variableName) const
 {
 	auto it = std::find_if(mVariables.cbegin(), mVariables.cend(), 
 			[variableName](auto& t) {return t->GetName() == variableName; });
