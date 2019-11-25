@@ -28,43 +28,49 @@ using namespace std;
 
 int main(){
 	try {
-
-		//SymbolFactory::SPtr fact = JavaSymbolFactory::GetInstance();
-
-		//JavaSymbolFactory::GetInstance().print();
-
-		/*JavaSymbolFactory& fact = JavaSymbolFactory::GetInstance();
-
-		cout << fact.GetTypeFilename() << endl;
-		cout << fact.GetVariableFilename() << endl;
-
-		JavaType::SPtr test = fact.CreateType("integer");
-		test->Print(cout);
-
-		JavaVariable::UPtr var1 = fact.CreateVariable("hallo");
-		var1->SetType(test);
-		var1->Print(cout);
-
-		IECSymbolFactory& factIEC = IECSymbolFactory::GetInstance();
-
-		cout << factIEC.GetTypeFilename() << endl;
-		cout << factIEC.GetVariableFilename() << endl;
-
-		IECType::SPtr iecType = factIEC.CreateType("double");
-		iecType->Print(cout);
-
-		IECVariable::UPtr iecVar = factIEC.CreateVariable("radius");
-		iecVar->SetType(iecType);
-		iecVar->Print(cout);*/
-
+		cout << "-----------------------------------------------------------" << endl;
+		cout << "add type and Variable without a factory" << endl;
+		cout << "-----------------------------------------------------------" << endl;
 		SymbolParser parser;
+		try
+		{
+			parser.AddType("integer");
+		}
+		catch (std::string const& s)
+		{
+			cerr << s << endl;
+		}
 
+		try
+		{
+			parser.AddVariable("Hugo", "integer");
+		}
+		catch (std::string const& s)
+		{
+			cerr << s << endl;
+		}
+		
+		cout << "-----------------------------------------------------------" << endl;
+		cout << "Set & Change empty" << endl;
+		cout << "-----------------------------------------------------------" << endl;
 		parser.SetFactory(&JavaSymbolFactory::GetInstance());
+		parser.SetFactory(&JavaSymbolFactory::GetInstance());
+		parser.SetFactory(&IECSymbolFactory::GetInstance());
+		parser.SetFactory(&JavaSymbolFactory::GetInstance());
+
+		cout << "-----------------------------------------------------------" << endl;
+		cout << "Add Types and Variables to Java" << endl;
+		cout << "-----------------------------------------------------------" << endl;
+
 		parser.AddType("Button");
 		parser.AddType("Hugo");
 		parser.AddType("Window");
 		parser.AddVariable("mButton", "Button");
 		parser.AddVariable("mWin", "Window");
+
+		cout << "-----------------------------------------------------------" << endl;
+		cout << "Add Types and Variables to IEC" << endl;
+		cout << "-----------------------------------------------------------" << endl;
 
 		parser.SetFactory(&IECSymbolFactory::GetInstance());
 		parser.AddType("SpeedController");
@@ -73,14 +79,51 @@ int main(){
 		parser.AddVariable("mCont", "SpeedController");
 		parser.AddVariable("mHu", "Hugo");
 
+		cout << "-----------------------------------------------------------" << endl;
+		cout << "Add more Types and Variables to Java" << endl;
+		cout << "-----------------------------------------------------------" << endl;
+
 		parser.SetFactory(&JavaSymbolFactory::GetInstance());
-		parser.AddVariable("b", "Button");
+		parser.AddType("Switch");
+		parser.AddType("Integer");
+		parser.AddVariable("myWin", "Window");
+		parser.AddVariable("Counter", "Integer");
+
+		cout << "-----------------------------------------------------------" << endl;
+		cout << "Add existing types and Variables to Java" << endl;
+		cout << "-----------------------------------------------------------" << endl;
+
+		parser.AddType("Switch");
+		parser.AddType("Hugo");
+		parser.AddVariable("mWin", "Window");
+		parser.AddVariable("Counter", "Integer");
+
+		cout << "-----------------------------------------------------------" << endl;
+		cout << "Add more Types and Variables to Java" << endl;
+		cout << "-----------------------------------------------------------" << endl;
 
 		parser.SetFactory(&IECSymbolFactory::GetInstance());
+		parser.AddType("Integer");
+		parser.AddType("Natural");
+		parser.AddVariable("ActSpeed", "SpeedController");
+		parser.AddVariable("Counter", "Hugo");
+
+		cout << "-----------------------------------------------------------" << endl;
+		cout << "Add existing types and Variables to IEC" << endl;
+		cout << "-----------------------------------------------------------" << endl;
+
+		parser.AddType("Integer");
 		parser.AddType("Hugo");
-		parser.AddVariable("mCont", "Hugo");
+		parser.AddVariable("mCont", "SpeedController");
+		parser.AddVariable("Counter", "Hugo");
+		
 	}
 	catch (exception const& ex)
+	{
+		cerr << "Error: " << ex.what() << endl;
+		return 1;
+	}
+	catch (bad_alloc const& ex)
 	{
 		cerr << "Error: " << ex.what() << endl;
 		return 1;

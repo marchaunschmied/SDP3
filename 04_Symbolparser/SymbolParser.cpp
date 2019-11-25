@@ -91,7 +91,7 @@ void SymbolParser::ReadTypes(std::ifstream& stream)
 }
 
 ///////////////////////////////////////////////////////////////////////////
-//Opens a file with a given name
+//Opens a file with a given name to read
 ///////////////////////////////////////////////////////////////////////////
 std::ifstream SymbolParser::OpenFileRead(std::string const& path)
 {
@@ -104,6 +104,7 @@ std::ifstream SymbolParser::OpenFileRead(std::string const& path)
 ///////////////////////////////////////////////////////////////////////////
 std::ofstream SymbolParser::OpenFileWrite(std::string const& path)
 {
+	//open file and remove old content
 	std::ofstream file{ path, std::ios::trunc };
 	if (!file.is_open())
 	{
@@ -144,14 +145,20 @@ void SymbolParser::SaveSymbols()
 {
 	std::ofstream file;
 	//Save Types
-	file = OpenFileWrite(mFact->GetTypeFilename());
-	WriteFile(mTypes, file);
-	file.close();
+	if (mTypes.size() > 0)
+	{
+		file = OpenFileWrite(mFact->GetTypeFilename());
+		WriteFile(mTypes, file);
+		file.close();
+	}
 
 	//Save Variables
-	file = OpenFileWrite(mFact->GetVariableFilename());
-	WriteFile(mVariables, file);
-	file.close();
+	if (mVariables.size() > 0)
+	{
+		file = OpenFileWrite(mFact->GetVariableFilename());
+		WriteFile(mVariables, file);
+		file.close();
+	}
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -242,7 +249,8 @@ void SymbolParser::AddVariable(std::string const& name, std::string const& type)
 ///////////////////////////////////////////////////////////////////////////
 void SymbolParser::SetFactory(SymbolFactory* fact)
 {
-	
+	//when the same factory gets assigned nothing has to be done
+	if (mFact == fact) { return; }
 	//when a fyctory is already set, save types and variables
 	if (mFact != nullptr)
 	{
