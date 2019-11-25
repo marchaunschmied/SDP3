@@ -17,6 +17,7 @@ std::string const ERROR_OPENING = "ERROR in opening of: ";
 std::string const ERROR_NOFACT = "ERROR: No Factory set!";
 std::string const ERROR_UN_TYPE = "ERROR: Unkwown Type: ";
 std::string const ERROR_VARIABLE = "ERROR: Variablename already exists: ";
+std::string const ERROR_TYPE= "NOTE: Typename already exists: ";
 std::string const ERROR_NOTYPE_READ = "ERROR: Type for Variable doesn't exist in file!";
 
 
@@ -209,6 +210,10 @@ void SymbolParser::AddType(std::string const& name)
 	{
 		//add
 		mTypes.emplace_back(mFact->CreateType(name));
+	}
+	else
+	{
+		std::cerr << ERROR_TYPE << name << std::endl;
 	}
 }
 
