@@ -5,16 +5,26 @@
 // Description :	Variable in Java Programming language
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
+#include <algorithm>
 
-#include <iostream>
 #include "JavaVariable.h"
 
 std::string JavaVariable::ParseFromLine(std::string const& line) {
-	if (!line.empty()) {				//benötigt obwohl von file?
-		mName = line.substr(line.find_last_of(" "));
+	if (!line.empty()) {				
+		//get first element before a space
+		mName = line.substr(line.find_last_of(" ") + 1);
+
+		//remove ';*
+		mName.erase(std::remove_if(mName.begin(), mName.end(), [](char const& c) {
+			return c == ';';
+			}),mName.end());
 	}
+
+	//parse type
 	return line.substr(0, line.find(' '));
 }
+
+//print variable formatted to an output stream 
 void JavaVariable::Print(std::ostream& ost) {
 	if (ost.good()) {
 		ost << mType->GetName() << " " << mName << ";" << std::endl;

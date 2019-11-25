@@ -1,5 +1,4 @@
-VAR SpeedController : SpeedController;
-VAR Hugo : Hugo;
+VAR mCont : SpeedController;
+VAR mHu : Hugo;
 VAR ActSpeed : SpeedController;
 VAR Counter : Hugo;
-VAR mCont : SpeedController;

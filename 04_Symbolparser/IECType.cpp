@@ -6,17 +6,21 @@
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 
-#include <iostream>
 #include "IECType.h"
 
 std::string IECType::ParseFromLine(std::string const& line) {
-	if (!line.empty()) {				//benötigt obwohl von file?
-		if (line.find("TYPE") == 0) {	// -''-
+	if (!line.empty()) {				
+		//check if TYPE is part of line
+		if (line.find("TYPE") == 0) {	
+			//find element after space
 			mName = line.substr(line.find_last_of(" ") + 1);
 		}
 	}
+	//return nothing
 	return "";
 }
+
+//print type formatted to an output stream 
 void IECType::Print(std::ostream& ost) {
 	if (ost.good()) {
 		ost << "TYPE " << mName << std::endl;
