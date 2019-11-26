@@ -1,0 +1,12 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile :		Type.cpp
+// Author :			Marc Haunschmied
+// Date :			25-November-2019
+// Description :	Represents a type in a programming language
+// Revision :
+///////////////////////////////////////////////////////////////////////////
+
+
+#include "Type.h"
+
+Type::Type(std::string const& name) : Symbol(name) {};
