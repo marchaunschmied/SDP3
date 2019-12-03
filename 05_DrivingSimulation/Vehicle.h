@@ -1,8 +1,12 @@
 #ifndef VEHICLE_H
 #define VEHICLE_H
 
+#include <memory>
+#include <vector>
+
 #include "Object.h"
 #include "DisplayObserver.h"
+
 
 class Vehicle : Object {
 public:
