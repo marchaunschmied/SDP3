@@ -36,7 +36,7 @@
     <ClInclude Include="DistanceObserver.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\WindowDisplay\WindowsDisplay.h">
+    <ClInclude Include="WindowsDisplay.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
@@ -53,7 +53,7 @@
     <ClCompile Include="DistanceObserver.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\WindowDisplay\WindowsDisplay.cpp">
+    <ClCompile Include="WindowsDisplay.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

@@ -152,14 +152,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\WindowDisplay\WindowsDisplay.cpp" />
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="DistanceObserver.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SpeedObserver.cpp" />
+    <ClCompile Include="WindowsDisplay.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\WindowDisplay\WindowsDisplay.h" />
     <ClInclude Include="Car.h" />
     <ClInclude Include="DisplayObserver.h" />
     <ClInclude Include="DistanceObserver.h" />
@@ -167,6 +166,7 @@
     <ClInclude Include="RevolutionSensor.h" />
     <ClInclude Include="SpeedObserver.h" />
     <ClInclude Include="Vehicle.h" />
+    <ClInclude Include="WindowsDisplay.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
