@@ -91,6 +91,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,10 +152,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\WindowDisplay\WindowsDisplay.cpp" />
+    <ClCompile Include="Car.cpp" />
+    <ClCompile Include="DistanceObserver.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SpeedObserver.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\WindowDisplay\WindowsDisplay.h" />
+    <ClInclude Include="Car.h" />
+    <ClInclude Include="DisplayObserver.h" />
+    <ClInclude Include="DistanceObserver.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="RevolutionSensor.h" />
+    <ClInclude Include="SpeedObserver.h" />
+    <ClInclude Include="Vehicle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
