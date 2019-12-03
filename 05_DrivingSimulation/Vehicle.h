@@ -12,8 +12,8 @@ class Vehicle : Object {
 public:
 	using SPtr = std::shared_ptr<DisplayObserver>;
 
-	void Attach();
-	void Dettach();
+	void Attach(DisplayObserver::SPtr obs);
+	void Detach(DisplayObserver::SPtr obs);
 protected:
 	void Notify();
 private:
