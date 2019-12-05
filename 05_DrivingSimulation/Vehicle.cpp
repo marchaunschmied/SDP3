@@ -16,7 +16,7 @@ std::string const ERROR_DETACH = "Nullpointer in Detach";
 ///////////////////////////////////////////////////////////////////////////
 //Adds an Observer to the Notify list of the Vehicle
 ///////////////////////////////////////////////////////////////////////////
-void Vehicle::Attach(DisplayObserver::SPtr obs)
+void Vehicle::Attach(DisplayObserver::SPtr const& obs)
 {
 	//Valid Observer
 	if (obs == nullptr)
@@ -33,7 +33,7 @@ void Vehicle::Attach(DisplayObserver::SPtr obs)
 ///////////////////////////////////////////////////////////////////////////
 //Removes an Observer to the Notify list of the Vehicle
 ///////////////////////////////////////////////////////////////////////////
-void Vehicle::Detach(DisplayObserver::SPtr obs)
+void Vehicle::Detach(DisplayObserver::SPtr const& obs)
 {
 	//Valid Observer
 	if (obs == nullptr)

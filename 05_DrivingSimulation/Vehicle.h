@@ -24,8 +24,8 @@ public:
 	typedef std::vector<Vehicle::SPtr> ObsCont;
 
 	//Add & Remove Observers from vector
-	void Attach(DisplayObserver::SPtr obs);
-	void Detach(DisplayObserver::SPtr obs);
+	void Attach(DisplayObserver::SPtr const& obs);
+	void Detach(DisplayObserver::SPtr const& obs);
 
 protected:
 	//abstract class protected CTor
