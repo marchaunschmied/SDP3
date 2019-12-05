@@ -1,38 +1,69 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile :		Vehicle.cpp
+// Author :			Markus Riegler
+// Date :			05-December-2019
+// Description :	Implementation of class Vehicle
+// Revision :		1
+///////////////////////////////////////////////////////////////////////////
 #include "Vehicle.h"
 
+///////////////////////////////////////////////////////////////////////////
+//Error Constants
+///////////////////////////////////////////////////////////////////////////
+std::string const ERROR_ATTACH = "Nullpointer in Attach";
+std::string const ERROR_DETACH = "Nullpointer in Detach";
+
+///////////////////////////////////////////////////////////////////////////
+//Adds an Observer to the Notify list of the Vehicle
+///////////////////////////////////////////////////////////////////////////
 void Vehicle::Attach(DisplayObserver::SPtr obs)
 {
+	//Valid Observer
 	if (obs == nullptr)
 	{
-		throw std::string("Nullpointer in Attach");
+		throw std::string(ERROR_ATTACH);
 	}
+	//Not already attached
 	if (Contained(obs) == mObservers.cend())
 	{
 		mObservers.emplace_back(obs);
 	}
 }
 
+///////////////////////////////////////////////////////////////////////////
+//Removes an Observer to the Notify list of the Vehicle
+///////////////////////////////////////////////////////////////////////////
 void Vehicle::Detach(DisplayObserver::SPtr obs)
 {
+	//Valid Observer
 	if (obs == nullptr)
 	{
-		throw std::string("Nullpointer in Detach");
+		throw std::string(ERROR_DETACH);
 	}
+	//save the given iterator
 	auto it = Contained(obs);
-	if (it == mObservers.cend())
+	//found, then remove
+	if (it != mObservers.cend())
 	{
 		mObservers.erase(it);
 	}
 }
 
+///////////////////////////////////////////////////////////////////////////
+//Notifies all Observers through their Update function
+///////////////////////////////////////////////////////////////////////////
 void Vehicle::Notify()
 {
+	//For every attached Observer
 	for (auto const& observer : mObservers)
 	{
 		observer->Update();
 	}
 }
 
+///////////////////////////////////////////////////////////////////////////
+//Search an specific Observer and return an iterator to it
+///////////////////////////////////////////////////////////////////////////
 Vehicle::ObsCont::const_iterator Vehicle::Contained(DisplayObserver::SPtr const& obs) const
 {
 	return find(mObservers.cbegin(), mObservers.cend(), obs);

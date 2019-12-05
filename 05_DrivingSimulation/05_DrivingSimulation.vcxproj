@@ -171,6 +171,9 @@
     <ClInclude Include="Vehicle.h" />
     <ClInclude Include="WindowsDisplay.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Revolutions.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
