@@ -7,7 +7,7 @@
 class Car :	public Vehicle {
 public:
 	void Process();
-	double GetCurrentSpeed();
+	double GetCurrentSpeed() const;
 private:
 	double mCurrentSpeed;
 	RevolutionSensor mRevoSensor;
