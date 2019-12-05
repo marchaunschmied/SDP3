@@ -6,9 +6,12 @@
 #include "WindowsDisplay.h"
 #include "Car.h"
 
-class DistanceObserver : public Object, DisplayObserver{
+class DistanceObserver : public Object, public DisplayObserver{
 public:
+
+	using SPtr = std::shared_ptr<DistanceObserver>;
 	DistanceObserver(std::shared_ptr<Car> pCar);
+
 	void Update() override;
 private:
 	size_t mDistance;
