@@ -17,12 +17,14 @@ class RevolutionSensor : Object {
 public:
 	//Reads Revolutions from the File and returns it 
 	size_t GetRevolutions();
+
+	RevolutionSensor(std::string const& path);
 	~RevolutionSensor();
 private:
 	//stream to the File
 	std::ifstream stream;
 	//Filename for Sensorvalues
-	std::string const File = "Revolutions.txt";
+	std::string const File;
 	//Help functions 
 	void OpenFile();
 };

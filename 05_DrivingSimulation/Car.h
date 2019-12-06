@@ -20,6 +20,7 @@ public:
 	double GetCurrentSpeed() const;
 	using SPtr = std::shared_ptr<Car>;
 
+	Car(std::string const& path = "Revolutions.txt");
 
 
 private:

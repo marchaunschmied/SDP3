@@ -67,5 +67,8 @@
     <Text Include="Revolutions.txt">
       <Filter>Quelldateien</Filter>
     </Text>
+    <Text Include="Maserati.txt">
+      <Filter>Quelldateien</Filter>
+    </Text>
   </ItemGroup>
 </Project>

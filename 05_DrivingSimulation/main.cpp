@@ -9,7 +9,7 @@ int main()
 {
 	
 
-	Car::SPtr pCar = make_shared<Car>();
+	Car::SPtr pCar = make_shared<Car>("Maserati.txt");
 	
 	SpeedObserver sp(pCar);
 	DistanceObserver dp(pCar);
