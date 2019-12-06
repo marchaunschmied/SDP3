@@ -18,6 +18,10 @@ public:
 	void Process();
 	//GetMethod for speed
 	double GetCurrentSpeed() const;
+	using SPtr = std::shared_ptr<Car>;
+
+
+
 private:
 	double mCurrentSpeed;
 	RevolutionSensor mRevoSensor;

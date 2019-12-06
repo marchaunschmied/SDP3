@@ -10,11 +10,11 @@ class DistanceObserver : public Object, public DisplayObserver{
 public:
 
 	using SPtr = std::shared_ptr<DistanceObserver>;
-	DistanceObserver(std::shared_ptr<Car> pCar);
+	DistanceObserver(Car::SPtr pCar);
 
 	void Update() override;
 private:
-	size_t mDistance;
+	double mDistance;
 
 	WindowsDisplay::SPtr mDigDisp;
 	std::weak_ptr<Car> mCar;

@@ -6,18 +6,19 @@
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 
-
+#include <iostream>
 #include <memory.h>
 #include "DistanceObserver.h"
 #include "WindowsDisplay.h"
 
-DistanceObserver::DistanceObserver(std::shared_ptr<Car> pCar) {
+DistanceObserver::DistanceObserver(Car::SPtr pCar) {
 	mDigDisp = std::make_shared<DigitalDisplay>();
 	mCar = std::weak_ptr(pCar);
 	mDistance = 0;
 }
 
 void DistanceObserver::Update() {
-	mDistance += mCar.lock()->GetCurrentSpeed() * 500;
+	mDistance += mCar.lock()->GetCurrentSpeed() * 0.5;
 	mDigDisp->SendValue(mDistance);
+	std::cout << "Distance: " << mDistance << std::endl;
 }

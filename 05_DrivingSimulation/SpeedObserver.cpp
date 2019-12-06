@@ -6,15 +6,18 @@
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 
-
+#include <iostream>
 #include "SpeedObserver.h"
 
-SpeedObserver::SpeedObserver(std::shared_ptr<Car> pCar) {
+static double const MS_TO_KMH_FACTOR = 3.6;
+
+SpeedObserver::SpeedObserver(Car::SPtr pCar) {
 	mAnaDisp = std::make_shared<AnalogDisplay>();
 	mCar = std::weak_ptr(pCar);
 }
 
 void SpeedObserver::Update() {
-	size_t speed = mCar.lock()->GetCurrentSpeed() * 3.6;
+	size_t speed = mCar.lock()->GetCurrentSpeed() * MS_TO_KMH_FACTOR;
 	mAnaDisp->SendValue(speed);
+	std::cout << "Speed: " << speed << std::endl;
 }

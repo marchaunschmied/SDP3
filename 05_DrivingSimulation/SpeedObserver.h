@@ -10,7 +10,7 @@
 
 class SpeedObserver : public Object, public DisplayObserver{
 public:
-	SpeedObserver(std::shared_ptr<Car> pCar);
+	SpeedObserver(Car::SPtr pCar);
 	void Update() override;
 private:
 	WindowsDisplay::SPtr mAnaDisp;
