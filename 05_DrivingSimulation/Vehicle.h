@@ -20,8 +20,8 @@
 class Vehicle : Object {
 public:
 	//typedefs
-	typedef std::shared_ptr<DisplayObserver> SPtr;
-	typedef std::vector<Vehicle::SPtr> ObsCont;
+	typedef std::shared_ptr<Vehicle> SPtr;
+	typedef std::vector<DisplayObserver::SPtr> ObsCont;
 
 	//Add & Remove Observers from vector
 	void Attach(DisplayObserver::SPtr const& obs);

@@ -7,6 +7,9 @@ class DisplayObserver {
 public:
 	using SPtr = std::shared_ptr<DisplayObserver>;
 	virtual void Update() = 0;
+	virtual ~DisplayObserver();
+protected:
+	DisplayObserver() = default;
 };
 
 #endif

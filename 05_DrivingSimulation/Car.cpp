@@ -17,7 +17,7 @@ double const TireCircumference = 0.6 * 3.1415;
 // CTor passes data path to Revolution Sensor 
 // if no value is specified default file name is passed
 ///////////////////////////////////////////////////////////////////////////
-Car::Car(std::string const& path) : mRevoSensor(path) {}
+Car::Car(std::string const& path) : mRevoSensor(path), mCurrentSpeed() {}
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -26,8 +26,8 @@ Car::Car(std::string const& path) : mRevoSensor(path) {}
 void Car::Process()
 {
 	//Current Speed = (Revolutions / Seconds) * Tire Circumference
-
 	mCurrentSpeed = (mRevoSensor.GetRevolutions()* 1.0 / seconds) * TireCircumference;
+
 	//Tell all Observers that a new value is ready;
 	Vehicle::Notify();
 }

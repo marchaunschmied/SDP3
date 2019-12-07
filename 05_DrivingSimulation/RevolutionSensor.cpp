@@ -43,11 +43,9 @@ size_t RevolutionSensor::GetRevolutions()
 		if (line.empty())
 		{
 			std::cerr << ERROR_READ << std::endl;
-		}
-		//line.erase(line.cend() - 1); // remove \n 
-		//convert ASCII string into integer
-		return stoi(line);
-		
+		} 
+		//convert ASCII string into unsigned integer
+		return stoul(line);
 	}
 	//end of File already reached
 	else
