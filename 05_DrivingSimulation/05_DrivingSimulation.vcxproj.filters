@@ -71,4 +71,9 @@
       <Filter>Quelldateien</Filter>
     </Text>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd">
+      <Filter>Quelldateien</Filter>
+    </None>
+  </ItemGroup>
 </Project>
