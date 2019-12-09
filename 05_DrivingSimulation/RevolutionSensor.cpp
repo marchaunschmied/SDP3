@@ -27,32 +27,42 @@ RevolutionSensor::RevolutionSensor(std::string const & path) : File(path){}
 ///////////////////////////////////////////////////////////////////////////
 size_t RevolutionSensor::GetRevolutions()
 {
-	//first time -> called open File
-	if (!stream.is_open())
-	{
-		OpenFile();
-	}
-
-	//EOF not yet reached
-	if (!stream.eof())
-	{
-		//buffer for one line
-		std::string line = {0};
-		std::getline(stream, line);
-		//didn't read anything
-		if (line.empty())
+	try {
+		//first time -> called open File
+		if (!stream.is_open())
 		{
-			std::cerr << ERROR_READ << std::endl;
+			OpenFile();
 		}
-		//line.erase(line.cend() - 1); // remove \n 
-		//convert ASCII string into integer
-		return stoi(line);
-		
+
+		//EOF not yet reached
+		if (!stream.eof())
+		{
+			//buffer for one line
+			std::string line = { 0 };
+			std::getline(stream, line);
+			//didn't read anything
+			if (line.empty())
+			{
+				std::cerr << ERROR_READ << std::endl;
+				throw std::string{ ERROR_READ };
+			}
+
+			//convert ASCII string into integer
+			try {
+				return stoi(line);
+			}
+			catch (std::exception ex) {
+				throw std::string{ ex.what() };
+			}
+		}
+		//end of File already reached
+		else
+		{
+			return 0;
+		}
 	}
-	//end of File already reached
-	else
-	{
-		return 0;
+	catch (std::string ex) {
+		throw std::string{ ex };
 	}
 }
 
@@ -65,6 +75,7 @@ RevolutionSensor::~RevolutionSensor()
 	if (stream.is_open())
 	{
 		std::cerr << ERROR_CLOSE << std::endl;
+		throw std::string{ ERROR_CLOSE };
 	}
 }
 
@@ -79,5 +90,6 @@ void RevolutionSensor::OpenFile()
 	if (!stream.is_open())
 	{
 		std::cerr << ERROR_OPEN << std::endl;
+		throw std::string{ ERROR_OPEN };
 	}
 }

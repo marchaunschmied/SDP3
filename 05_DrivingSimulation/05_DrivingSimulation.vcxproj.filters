@@ -70,5 +70,11 @@
     <Text Include="Maserati.txt">
       <Filter>Quelldateien</Filter>
     </Text>
+    <Text Include="empty.txt">
+      <Filter>Quelldateien</Filter>
+    </Text>
+    <Text Include="bullshit.txt">
+      <Filter>Quelldateien</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -27,9 +27,14 @@ void Car::Process()
 {
 	//Current Speed = (Revolutions / Seconds) * Tire Circumference
 
-	mCurrentSpeed = (mRevoSensor.GetRevolutions()* 1.0 / seconds) * TireCircumference;
-	//Tell all Observers that a new value is ready;
-	Vehicle::Notify();
+	try {
+		mCurrentSpeed = (mRevoSensor.GetRevolutions() * 1.0 / seconds) * TireCircumference;
+		//Tell all Observers that a new value is ready;
+		Vehicle::Notify();
+	}
+	catch (std::string ex) {
+		throw std::string{ ex };
+	}
 }
 
 ///////////////////////////////////////////////////////////////////////////

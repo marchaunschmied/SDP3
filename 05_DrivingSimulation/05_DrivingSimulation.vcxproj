@@ -172,6 +172,8 @@
     <ClInclude Include="WindowsDisplay.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="bullshit.txt" />
+    <Text Include="empty.txt" />
     <Text Include="Maserati.txt" />
     <Text Include="Revolutions.txt" />
   </ItemGroup>
