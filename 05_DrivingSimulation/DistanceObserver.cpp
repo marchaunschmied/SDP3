@@ -11,6 +11,8 @@
 #include "DistanceObserver.h"
 #include "WindowsDisplay.h"
 
+static double const INTERVAL = 0.5; //time in s
+
 DistanceObserver::DistanceObserver(Car::SPtr pCar) {
 	mDigDisp = std::make_shared<DigitalDisplay>();
 	mCar = std::weak_ptr(pCar);
@@ -18,7 +20,7 @@ DistanceObserver::DistanceObserver(Car::SPtr pCar) {
 }
 
 void DistanceObserver::Update() {
-	mDistance += mCar.lock()->GetCurrentSpeed() * 0.5;
+	mDistance += mCar.lock()->GetCurrentSpeed() * INTERVAL;
 	mDigDisp->SendValue(mDistance);
 	std::cout << "Distance: " << mDistance << std::endl;
 }
