@@ -1,3 +1,12 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile :		SpeedObserver.h
+// Author :			Marc Haunschmied
+// Date :			9-December-2019
+// Description :	Observer for sending speed data to an analog display
+// Revision :
+///////////////////////////////////////////////////////////////////////////
+
+
 #ifndef SPEED_OBSERVER_H
 #define SPEED_OBSERVER_H
 

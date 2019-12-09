@@ -2,7 +2,7 @@
 // Workfile :		Car.cpp
 // Author :			Markus Riegler
 // Date :			05-December-2019
-// Description :	Implematation of class Car
+// Description :	Implementation of class Car
 // Revision :		1
 ///////////////////////////////////////////////////////////////////////////
 

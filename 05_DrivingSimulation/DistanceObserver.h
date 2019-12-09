@@ -1,3 +1,13 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile :		DistanceObserver.h
+// Author :			Marc Haunschmied
+// Date :			9-December-2019
+// Description :	Observer to send distance data from an vehicle to a
+//					digitial display
+// Revision :
+///////////////////////////////////////////////////////////////////////////
+
+
 #ifndef DISTANCE_OBSERVER_H
 #define DISTANCE_OBSERVER_H
 

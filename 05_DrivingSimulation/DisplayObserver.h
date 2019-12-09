@@ -1,3 +1,12 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile :		DisplayObserver.h
+// Author :			Marc Haunschmied
+// Date :			9-December-2019
+// Description :	Observer for sending data to an external display
+// Revision :
+///////////////////////////////////////////////////////////////////////////
+
+
 #ifndef DISPLAY_OBSERVER_H
 #define DISPLAY_OBSERVER_H
 
