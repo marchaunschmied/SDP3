@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile :		RevolutionSensor.h
+// Workfile :		RevolutionSensor.cpp
 // Author :			Markus Riegler
 // Date :			05-December-2019
 // Description :	Implementation of class RevolutionSensor

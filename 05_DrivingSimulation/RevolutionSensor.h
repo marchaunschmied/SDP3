@@ -11,8 +11,6 @@
 #include <fstream>
 #include "Object.h"
 
-
-
 class RevolutionSensor : Object {
 public:
 	//Reads Revolutions from the File and returns it 
