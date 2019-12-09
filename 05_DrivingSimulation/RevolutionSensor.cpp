@@ -49,10 +49,10 @@ size_t RevolutionSensor::GetRevolutions()
 
 			//convert ASCII string into integer
 			try {
-				return stoi(line);
+				return stoul(line);
 			}
 			catch (std::exception ex) {
-				throw std::string{ ex.what() };
+				throw "invalid input in *.txt file: " + std::string{ ex.what() };
 			}
 		}
 		//end of File already reached
