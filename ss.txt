@@ -1,0 +1,11 @@
+﻿1>------ Erstellen gestartet: Projekt: 05_DrivingSimulation, Konfiguration: Debug Win32 ------
+1>WindowsDisplay.cpp
+1>C:\FH_Hagenberg\3_Semester\WindowDisplay\WindowsDisplay.cpp(23,93): error C2664: "HANDLE CreateFileW(LPCWSTR,DWORD,DWORD,LPSECURITY_ATTRIBUTES,DWORD,DWORD,HANDLE)" : Konvertierung von Argument 1 von "const _Elem *" in "LPCWSTR" nicht möglich
+1>C:\FH_Hagenberg\3_Semester\WindowDisplay\WindowsDisplay.cpp(23,93): error C2664:         with
+1>C:\FH_Hagenberg\3_Semester\WindowDisplay\WindowsDisplay.cpp(23,93): error C2664:         [
+1>C:\FH_Hagenberg\3_Semester\WindowDisplay\WindowsDisplay.cpp(23,93): error C2664:             _Elem=char
+1>C:\FH_Hagenberg\3_Semester\WindowDisplay\WindowsDisplay.cpp(23,93): error C2664:         ]
+1>C:\FH_Hagenberg\3_Semester\WindowDisplay\WindowsDisplay.cpp(23,37): message : Die Typen, auf die verwiesen wird, sind nicht verknüpft; die Konvertierung erfordert einen reinterpret_cast-Operator oder eine Typumwandlung im C- oder Funktionsformat.
+1>C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\fileapi.h(100,1): message : Siehe Deklaration von "CreateFileW"
+1>Die Erstellung des Projekts "05_DrivingSimulation.vcxproj" ist abgeschlossen -- FEHLER.
+========== Erstellen: 0 erfolgreich, 1 fehlerhaft, 0 aktuell, 0 übersprungen ==========
