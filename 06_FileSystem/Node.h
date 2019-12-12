@@ -13,8 +13,9 @@ public:
 	using WPtr = std::weak_ptr<Node>;
 
 	virtual void Add(Node::SPtr const& node);
-	virtual Node::SPtr GetChild(size_t index) const;
 	virtual void Remove(Node::SPtr const& node);
+	virtual Node::SPtr GetChild(size_t index) const;
+	
 
 	virtual void Accept(NodeVisitor::SPtr const& vis) = 0;
 
@@ -22,8 +23,8 @@ public:
 	void SetParent(Node::SPtr parent);
 
 	Node::SPtr GetParent() const;
-	virtual Node::SPtr GetComposite() const;
-	std::string GetName();
+	virtual Node::SPtr GetComposite();
+	std::string GetName() const;
 
 protected:
 	Node(std::string const& name);

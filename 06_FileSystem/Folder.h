@@ -16,7 +16,7 @@ public:
 	virtual void Accept(NodeVisitor::SPtr const& vis) override;
 
 	Folder(std::string const& name);
-	virtual Node::SPtr GetComposite() const override;
+	virtual Node::SPtr GetComposite() override;
 
 private:
 	std::vector<Node::SPtr> mNodes

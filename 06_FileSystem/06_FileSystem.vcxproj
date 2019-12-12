@@ -134,6 +134,12 @@
     <ClInclude Include="NodeVisitor.h" />
     <ClInclude Include="Object.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="File.cpp" />
+    <ClCompile Include="Folder.cpp" />
+    <ClCompile Include="Link.cpp" />
+    <ClCompile Include="Node.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
