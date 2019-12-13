@@ -136,6 +136,7 @@
     <ClInclude Include="Object.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DumpVisitor.cpp" />
     <ClCompile Include="File.cpp" />
     <ClCompile Include="Folder.cpp" />
     <ClCompile Include="Link.cpp" />

@@ -1,29 +1,58 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile :		File.cpp
+// Author :			Markus Riegler
+// Date :			13-December-2019
+// Description :	Implementation for class File derived from base class Node
+// Revision :		1.0
+///////////////////////////////////////////////////////////////////////////
+
 #include <iostream>
 #include "File.h"
 
+std::string const FULL = " is full, couldn't write last ";
+std::string const TYPE = " bytes";
+
+///////////////////////////////////////////////////////////////////////////
+//executes Visitor
+///////////////////////////////////////////////////////////////////////////
 void File::Accept(NodeVisitor& vis)
 {
 	vis.Visit(*this);
 }
 
+///////////////////////////////////////////////////////////////////////////
+//simulates writing to the file
+///////////////////////////////////////////////////////////////////////////
 void File::Write(size_t const bytes)
 {
+	//enough place?
 	if ((mFileSize + bytes) > (mBlockCount * mBlockSize))
 	{
-		std::cout << GetName() << " is full, couldn't write last " << (mFileSize + bytes) - (mBlockCount * mBlockSize) << " bytes." << std::endl;
+		//Warning
+		std::cout << GetName() << FULL << 
+					(mFileSize + bytes) - (mBlockCount * mBlockSize) << TYPE << std::endl;
+		//set to max capacity
 		mFileSize = mBlockCount * mBlockSize;
 	}
 	else
 	{
+		//add written bytes
 		mFileSize += bytes;
 	}
 }
 
+///////////////////////////////////////////////////////////////////////////
+//CTor sets name, size of Blocks, number of Blocks
+///////////////////////////////////////////////////////////////////////////
 File::File(std::string const& name, size_t const blocksize, size_t const blockcount): 
 		Node{name}, mBlockSize{blocksize}, mBlockCount{blockcount}
 {
 }
 
+
+///////////////////////////////////////////////////////////////////////////
+//Get functions
+///////////////////////////////////////////////////////////////////////////
 size_t File::GetFileSize() const
 {
 	return mFileSize;
