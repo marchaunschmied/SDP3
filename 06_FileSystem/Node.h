@@ -7,7 +7,7 @@
 #include "Object.h"
 #include "NodeVisitor.h"
 
-class Node : public Object{
+class Node : public Object {
 public:
 	using SPtr = std::shared_ptr<Node>;
 	using WPtr = std::weak_ptr<Node>;

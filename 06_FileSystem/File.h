@@ -9,6 +9,8 @@ class File : public Node {
 public:
 	using SPtr = std::shared_ptr<File>;
 
+	virtual void Accept(NodeVisitor::SPtr const& vis) override;
+
 	void Write(size_t const bytes);
 
 	File(std::string const& name, size_t const blocksize, size_t const blockcount);

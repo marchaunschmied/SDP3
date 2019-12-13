@@ -140,6 +140,7 @@
     <ClCompile Include="Folder.cpp" />
     <ClCompile Include="Link.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="NodeFactory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

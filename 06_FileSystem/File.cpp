@@ -1,6 +1,11 @@
 #include <iostream>
 #include "File.h"
 
+void File::Accept(NodeVisitor::SPtr const& vis)
+{
+	vis->Visit(this);
+}
+
 void File::Write(size_t const bytes)
 {
 	if ((mFileSize + bytes) > (mBlockCount * mBlockSize))
