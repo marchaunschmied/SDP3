@@ -6,7 +6,7 @@
 #include "Link.h"
 #include "Object.h"
 
-class NodeFactory: public Object {
+class NodeFactory : public Object {
 public:
 	Folder::SPtr CreateFolder(std::string const& name);
 	File::SPtr CreateFile(std::string const& name, size_t const blocksize, size_t const blockcount);
