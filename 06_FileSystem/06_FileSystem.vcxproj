@@ -139,6 +139,7 @@
     <ClCompile Include="File.cpp" />
     <ClCompile Include="Folder.cpp" />
     <ClCompile Include="Link.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="NodeFactory.cpp" />
   </ItemGroup>

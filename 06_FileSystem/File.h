@@ -4,12 +4,13 @@
 #include <memory>
 #include <string>
 #include "Node.h"
+#include "NodeVisitor.h"
 
 class File : public Node {
 public:
 	using SPtr = std::shared_ptr<File>;
 
-	virtual void Accept(NodeVisitor::SPtr const& vis) override;
+	virtual void Accept(NodeVisitor& vis) override;
 
 	void Write(size_t const bytes);
 

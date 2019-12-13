@@ -4,12 +4,13 @@
 #include <memory>
 #include <string>
 #include "Node.h"
+#include "NodeVisitor.h"
 
 class Link : public Node {
 public:
 	using SPtr = std::shared_ptr<Link>;
 
-	virtual void Accept(NodeVisitor::SPtr const& vis) override;
+	virtual void Accept(NodeVisitor& vis) override;
 
 	Link(std::string const& name, Node::SPtr const& link);
 

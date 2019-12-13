@@ -1,5 +1,6 @@
 #include "Node.h"
 
+
 void Node::Add(Node::SPtr const& node)
 {
 	throw std::string("Add not implemented in base class Node");

@@ -39,9 +39,9 @@ void Folder::Remove(Node::SPtr const& node)
 	}
 }
 
-void Folder::Accept(NodeVisitor::SPtr const& vis)
+void Folder::Accept(NodeVisitor& vis)
 {
-	vis->Visit(this);
+	vis.Visit(*this);
 
 	for (auto const& n : mNodes)
 	{

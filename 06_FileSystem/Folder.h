@@ -6,6 +6,7 @@
 #include "Node.h"
 #include "NodeVisitor.h"
 
+
 class Folder : public Node, public std::enable_shared_from_this<Folder>{
 public:
 	using SPtr = std::shared_ptr<Folder>;
@@ -14,7 +15,7 @@ public:
 	virtual Node::SPtr GetChild(size_t index) const override;
 	virtual void Remove(Node::SPtr const& node) override;
 
-	virtual void Accept(NodeVisitor::SPtr const& vis) override;
+	virtual void Accept(NodeVisitor& vis) override;
 
 	Folder(std::string const& name);
 	virtual Node::SPtr GetComposite() override;

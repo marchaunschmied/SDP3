@@ -1,9 +1,9 @@
 #include <iostream>
 #include "File.h"
 
-void File::Accept(NodeVisitor::SPtr const& vis)
+void File::Accept(NodeVisitor& vis)
 {
-	vis->Visit(this);
+	vis.Visit(*this);
 }
 
 void File::Write(size_t const bytes)

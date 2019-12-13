@@ -1,9 +1,10 @@
 #include "Link.h"
 
-void Link::Accept(NodeVisitor::SPtr const& vis)
+void Link::Accept(NodeVisitor& vis)
 {
-	vis->Visit(this);
+	vis.Visit(*this);
 }
+
 
 Link::Link(std::string const& name, Node::SPtr const& link): Node{name}
 {

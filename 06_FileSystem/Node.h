@@ -5,7 +5,7 @@
 #include <string>
 
 #include "Object.h"
-#include "NodeVisitor.h"
+class NodeVisitor;
 
 class Node : public Object {
 public:
@@ -17,7 +17,7 @@ public:
 	virtual Node::SPtr GetChild(size_t index) const;
 	
 
-	virtual void Accept(NodeVisitor::SPtr const& vis) = 0;
+	virtual void Accept(NodeVisitor& vis) = 0;
 
 	void SetName(std::string const& name);
 	void SetParent(Node::SPtr parent);
