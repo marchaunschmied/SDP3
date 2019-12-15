@@ -22,8 +22,16 @@ int main()
 	text->Write(80);
 	text->Write(800);
 	bsy->Add(text);
+	bsy->Add(text);
 	root->Add(bsy);
 	root->Add(fact.CreateLink("link", text));
+	root->Accept(dmp);
+	cout << endl;
+	root->Remove(bsy);
+	root->Accept(dmp);
+	cout << endl;
+	auto ptr1 = root->GetChild(1);
+	root->Remove(ptr1);
 	root->Accept(dmp);
 	cout << endl;
 

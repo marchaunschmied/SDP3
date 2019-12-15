@@ -29,7 +29,7 @@ void File::Write(size_t const bytes)
 	if ((mFileSize + bytes) > (mBlockCount * mBlockSize))
 	{
 		//Warning
-		std::cout << GetName() << FULL << 
+		std::cerr << GetName() << FULL << 
 					(mFileSize + bytes) - (mBlockCount * mBlockSize) << TYPE << std::endl;
 		//set to max capacity
 		mFileSize = mBlockCount * mBlockSize;

@@ -7,11 +7,13 @@
 ///////////////////////////////////////////////////////////////////////////
 
 #include <algorithm>
+#include <iostream>
 #include "Folder.h"
 
 ///////////////////////////////////////////////////////////////////////////
 //Adds the given node into the container
 ///////////////////////////////////////////////////////////////////////////
+std::string const ERROR_CONTAINED = " is already contained in ";
 void Folder::Add(Node::SPtr const& node)
 {
 	if (node == nullptr)
@@ -20,8 +22,19 @@ void Folder::Add(Node::SPtr const& node)
 	}
 	else
 	{
-		node->SetParent(shared_from_this());
-		mNodes.emplace_back(node);
+		auto it = find_if(mNodes.cbegin(), mNodes.cend(), 
+						  [&node](auto s) {return node->GetName() == s->GetName(); });
+		if (it == mNodes.cend())
+		{
+			node->SetParent(shared_from_this());
+			mNodes.emplace_back(node);
+		}
+		else
+		{
+			std::cerr << node->GetName() << ERROR_CONTAINED << GetName() << std::endl;
+		}
+
+
 	}
 }
 
@@ -52,8 +65,8 @@ void Folder::Remove(Node::SPtr const& node)
 	}
 	else
 	{
-		//search for node
-		auto it = std::find(mNodes.cbegin(), mNodes.cend(), node);
+		auto it = find_if(mNodes.cbegin(), mNodes.cend(),
+			[&node](auto s) {return node->GetName() == s->GetName(); });
 		//found?
 		if (it == mNodes.cend()) { return; }
 		//when found erase
