@@ -25,10 +25,19 @@ int main()
 
 	Folder::SPtr bsy = fact.CreateFolder("bsy");
 	Folder::SPtr karl = fact.CreateFolder("karl");
+	Folder::SPtr karl2 = fact.CreateFolder("karl2");
+	Folder::SPtr karl3 = fact.CreateFolder("karl3");
+	Folder::SPtr karl4 = fact.CreateFolder("karl4");
+	Folder::SPtr karl5 = fact.CreateFolder("karl5");
 	File::SPtr text = fact.CreateFile("text", 32, 15);
 	text->Write(80);
 	text->Write(800);
 	karl->Add(fact.CreateFolder("sepp"));
+	karl->Add(karl2);
+	karl2->Add(karl3);
+	karl3->Add(karl4);
+	karl4->Add(karl5);
+
 	bsy->Add(karl);
 	bsy->Add(text);
 	bsy->Add(text);
