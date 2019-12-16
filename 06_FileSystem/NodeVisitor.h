@@ -18,6 +18,9 @@ public:
 
 protected:
 	NodeVisitor() = default;
+
+
+
 };
 
 #endif

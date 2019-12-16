@@ -27,8 +27,11 @@ public:
 	virtual void Visit(Folder& folder) override;
 	virtual void Visit(File& file) override;
 	virtual void Visit(Link& link) override;
+
+	void Print() const;
+
 private:
-	std::list<std::pair<File::SPtr, std::string>> mFiles;
+	std::list<File::SPtr> mFiles;
 
 	std::ostream& mOst;
 

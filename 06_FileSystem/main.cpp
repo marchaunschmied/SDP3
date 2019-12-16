@@ -48,10 +48,11 @@ int main()
 
 	FilterFilesVisitor fVis(10, 500);
 	root->Accept(fVis);
+	fVis.Print();
 
 	LinkVisitor lVis(cout);
-
 	root->Accept(lVis);
+	lVis.Print();
 
 	cout << "////////////////////////////////////////////////" << endl;
 

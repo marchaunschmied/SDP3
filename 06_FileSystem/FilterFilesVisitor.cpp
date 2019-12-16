@@ -16,31 +16,47 @@ void FilterFilesVisitor::Visit(Folder& folder) {
 }
 
 /////////////////////////////////////////////////
-// prints all files inside the range specified
-// in mMinSize and mMaxSize
+// saves all files which are between mMinSize
+// and mMaxSize
 /////////////////////////////////////////////////
 void FilterFilesVisitor::Visit(File& file) {
 
 	 if (file.GetFileSize() > mMinSize && file.GetFileSize() < mMaxSize) {
-		 //current parentNode
-		 Node::SPtr parentNode = file.GetParent();
-		 std::string path = "";
-
-		 //iterate trough parent nodes until root is reached
-		 while (parentNode->GetParent() != nullptr) {
-			 path = parentNode->GetName() + "/" + path;
-			 parentNode = parentNode->GetParent();
-		 }
-		 path += file.GetName();		//add file to path
-		 path = parentNode->GetName() + path;	//add root directory to path
-		 //mOst << "Pfad: " << path << ": " << file.GetFileSize() << std::endl;
 		
 		 //add filtered files to list
 		 File::SPtr pFile = std::make_shared<File>(file);
-		 mFiles.push_back(std::pair<File::SPtr, std::string>(pFile, path));
+		 mFiles.push_back(pFile);
 
 	 }
 }
 
 void FilterFilesVisitor::Visit(Link& link) {
+}
+
+
+/////////////////////////////////////////////////
+// prints all files inside the range
+/////////////////////////////////////////////////
+void FilterFilesVisitor::Print() const {
+	if (mOst.good()) {
+		mOst << "Files between " << mMinSize << " and " << mMaxSize << " : " << std::endl;
+		for (File::SPtr pFile : mFiles) {
+			if (pFile != nullptr) {
+				//current parentNode
+				Node::SPtr parentNode = pFile->GetParent();
+				std::string path = "";
+
+				//iterate trough parent nodes until root is reached
+				while (parentNode->GetParent() != nullptr) {
+					path = parentNode->GetName() + "/" + path;
+					parentNode = parentNode->GetParent();
+				}
+				path += pFile->GetName();		//add file to path
+				path = parentNode->GetName() + path;	//add root directory to path
+
+				mOst  << pFile->GetFileSize() << "\t" << path << std::endl;
+
+			}
+		}
+	}
 }

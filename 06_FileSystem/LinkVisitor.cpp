@@ -20,8 +20,39 @@ void LinkVisitor::Visit(Folder& folder)
 void LinkVisitor::Visit(File& file)
 {
 }
-
-void LinkVisitor::Visit(Link& link){
+/////////////////////////////////////////////////
+// save all links
+/////////////////////////////////////////////////
+void LinkVisitor::Visit(Link& link) {
 	mLinks.push_back(std::make_shared<Link>(link));
-	mOst << link.GetName() << ": " << link.GetLink()->GetName() << std::endl;
 }
+
+std::string GetPath(Node::SPtr pLink) {
+	//current parentNode
+	Node::SPtr parentNode = pLink->GetParent();
+	std::string path = "";
+
+	//iterate trough parent nodes until root is reached
+	while (parentNode->GetParent() != nullptr) {
+		path = parentNode->GetName() + "/" + path;
+		parentNode = parentNode->GetParent();
+	}
+	path += pLink->GetName();		//add file to path
+	path = parentNode->GetName() + path;	//add root directory to path
+	return path;
+}
+
+
+/////////////////////////////////////////////////
+// print saved links
+/////////////////////////////////////////////////
+void LinkVisitor::Print() const {
+	if (mOst.good()) {
+		for (Link::SPtr pLink : mLinks) {
+			if (pLink != nullptr) {
+				mOst << GetPath(pLink) << pLink->GetName() << ": " << GetPath(pLink->GetLink()) << pLink->GetLink()->GetName() << std::endl;
+			}
+		}
+	}
+}
+
