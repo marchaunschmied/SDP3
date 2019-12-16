@@ -50,7 +50,7 @@ void LinkVisitor::Print() const {
 	if (mOst.good()) {
 		for (Link::SPtr pLink : mLinks) {
 			if (pLink != nullptr) {
-				mOst << GetPath(pLink) << pLink->GetName() << ": " << GetPath(pLink->GetLink()) << pLink->GetLink()->GetName() << std::endl;
+				mOst << GetPath(pLink)  << " ==> " << GetPath(pLink->GetLink())  << std::endl;
 			}
 		}
 	}

@@ -143,6 +143,7 @@
   <ItemGroup>
     <ClCompile Include="DumpVisitor.cpp" />
     <ClCompile Include="File.cpp" />
+    <ClCompile Include="FileSystem.cpp" />
     <ClCompile Include="FilterFilesVisitor.cpp" />
     <ClCompile Include="Folder.cpp" />
     <ClCompile Include="Link.cpp" />

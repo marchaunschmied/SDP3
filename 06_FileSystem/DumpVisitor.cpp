@@ -20,7 +20,13 @@ void DumpVisitor::Visit(Folder& folder)
 		CheckPrev(folder.GetParent());
 		//Print information
 		PrintSpace();
-		*ost << folder.GetName() << std::endl;
+		if (folder.GetName() != "/") {	//dont print slash when root folder
+			*ost << folder.GetName() << "/" << std::endl;
+		}
+		else {
+			*ost << folder.GetName() << std::endl;
+		}
+		
 		//Set Values after Folder
 		++mDepth;
 		mPrev = folder.GetFolder();

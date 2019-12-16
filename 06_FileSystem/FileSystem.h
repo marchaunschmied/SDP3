@@ -6,12 +6,14 @@
 #include "File.h"
 #include "Link.h"
 #include "NodeVisitor.h"
+#include "NodeFactory.h"
 
 class FileSystem : public Object {
 public:
 	void Visit(NodeVisitor::SPtr visitor);
 private:
-	Folder mFolder;
+	Folder mRoot;
+	NodeFactory fact;
 };
 
 #endif

@@ -16,9 +16,11 @@
 std::string const ERROR_CONTAINED = " is already contained in ";
 void Folder::Add(Node::SPtr const& node)
 {
-	if (node == nullptr)
-	{
+	if (node == nullptr){
 		throw std::string(GetName() + ": null pointer in Folder::Add");
+	}
+	else if (node.get() == this) {
+		throw std::string(GetName() + ": self assignment in Folder::Add");
 	}
 	else
 	{

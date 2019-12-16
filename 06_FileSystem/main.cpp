@@ -11,85 +11,175 @@
 using namespace std;
 int main()
 {
+	try {
+		NodeFactory fact;
 
-	NodeFactory fact;
-	DumpVisitor dmp;
-	Folder::SPtr root = fact.CreateFolder("/");
-	root->Accept(dmp);
-	cout << endl;
-	ofstream file{ "Test.txt" };
-	DumpVisitor dmp2{ &file };
-
-	root->Add(fact.CreateFolder("home"));
-	root->Add(fact.CreateFile("test.txt", 64, 10));
-	root->Add(fact.CreateFile("abc.txt",128, 7));
-	root->Accept(dmp);
-	root->Accept(dmp2);
-	cout << endl;
-
-	Folder::SPtr bsy = fact.CreateFolder("bsy");
-	Folder::SPtr karl = fact.CreateFolder("karl");
-
-	File::SPtr text = fact.CreateFile("text.txt", 32, 15);
-	text->Write(80);
-	text->Write(800);
-	karl->Add(fact.CreateFolder("sepp"));
-	karl->Add(text);
-
-	Folder::SPtr karl2 = fact.CreateFolder("karl2");
-	Folder::SPtr karl3 = fact.CreateFolder("karl3");
-	Folder::SPtr karl4 = fact.CreateFolder("karl4");
-	Folder::SPtr karl5 = fact.CreateFolder("karl5");
-	File::SPtr text = fact.CreateFile("text", 32, 15);
-	text->Write(80);
-	text->Write(800);
-	karl->Add(fact.CreateFolder("sepp"));
-	karl->Add(karl2);
-	karl2->Add(karl3);
-	karl3->Add(karl4);
-	karl4->Add(karl5);
-
-	bsy->Add(karl);
-	//bsy->Add(text);
-	//bsy->Add(text);
-
-	root->Add(bsy);
-	root->Add(fact.CreateLink("link", text));
-	root->Accept(dmp);
-	cout << endl;
+		DumpVisitor dVis;
 
 
-	cout << "////////////////////////////////////////////////" << endl;
+		Folder::SPtr root = fact.CreateFolder("/");
 
-	FilterFilesVisitor fVis(10, 500);
-	root->Accept(fVis);
-	fVis.Print();
+		Folder::SPtr bin = fact.CreateFolder("bin");
+		Folder::SPtr boot = fact.CreateFolder("boot");
+		Folder::SPtr dev = fact.CreateFolder("dev");
+		Folder::SPtr etc = fact.CreateFolder("etc");
+		Folder::SPtr home = fact.CreateFolder("home");
+		Folder::SPtr lib = fact.CreateFolder("lib");
+		Folder::SPtr media = fact.CreateFolder("media");
+		Folder::SPtr mnt = fact.CreateFolder("mnt");
 
-	LinkVisitor lVis(cout);
-	root->Accept(lVis);
-	lVis.Print();
+		root->Add(bin);
+		root->Add(boot);
+		root->Add(dev);
+		root->Add(etc);
+		root->Add(home);
+		root->Add(lib);
+		root->Add(media);
+		root->Add(mnt);
 
-	cout << "////////////////////////////////////////////////" << endl;
+		File::SPtr bash = fact.CreateFile("bash", 32, 256);
+		File::SPtr bzip2 = fact.CreateFile("bzip2", 32, 256);
+		File::SPtr grep = fact.CreateFile("grep", 32, 256);
+		File::SPtr systemd = fact.CreateFile("systemd", 32, 256);
 
-	root->Remove(bsy);
-	root->Accept(dmp);
-	cout << endl;
-	auto ptr1 = root->GetChild(1);
-	root->Remove(ptr1);
-	root->Accept(dmp);
-	cout << endl;
+		bash->Write(1234);
+		bzip2->Write(1956);
+		grep->Write(21004);
+		systemd->Write(5234);
 
-	auto ptr = root->GetChild(0);
-	if (ptr->GetFolder() != nullptr)
-	{
-		ptr->Add(fact.CreateFile("franz", 10, 10));
-		cout << endl << "Parent of " << ptr->GetName() << ptr->GetParent()->GetName() << endl << endl;
+		bin->Add(bash);
+		bin->Add(bzip2);
+		bin->Add(grep);
+		bin->Add(systemd);
+
+		Folder::SPtr grub = fact.CreateFolder("grub");
+		File::SPtr grubcfg = fact.CreateFile("grub.cfg", 32, 16);
+		grubcfg->Write(144);
+		grub->Add(grubcfg);
+		boot->Add(grub);
+
+		File::SPtr memtest = fact.CreateFile("memtest86.bin", 32, 16384);
+		File::SPtr vmlinux = fact.CreateFile("vmlinux.bin", 32, 65536);
+		memtest->Write(255000);
+		vmlinux->Write(1420690);
+		boot->Add(memtest);
+		boot->Add(vmlinux);
+
+		//filesize 0
+		dev->Add(fact.CreateFile("tty0", 32, 16));
+		dev->Add(fact.CreateFile("tty1", 32, 16));
+		dev->Add(fact.CreateFile("tty2", 32, 16));
+		dev->Add(fact.CreateFile("tty3", 32, 16));
+		dev->Add(fact.CreateFile("tty4", 32, 16));
+		dev->Add(fact.CreateFile("tty5", 32, 16));
+		File::SPtr tty6 = fact.CreateFile("tty6", 32, 16);
+		tty6->Write(64);
+		dev->Add(tty6);
+
+		Folder::SPtr acpi = fact.CreateFolder("acpi");
+		Folder::SPtr bluetooth = fact.CreateFolder("bluetooth");
+		Folder::SPtr emacs = fact.CreateFolder("emacs");
+		Folder::SPtr initd = fact.CreateFolder("initd");
+		Folder::SPtr modprobe = fact.CreateFolder("modprobe");
+		Folder::SPtr kernel = fact.CreateFolder("kernel");
+		Folder::SPtr mysql = fact.CreateFolder("mysql");
+		Folder::SPtr systemd_f = fact.CreateFolder("systemd");
+
+		etc->Add(acpi);
+		etc->Add(bluetooth);
+		etc->Add(emacs);
+		etc->Add(initd);
+		etc->Add(modprobe);
+		etc->Add(kernel);
+		etc->Add(mysql);
+		etc->Add(systemd_f);
+
+		File::SPtr asus_wireless = fact.CreateFile("asus-wireless.sh", 32, 512);
+		asus_wireless->Write(1000);
+		acpi->Add(asus_wireless);
+
+		Folder::SPtr events = fact.CreateFolder("events");
+		File::SPtr asus_wireless_on = fact.CreateFile("asus-wireless-on", 32, 1024);
+		asus_wireless_on->Write(3333);
+		events->Add(asus_wireless_on);
+		acpi->Add(events);
+
+		Folder::SPtr bsy3 = fact.CreateFolder("bsy3");
+		home->Add(bsy3);
+
+		Folder::SPtr dok = fact.CreateFolder("Dokumente");
+		bsy3->Add(dok);
+
+		Folder::SPtr scan = fact.CreateFolder("Scans");
+		dok->Add(scan);
+		Folder::SPtr pdfs = fact.CreateFolder("PDFs");
+		dok->Add(pdfs);
+		Folder::SPtr zahlung = fact.CreateFolder("Zahlungen");
+		dok->Add(zahlung);
+		Folder::SPtr sauf = fact.CreateFolder("Saufen");
+		zahlung->Add(sauf);
+
+		Folder::SPtr down = fact.CreateFolder("Downloads");
+		bsy3->Add(down);
+		Folder::SPtr pics = fact.CreateFolder("Bilder");
+		bsy3->Add(pics);
+		Folder::SPtr workspace = fact.CreateFolder("Workspace");
+		bsy3->Add(workspace);
+
+		Folder::SPtr codeblocks = fact.CreateFolder("code_blocks");
+		workspace->Add(codeblocks);
+		Folder::SPtr interp = fact.CreateFolder("CommandoInterpreter");
+		codeblocks->Add(interp);
+		Folder::SPtr int_bin = fact.CreateFolder("bin");
+		interp->Add(int_bin);
+		Folder::SPtr int_obj = fact.CreateFolder("obj");
+		interp->Add(int_obj);
+
+		File::SPtr main = fact.CreateFile("main.c", 32, 2048);
+		main->Write(55000);
+		interp->Add(main);
+
+		File::SPtr prog_bin = fact.CreateFile("prog.bin", 32, 5120);
+		prog_bin->Write(89120);
+		int_bin->Add(prog_bin);
+
+		File::SPtr main_o = fact.CreateFile("main.o", 32, 2048);
+		main_o->Write(55000);
+		int_obj->Add(main_o);
+
+		//create some links
+		bsy3->Add(fact.CreateLink("sourcecode", main));
+		workspace->Add(fact.CreateLink("search_programm", grep));
+		dok->Add(fact.CreateLink("activate_wifi", asus_wireless_on));
+
+
+
+		FilterFilesVisitor fVis(0, 10000000);
+		LinkVisitor lVis;
+
+		cout << "=============== D U M P ====================" << endl;
+		root->Accept(dVis);
+		cout << "*************** L I N K ********************" << endl;
+		root->Accept(lVis);
+		lVis.Print();
+		cout << "************* F I L T E R ******************" << endl;
+		root->Accept(fVis);
+		fVis.Print();
+		cout << "============================================" << endl;
+
+		FilterFilesVisitor fSmallVis(0, 1024);
+		root->Accept(fSmallVis);
+		fSmallVis.Print();
+
+		//self assignment
+
+		Folder::SPtr test = fact.CreateFolder("test");
+		test->Add(test);
+
 	}
-	root->Accept(dmp);
-	cout << endl;
-
-	
-
+	catch (std::string & ex) {
+		cerr << ex << endl;
+	}
 	
 
 

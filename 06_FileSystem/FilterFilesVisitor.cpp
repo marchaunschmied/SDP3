@@ -21,7 +21,7 @@ void FilterFilesVisitor::Visit(Folder& folder) {
 /////////////////////////////////////////////////
 void FilterFilesVisitor::Visit(File& file) {
 
-	 if (file.GetFileSize() > mMinSize && file.GetFileSize() < mMaxSize) {
+	 if (file.GetFileSize() >= mMinSize && file.GetFileSize() <= mMaxSize) {
 		
 		 //add filtered files to list
 		 File::SPtr pFile = std::make_shared<File>(file);
