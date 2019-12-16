@@ -45,6 +45,9 @@
     <ClInclude Include="FileSystem.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="LinkVisitor.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Node.cpp">
@@ -69,6 +72,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="FilterFilesVisitor.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkVisitor.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

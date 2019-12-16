@@ -4,6 +4,7 @@
 #include "NodeFactory.h"
 #include "DumpVisitor.h"
 #include "FilterFilesVisitor.h"
+#include "LinkVisitor.h"
 
 #include "vld.h"
 
@@ -47,6 +48,10 @@ int main()
 
 	FilterFilesVisitor fVis(10, 500);
 	root->Accept(fVis);
+
+	LinkVisitor lVis(cout);
+
+	root->Accept(lVis);
 
 	cout << "////////////////////////////////////////////////" << endl;
 

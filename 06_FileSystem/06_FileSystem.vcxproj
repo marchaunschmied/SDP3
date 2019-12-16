@@ -134,6 +134,7 @@
     <ClInclude Include="FilterFilesVisitor.h" />
     <ClInclude Include="Folder.h" />
     <ClInclude Include="Link.h" />
+    <ClInclude Include="LinkVisitor.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="NodeFactory.h" />
     <ClInclude Include="NodeVisitor.h" />
@@ -145,6 +146,7 @@
     <ClCompile Include="FilterFilesVisitor.cpp" />
     <ClCompile Include="Folder.cpp" />
     <ClCompile Include="Link.cpp" />
+    <ClCompile Include="LinkVisitor.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="NodeFactory.cpp" />
