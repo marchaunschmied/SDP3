@@ -2,7 +2,8 @@
 // Workfile :		DumpVisitor.h
 // Author :			Markus Riegler
 // Date :			15-December-2019
-// Description :	Header for class File derived from base class Node
+// Description :	Header for class DumpVisitor implements interface 
+//					NodeVisitor
 // Revision :		1.0
 ///////////////////////////////////////////////////////////////////////////
 
@@ -26,7 +27,7 @@ public:
 	DumpVisitor(std::ostream* stream = &std::cout);
 private:
 	size_t mDepth = 0;
-	std::string prev = { 0 };
+	Node::SPtr mPrev = nullptr;
 	std::ostream* ost;
 	
 	//Prints format
