@@ -25,6 +25,8 @@ public:
 	//CTor
 	Link(std::string const& name, Node::SPtr const& link);
 
+	Node::SPtr GetLink() const;
+
 private:
 	//linked object
 	Node::SPtr mLink;

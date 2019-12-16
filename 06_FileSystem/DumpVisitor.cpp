@@ -95,6 +95,7 @@ void DumpVisitor::CheckPrev(Node::SPtr const& node)
 	//previuos was root directory
 	if (mPrev == nullptr)
 	{
+
 		mDepth = 1;
 	}
 	else

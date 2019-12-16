@@ -1,7 +1,11 @@
 #include <iostream>
 #include <fstream>
+
 #include "NodeFactory.h"
 #include "DumpVisitor.h"
+#include "FilterFilesVisitor.h"
+#include "LinkVisitor.h"
+
 #include "vld.h"
 
 using namespace std;
@@ -17,14 +21,21 @@ int main()
 	DumpVisitor dmp2{ &file };
 
 	root->Add(fact.CreateFolder("home"));
-	root->Add(fact.CreateFile("test", 64, 10));
-	root->Add(fact.CreateFile("abc",128, 7));
+	root->Add(fact.CreateFile("test.txt", 64, 10));
+	root->Add(fact.CreateFile("abc.txt",128, 7));
 	root->Accept(dmp);
 	root->Accept(dmp2);
 	cout << endl;
 
 	Folder::SPtr bsy = fact.CreateFolder("bsy");
 	Folder::SPtr karl = fact.CreateFolder("karl");
+
+	File::SPtr text = fact.CreateFile("text.txt", 32, 15);
+	text->Write(80);
+	text->Write(800);
+	karl->Add(fact.CreateFolder("sepp"));
+	karl->Add(text);
+
 	Folder::SPtr karl2 = fact.CreateFolder("karl2");
 	Folder::SPtr karl3 = fact.CreateFolder("karl3");
 	Folder::SPtr karl4 = fact.CreateFolder("karl4");
@@ -39,12 +50,27 @@ int main()
 	karl4->Add(karl5);
 
 	bsy->Add(karl);
-	bsy->Add(text);
-	bsy->Add(text);
+	//bsy->Add(text);
+	//bsy->Add(text);
+
 	root->Add(bsy);
 	root->Add(fact.CreateLink("link", text));
 	root->Accept(dmp);
 	cout << endl;
+
+
+	cout << "////////////////////////////////////////////////" << endl;
+
+	FilterFilesVisitor fVis(10, 500);
+	root->Accept(fVis);
+	fVis.Print();
+
+	LinkVisitor lVis(cout);
+	root->Accept(lVis);
+	lVis.Print();
+
+	cout << "////////////////////////////////////////////////" << endl;
+
 	root->Remove(bsy);
 	root->Accept(dmp);
 	cout << endl;
@@ -62,7 +88,9 @@ int main()
 	root->Accept(dmp);
 	cout << endl;
 
+	
 
+	
 
 
 	return 0;

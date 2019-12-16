@@ -69,7 +69,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Program Files %28x86%29\Visual Leak Detector\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -88,6 +91,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,6 +134,7 @@
     <ClInclude Include="FilterFilesVisitor.h" />
     <ClInclude Include="Folder.h" />
     <ClInclude Include="Link.h" />
+    <ClInclude Include="LinkVisitor.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="NodeFactory.h" />
     <ClInclude Include="NodeVisitor.h" />
@@ -138,8 +143,10 @@
   <ItemGroup>
     <ClCompile Include="DumpVisitor.cpp" />
     <ClCompile Include="File.cpp" />
+    <ClCompile Include="FilterFilesVisitor.cpp" />
     <ClCompile Include="Folder.cpp" />
     <ClCompile Include="Link.cpp" />
+    <ClCompile Include="LinkVisitor.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="NodeFactory.cpp" />

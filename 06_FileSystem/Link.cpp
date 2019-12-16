@@ -30,3 +30,7 @@ Link::Link(std::string const& name, Node::SPtr const& link): Node{name}
 		mLink = link;
 	}
 }
+
+Node::SPtr Link::GetLink() const {
+	return mLink;
+}
