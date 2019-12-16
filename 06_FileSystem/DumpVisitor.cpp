@@ -59,7 +59,7 @@ void DumpVisitor::CheckPrev(Node::SPtr const& node)
 	}
 	if (prev != node->GetName() && mDepth > 0)
 	{
-		while 
+		//while 
 		--mDepth;
 		prev = node->GetName();
 	}

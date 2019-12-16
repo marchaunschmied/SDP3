@@ -1,6 +1,8 @@
 #ifndef NODEVISITOR_H
 #define NODEVISITOR_H
 
+#include <memory>
+
 class File;
 class Folder;
 class Link;
