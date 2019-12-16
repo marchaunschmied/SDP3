@@ -10,6 +10,7 @@
 #ifndef DUMPVISITOR_H
 #define DUMPVISITOR_H
 
+#include <iostream>
 #include "Object.h"
 #include "NodeVisitor.h"
 #include "File.h"

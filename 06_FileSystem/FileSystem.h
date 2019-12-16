@@ -1,3 +1,11 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile :		FileSystem.cpp
+// Author :			Marc Haunschmied
+// Date :			16-December-2019
+// Description :	Test class for filesystem implementation
+// Revision :
+///////////////////////////////////////////////////////////////////////////
+
 #ifndef FILESYSTEM_H
 #define FILESYSTEM_H
 
@@ -10,10 +18,15 @@
 
 class FileSystem : public Object {
 public:
-	void Visit(NodeVisitor::SPtr visitor);
+	FileSystem();
+
+	void Visit(NodeVisitor& visitor);
+
 private:
-	Folder mRoot;
+	Folder::SPtr mRoot;
 	NodeFactory fact;
+
+	void Test();
 };
 
 #endif

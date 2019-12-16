@@ -1,4 +1,55 @@
 --/
- |--home
- |--test.txt
- |--abc.txt
+ |--bin/
+ | |--bash
+ | |--bzip2
+ | |--grep
+ | |--systemd
+ |--boot/
+ | |--grub/
+ | | |--grub.cfg
+ | |--memtest86.bin
+ | |--vmlinux.bin
+ |--dev/
+ | |--tty0
+ | |--tty1
+ | |--tty2
+ | |--tty3
+ | |--tty4
+ | |--tty5
+ | |--tty6
+ |--etc/
+ | |--acpi/
+ | | |--asus-wireless.sh
+ | | |--events/
+ | | | |--asus-wireless-on
+ | |--bluetooth/
+ | |--emacs/
+ | |--initd/
+ | |--modprobe/
+ | |--kernel/
+ | |--mysql/
+ | |--systemd/
+ |--home/
+ | |--bsy3/
+ | | |--Dokumente/
+ | | | |--Scans/
+ | | | |--PDFs/
+ | | | |--Zahlungen/
+ | | | | |--Saufen/
+ | | | |--activate_wifi
+ | | | |--start
+ | | | |--codebase
+ | | |--Downloads/
+ | | |--Workspace/
+ | | | |--code_blocks/
+ | | | | |--CommandoInterpreter/
+ | | | | | |--bin/
+ | | | | | | |--prog.bin
+ | | | | | |--obj/
+ | | | | | | |--main.o
+ | | | | | |--main.c
+ | | | |--search_programm
+ | | |--sourcecode
+ |--lib/
+ |--media/
+ |--mnt/
