@@ -4,16 +4,20 @@
 #include <string>
 
 namespace CoffeeNames {
-	//-----------------Coffee----------------------
-	std::string Americano    = "Verlaengerter";
-	std::string Decaf        = "Koffeinfrei";
-	std::string Espresso     = "Espresso";
-	std::string Mocca        = "Mocca";
+	//-----------------Coffee-------------------------
+	std::string const Americano     = "Verlaengerter";
+	std::string const Decaf         = "Koffeinfrei";
+	std::string const Espresso      = "Espresso";
+	std::string const Mocca         = "Mocca";
 
-	//-----------------Ingredients-----------------
-	std::string Milk         = "Milch";
-	std::string SoyMilk      = "Sojamilch";
-	std::string Sugar        = "Zucker";
-	std::string WhippedCream = "Schlagobers";
+	//-----------------Ingredients--------------------
+	std::string const Milk          = "Milch";
+	std::string const SoyMilk       = "Sojamilch";
+	std::string const Sugar         = "Zucker";
+	std::string const WhippedCream  = "Schlagobers";
+
+	//------------------Formation---------------------
+	std::string const CoffeeSep     = ": ";
+	std::string const IngredientSep = ", ";
 }
 #endif

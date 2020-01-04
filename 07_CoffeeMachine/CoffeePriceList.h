@@ -4,16 +4,16 @@
 
 namespace CoffeePriceList {
 	//-----------------Coffee----------------------
-	double Americano    = 2.10;
-	double Decaf        = 2.25;
-	double Espresso     = 2.80;
-	double Mocca        = 3.10;
+	double const Americano    = 2.10;
+	double const Decaf        = 2.25;
+	double const Espresso     = 2.80;
+	double const Mocca        = 3.10;
 
 	//-----------------Ingredients-----------------
-	double Milk         = 0.15;
-	double SoyMilk      = 0.20;
-	double Sugar        = 0.12;
-	double WhippedCream = 0.28;
+	double const Milk         = 0.15;
+	double const SoyMilk      = 0.20;
+	double const Sugar        = 0.12;
+	double const WhippedCream = 0.28;
 }
 
 #endif

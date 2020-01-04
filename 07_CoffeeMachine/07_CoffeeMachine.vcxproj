@@ -138,6 +138,18 @@
     <ClInclude Include="Sugar.h" />
     <ClInclude Include="WhippedCream.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Americano.cpp" />
+    <ClCompile Include="Decaf.cpp" />
+    <ClCompile Include="Espresso.cpp" />
+    <ClCompile Include="Ingredient.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Milk.cpp" />
+    <ClCompile Include="Mocca.cpp" />
+    <ClCompile Include="SoyMilk.cpp" />
+    <ClCompile Include="Sugar.cpp" />
+    <ClCompile Include="WhippedCream.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

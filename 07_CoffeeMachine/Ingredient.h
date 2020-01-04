@@ -4,13 +4,15 @@
 #include "Object.h"
 #include "Coffee.h"
 
+#include "CoffeeNames.h"
+#include "CoffeePriceList.h"
+
 class Ingredient : public Coffee, public Object {
 public:
 	virtual double GetCost() const = 0;
 	virtual std::string GetDescription() const = 0;
 protected:
 	Ingredient(Coffee::SPtr coffee);
-private:
 	Coffee::SPtr mComponent;
 };
 
