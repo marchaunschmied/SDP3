@@ -3,6 +3,7 @@
 
 
 namespace CoffeePriceList {
+	std::string const Currency = "Euro";
 	//-----------------Coffee----------------------
 	double const Americano    = 2.10;
 	double const Decaf        = 2.25;

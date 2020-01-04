@@ -140,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Americano.cpp" />
+    <ClCompile Include="CoffeePreparation.cpp" />
     <ClCompile Include="Decaf.cpp" />
     <ClCompile Include="Espresso.cpp" />
     <ClCompile Include="Ingredient.cpp" />
