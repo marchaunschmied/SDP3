@@ -26,6 +26,7 @@ public:
 protected:
 	//protected CTor
 	Ingredient(ICoffee::SPtr coffee);
+private:
 	//make it a Composite
 	ICoffee::SPtr mComponent;
 };

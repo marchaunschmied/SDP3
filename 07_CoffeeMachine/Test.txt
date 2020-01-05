@@ -1,0 +1,8 @@
+Verlaengerter:  2.10 Euro
+Koffeinfrei:  2.25 Euro
+Espresso:  2.80 Euro
+Mocca:  3.10 Euro
+Verlaengerter: Milch 2.25 Euro
+Verlaengerter: Milch, Sojamilch 2.45 Euro
+Verlaengerter: Milch, Sojamilch, Zucker 2.57 Euro
+Verlaengerter: Milch, Sojamilch, Zucker, Schlagobers 2.85 Euro
