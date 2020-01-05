@@ -1,3 +1,10 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile :		WhippedCream.cpp
+// Author :			Markus Riegler
+// Date :			05-January-2019
+// Description :	Implementation of class WhippedCream
+// Revision :		1
+///////////////////////////////////////////////////////////////////////////
 #include "WhippedCream.h"
 
 double WhippedCream::GetCost() const

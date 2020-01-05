@@ -18,9 +18,6 @@
     <ClInclude Include="Object.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Coffee.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="Americano.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
@@ -55,6 +52,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="CoffeePreparation.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ICoffee.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,29 +1,28 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile :		Ingredient.h
+// Workfile :		ICoffee.h
 // Author :			Markus Riegler
 // Date :			05-January-2019
-// Description :	Header of abstract base class Ingredient
+// Description :	Interface for Coffee
 // Revision :		1
 ///////////////////////////////////////////////////////////////////////////
-#ifndef INGREDIENT_H
-#define INGREDIENT_H
+#ifndef COFFEE_H
+#define COFFEE_H
 
-#include "Object.h"
-#include "ICoffee.h"
+#include <string>
+#include <memory>
 
 #include "CoffeeNames.h"
 #include "CoffeePriceList.h"
 
-class Ingredient : public ICoffee, public Object {
+class ICoffee {
 public:
-	//functions from interface Coffee
+	//typedefs
+	using SPtr = std::shared_ptr<ICoffee>;
+	//Interface functions
 	virtual double GetCost() const = 0;
 	virtual std::string GetDescription() const = 0;
 protected:
-	//protected CTor
-	Ingredient(ICoffee::SPtr coffee);
-	//make it a Composite
-	ICoffee::SPtr mComponent;
+	ICoffee() = default;
 };
 
 #endif

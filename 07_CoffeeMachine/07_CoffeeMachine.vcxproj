@@ -124,7 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Americano.h" />
-    <ClInclude Include="Coffee.h" />
+    <ClInclude Include="ICoffee.h" />
     <ClInclude Include="CoffeeNames.h" />
     <ClInclude Include="CoffeePreparation.h" />
     <ClInclude Include="CoffeePriceList.h" />
