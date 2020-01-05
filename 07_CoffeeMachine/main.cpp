@@ -62,7 +62,7 @@ int main()
 	prep.Display(cout);
 	cout << endl << endl;
 
-	Coffee::SPtr mmm = prep.Finished();
+	ICoffee::SPtr mmm = prep.Finished();
 	cout << mmm->GetDescription() << " " << mmm->GetCost() << endl;
 	cout << endl << endl;
 	prep.Finished();

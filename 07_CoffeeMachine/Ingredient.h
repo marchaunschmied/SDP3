@@ -17,8 +17,12 @@
 class Ingredient : public ICoffee, public Object {
 public:
 	//functions from interface Coffee
-	virtual double GetCost() const = 0;
-	virtual std::string GetDescription() const = 0;
+	virtual double GetCost() const;
+	virtual std::string GetDescription() const;
+
+	//virtual functions to be implemented by concrete Ingredients
+	virtual std::string GetIngredientName() const = 0;
+	virtual double GetIngredientCost() const = 0;
 protected:
 	//protected CTor
 	Ingredient(ICoffee::SPtr coffee);

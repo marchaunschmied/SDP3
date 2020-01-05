@@ -12,9 +12,9 @@
 
 class SoyMilk : public Ingredient {
 public:
-	//functions from interface Coffee
-	virtual double GetCost() const override;
-	virtual std::string GetDescription() const override;
+	//functions from Ingredient
+	virtual std::string GetIngredientName() const override;
+	virtual double GetIngredientCost() const override;
 	
 	SoyMilk(ICoffee::SPtr coffee);
 };

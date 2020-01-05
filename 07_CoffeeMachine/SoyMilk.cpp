@@ -7,24 +7,22 @@
 ///////////////////////////////////////////////////////////////////////////
 #include "SoyMilk.h"
 
-double SoyMilk::GetCost() const
+///////////////////////////////////////////////////////////////////////////
+//GetMethods
+///////////////////////////////////////////////////////////////////////////
+std::string SoyMilk::GetIngredientName() const
 {
-	return CoffeePriceList::SoyMilk + mComponent->GetCost();
+	return CoffeeNames::SoyMilk;
 }
 
-std::string SoyMilk::GetDescription() const
+double SoyMilk::GetIngredientCost() const
 {
-	std::string prevDes = mComponent->GetDescription();
-	if (prevDes.compare(prevDes.size() - CoffeeNames::CoffeeSep.size(), CoffeeNames::CoffeeSep.size(), CoffeeNames::CoffeeSep) == 0)
-	{
-		return prevDes + CoffeeNames::SoyMilk;
-	}
-	else
-	{
-		return prevDes + CoffeeNames::IngredientSep + CoffeeNames::SoyMilk;
-	}
+	return CoffeePriceList::SoyMilk;
 }
 
-SoyMilk::SoyMilk(Coffee::SPtr coffee): Ingredient{coffee}
+///////////////////////////////////////////////////////////////////////////
+//CTor passes coffee to the base class
+///////////////////////////////////////////////////////////////////////////
+SoyMilk::SoyMilk(ICoffee::SPtr coffee): Ingredient{coffee}
 {
 }

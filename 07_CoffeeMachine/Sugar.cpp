@@ -7,24 +7,22 @@
 ///////////////////////////////////////////////////////////////////////////
 #include "Sugar.h"
 
-double Sugar::GetCost() const
+///////////////////////////////////////////////////////////////////////////
+//GetMethods
+///////////////////////////////////////////////////////////////////////////
+std::string Sugar::GetIngredientName() const
 {
-	return CoffeePriceList::Sugar + mComponent->GetCost();
+	return CoffeeNames::Sugar;
 }
 
-std::string Sugar::GetDescription() const
+double Sugar::GetIngredientCost() const
 {
-	std::string prevDes = mComponent->GetDescription();
-	if (prevDes.compare(prevDes.size() - CoffeeNames::CoffeeSep.size(), CoffeeNames::CoffeeSep.size(), CoffeeNames::CoffeeSep) == 0)
-	{
-		return prevDes + CoffeeNames::Sugar;
-	}
-	else
-	{
-		return prevDes + CoffeeNames::IngredientSep + CoffeeNames::Sugar;
-	}
+	return CoffeePriceList::Sugar;
 }
 
-Sugar::Sugar(Coffee::SPtr coffee): Ingredient{coffee}
+///////////////////////////////////////////////////////////////////////////
+//CTor passes coffee to the base class
+///////////////////////////////////////////////////////////////////////////
+Sugar::Sugar(ICoffee::SPtr coffee): Ingredient{coffee}
 {
 }

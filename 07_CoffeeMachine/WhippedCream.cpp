@@ -7,24 +7,22 @@
 ///////////////////////////////////////////////////////////////////////////
 #include "WhippedCream.h"
 
-double WhippedCream::GetCost() const
+///////////////////////////////////////////////////////////////////////////
+//GetMethods
+///////////////////////////////////////////////////////////////////////////
+std::string WhippedCream::GetIngredientName() const
 {
-	return CoffeePriceList::WhippedCream + mComponent->GetCost();
+	return CoffeeNames::WhippedCream;
 }
 
-std::string WhippedCream::GetDescription() const
+double WhippedCream::GetIngredientCost() const
 {
-	std::string prevDes = mComponent->GetDescription();
-	if (prevDes.compare(prevDes.size() - CoffeeNames::CoffeeSep.size(), CoffeeNames::CoffeeSep.size(), CoffeeNames::CoffeeSep) == 0)
-	{
-		return prevDes + CoffeeNames::WhippedCream;
-	}
-	else
-	{
-		return prevDes + CoffeeNames::IngredientSep + CoffeeNames::WhippedCream;
-	}
+	return CoffeePriceList::WhippedCream;
 }
 
-WhippedCream::WhippedCream(Coffee::SPtr coffee): Ingredient{coffee}
+///////////////////////////////////////////////////////////////////////////
+//CTor passes coffee to the base class
+///////////////////////////////////////////////////////////////////////////
+WhippedCream::WhippedCream(ICoffee::SPtr coffee): Ingredient{coffee}
 {
 }
