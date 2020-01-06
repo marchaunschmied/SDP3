@@ -27,7 +27,7 @@ void CoffeePreparation::Prepare(ICoffee::SPtr coffee)
 ///////////////////////////////////////////////////////////////////////////
 //Prints declaration and Price of all Coffees in the queue
 ///////////////////////////////////////////////////////////////////////////
-void CoffeePreparation::Display(std::ostream& os)
+void CoffeePreparation::Display(std::ostream& os) const
 {
 	if (os.good())
 	{

@@ -17,7 +17,7 @@
 class CoffeePreparation : public Object {
 public:
 	void Prepare(ICoffee::SPtr coffee); //adds and prepares a coffee
-	void Display(std::ostream & os); //outputs all coffees in preparation
+	void Display(std::ostream & os) const; //outputs all coffees in preparation
 	ICoffee::SPtr Finished(); //removes the prepared coffee
 private:
 	//Container for Coffees in preparation
