@@ -40,6 +40,9 @@ public:
 	void SetName(std::string const& name);
 	void SetDirection(Direction const& dir);
 
+	Position GetPosition() const;
+	Direction GetDirection() const;
+
 
 
 };

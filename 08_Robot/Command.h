@@ -2,7 +2,7 @@
 // Workfile :		Command.h
 // Author :			Markus Riegler
 // Date :			12-January-2020
-// Description :	Interface for commands
+// Description :	Base class for commands
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
 #ifndef COMMAND_H
@@ -20,9 +20,8 @@ public:
 
 protected:
 	Command(Robot::SPtr robot);
-
-private:
 	Robot::SPtr mRobot;
+	
 };
 
 #endif

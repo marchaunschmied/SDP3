@@ -20,10 +20,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CleaningRobot.cpp" />
+    <ClCompile Include="CmdFactory.cpp" />
+    <ClCompile Include="Command.cpp" />
     <ClCompile Include="Direction.cpp" />
+    <ClCompile Include="Forward.cpp" />
     <ClCompile Include="Hexapod.cpp" />
+    <ClCompile Include="MacroMovement.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Robot.cpp" />
+    <ClCompile Include="Turn.cpp" />
+    <ClCompile Include="TurnLeft.cpp" />
+    <ClCompile Include="TurnRight.cpp" />
     <ClCompile Include="WheelRobot.cpp" />
   </ItemGroup>
   <ItemGroup>

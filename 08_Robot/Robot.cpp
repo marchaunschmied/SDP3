@@ -35,3 +35,13 @@ void Robot::SetName(std::string const& name){
 void Robot::SetDirection(Direction const& dir){
 	mDir = dir;
 }
+
+Position Robot::GetPosition() const
+{
+	return mPos;
+}
+
+Direction Robot::GetDirection() const
+{
+	return mDir;
+}

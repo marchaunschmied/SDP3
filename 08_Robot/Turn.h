@@ -19,7 +19,7 @@ public:
 protected:
 	Turn(Robot::SPtr robot);
 
-	virtual int DoTurn() const;
+	virtual int DoTurn() const = 0;
 
 private:
 	Direction mPrevDir;
