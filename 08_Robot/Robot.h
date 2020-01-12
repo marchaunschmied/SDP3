@@ -29,12 +29,12 @@ private:
 protected:
 	virtual std::string GetRobotType() const = 0;
 
+	Robot(Position const& pos = std::make_pair(0, 0), std::string const& name = "", Direction const& dir = Direction::NORTH);
+
 public:
+	using SPtr = std::shared_ptr<Robot>;
 	void Info(std::ostream& os) const;
 	~Robot() override;
-	
-	Robot(Position const& pos = std::make_pair(0,0), std::string const & name = "", Direction const & dir = Direction::NORTH);
-	
 
 	void SetPos(Position const& pos);
 	void SetName(std::string const& name);
