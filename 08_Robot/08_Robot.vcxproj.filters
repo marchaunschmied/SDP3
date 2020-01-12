@@ -30,9 +30,6 @@
     <ClCompile Include="CleaningRobot.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="IRobot.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="Direction.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>

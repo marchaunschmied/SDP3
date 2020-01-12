@@ -22,7 +22,6 @@
     <ClCompile Include="CleaningRobot.cpp" />
     <ClCompile Include="Direction.cpp" />
     <ClCompile Include="Hexapod.cpp" />
-    <ClCompile Include="IRobot.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Robot.cpp" />
     <ClCompile Include="WheelRobot.cpp" />

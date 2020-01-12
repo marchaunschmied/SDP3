@@ -13,6 +13,7 @@
 class IRobot {
 public:
 	virtual void Info(std::ostream& os) const = 0;
-	virtual ~IRobot();
+protected:
+	virtual ~IRobot() = default;
 };
 #endif
