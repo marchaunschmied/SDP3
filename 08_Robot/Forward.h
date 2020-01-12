@@ -18,11 +18,11 @@ public:
 	virtual void Execute() override;
 	virtual void Undo() override;
 
-	Forward(Robot::SPtr robot, size_t distance);
+	Forward(Robot::SPtr robot, int distance);
 
 private:
 	Position mPrevPos;
-	size_t mDistance;
+	int mDistance;
 };
 
 #endif

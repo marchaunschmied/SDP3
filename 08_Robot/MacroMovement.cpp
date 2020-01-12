@@ -14,7 +14,7 @@
 ///////////////////////////////////////////////////////////////////////////
 void MacroMovement::Execute()
 {
-	for (auto const& cmd : mCommands)
+	for (auto const cmd : mCommands)
 	{
 		cmd->Execute();
 	}
@@ -27,7 +27,7 @@ void MacroMovement::Undo()
 {
 	//Undo all Commands in reversed order to get right result
 	std::for_each(mCommands.crbegin(), mCommands.crend(), 
-				  [](auto const& cmd) {cmd->Undo(); });
+				  [](auto const cmd) {cmd->Undo(); });
 }
 
 

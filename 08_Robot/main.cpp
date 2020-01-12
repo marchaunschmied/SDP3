@@ -10,10 +10,14 @@
 #include "Hexapod.h"
 #include "WheelRobot.h"
 #include "CleaningRobot.h"
+#include "CmdFactory.h"
+#include "MacroMovement.h"
+
+using namespace std;
 
 int main() {
 
-
+	CmdFactory fact;
 
 	Hexapod hexy(std::make_pair(100,100), "Hexy", Direction::NORTH);
 	WheelRobot wheely(std::make_pair(0, 0), "Wheely", Direction::EAST);
@@ -26,6 +30,11 @@ int main() {
 	Hexapod pody(std::make_pair(0,50),"Pody", Direction::WEST);
 	std::cout << std::endl;
 	pody.Info(std::cout);
+
+	ICommand::SPtr cmd = fact.CreateTurnLeft(make_shared<Hexapod>(hexy));
+	cmd->Execute();
+	cout << endl;
+	hexy.Info(cout);
 
 	return 0;
 }

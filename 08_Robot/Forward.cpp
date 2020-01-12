@@ -5,7 +5,10 @@
 // Description :	Implementation of forward movement command
 // Revision :
 ///////////////////////////////////////////////////////////////////////////
+#include <iostream>
 #include "Forward.h"
+
+std::string const WARNING_NEGATIVE = "WARNING: Distance has to be positive. 0 is used instead!";
 
 ///////////////////////////////////////////////////////////////////////////
 //Executes the forward movement with the current direction and saves
@@ -50,6 +53,15 @@ void Forward::Undo()
 ///////////////////////////////////////////////////////////////////////////
 //CTor sets Distance and forwards Robot to Command
 ///////////////////////////////////////////////////////////////////////////
-Forward::Forward(Robot::SPtr robot, size_t distance) : Command{robot}, mDistance{distance}
+Forward::Forward(Robot::SPtr robot, int distance) : Command{robot}
 {
+	if (distance < 0)
+	{
+		std::cerr << WARNING_NEGATIVE << std::endl;
+		mDistance = 0;
+	}
+	else
+	{
+		mDistance = distance;
+	}
 }
