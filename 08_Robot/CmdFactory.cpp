@@ -7,9 +7,9 @@
 ///////////////////////////////////////////////////////////////////////////
 #include "CmdFactory.h"
 
-Forward::SPtr CmdFactory::CreateForward(Robot::SPtr robot)
+Forward::SPtr CmdFactory::CreateForward(Robot::SPtr robot, int const & distance)
 {
-	return std::make_shared<Forward>(robot);
+	return std::make_shared<Forward>(robot,distance);
 }
 
 TurnLeft::SPtr CmdFactory::CreateTurnLeft(Robot::SPtr robot)

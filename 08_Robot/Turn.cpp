@@ -17,7 +17,17 @@ void Turn::Execute()
 	//save previous Direction for Undo
 	mPrevDir = mRobot->GetDirection();
 
-	Direction newDir = (mPrevDir + DoTurn()) % 4;
+	//calculate new direction
+	int newTurn = (mPrevDir + DoTurn()) % DIRECTION_SIZE;
+	//% operator does not work with negative values, you need to add
+	//the divison factor 
+	if (newTurn < 0) {
+		newTurn += DIRECTION_SIZE;
+	}
+	//cast new direction, "%" ensures the values are in the right range
+	Direction newDir = static_cast<Direction>(newTurn);
+	
+	mRobot->SetDirection(newDir);
 }
 
 

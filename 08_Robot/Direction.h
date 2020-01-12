@@ -10,7 +10,9 @@
 
 #include <iostream>
 
-enum class Direction {
+const size_t DIRECTION_SIZE = 4;
+
+enum Direction {
 	NORTH,	//0
 	EAST,	//1
 	SOUTH,	//2

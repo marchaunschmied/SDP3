@@ -15,7 +15,7 @@
 
 class CmdFactory : public Object {
 public:
-	Forward::SPtr CreateForward(Robot::SPtr robot);
+	Forward::SPtr CreateForward(Robot::SPtr robot, int const & distance);
 	TurnLeft::SPtr CreateTurnLeft(Robot::SPtr robot);
 	TurnRight::SPtr CreateTurnRight(Robot::SPtr robot);
 };

@@ -19,22 +19,45 @@ int main() {
 
 	CmdFactory fact;
 
-	Hexapod hexy(std::make_pair(100,100), "Hexy", Direction::NORTH);
-	WheelRobot wheely(std::make_pair(0, 0), "Wheely", Direction::EAST);
-	CleaningRobot cleany(std::make_pair(-130, 270), "Cleany", Direction::SOUTH);
+	Hexapod::SPtr hexy = make_shared<Hexapod>(make_pair(100,100), "Hexy", Direction::NORTH);
+	WheelRobot::SPtr wheely = make_shared<WheelRobot>(make_pair(0, 0), "Wheely", Direction::EAST);
+	CleaningRobot::SPtr cleany = make_shared<CleaningRobot>(make_pair(-130, 270), "Cleany", Direction::SOUTH);
 
-	hexy.Info(std::cout);
-	wheely.Info(std::cout);
-	cleany.Info(std::cout);
+	hexy->Info(cout);
+	wheely->Info(cout);
+	cleany->Info(cout);
+	
+	//make four turns counter clock wise
 
-	Hexapod pody(std::make_pair(0,50),"Pody", Direction::WEST);
-	std::cout << std::endl;
-	pody.Info(std::cout);
-
-	ICommand::SPtr cmd = fact.CreateTurnLeft(make_shared<Hexapod>(hexy));
-	cmd->Execute();
+	ICommand::SPtr hexyDoLeft = fact.CreateTurnLeft(hexy);
+	ICommand::SPtr hexyDoRight = fact.CreateTurnRight(hexy);
+	hexyDoLeft->Execute();
 	cout << endl;
-	hexy.Info(cout);
+	hexy->Info(cout);
+	
+	hexyDoLeft->Execute();
+	cout << endl;
+	hexy->Info(cout);
+
+	hexyDoLeft->Execute();
+	cout << endl;
+	hexy->Info(cout);
+
+	hexyDoLeft->Execute();
+	cout << endl;
+	hexy->Info(cout);
+
+	//turn one back
+	hexyDoRight->Execute();
+	cout << endl;
+	hexy->Info(cout);
+
+
+	cout << endl << "------------------------------------" << endl;
+	//new hexapod
+	Hexapod::SPtr pody = make_shared<Hexapod>(std::make_pair(0, 50), "Pody", Direction::WEST);
+	cout << endl;
+	pody->Info(cout);
 
 	return 0;
-}
+} 
