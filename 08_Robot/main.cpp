@@ -59,5 +59,28 @@ int main() {
 	cout << endl;
 	pody->Info(cout);
 
+	ICommand::SPtr podyDoForward = fact.CreateForward(pody, 50);
+
+
+	podyDoForward->Execute();
+	cout << endl << "Move 50 to left" <<  endl;
+	pody->Info(cout);
+
+
+	podyDoForward->Execute();
+	cout << endl << "Move 50 to left" << endl;
+	pody->Info(cout);
+
+	ICommand::SPtr podyDoLeft = fact.CreateTurnLeft(pody);
+
+	podyDoLeft->Execute();
+	cout << endl << "Turn down" << endl;
+	pody->Info(cout);
+
+	podyDoForward->Execute();
+	cout << endl << "Move 50 down" << endl;
+	pody->Info(cout);
+
+
 	return 0;
 } 

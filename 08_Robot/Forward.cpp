@@ -16,30 +16,31 @@ std::string const WARNING_NEGATIVE = "WARNING: Distance has to be positive. 0 is
 ///////////////////////////////////////////////////////////////////////////
 void Forward::Execute()
 {
-	//save the position befor movement
+	//save the position before movement
 	mPrevPos = mRobot->GetPosition();
 
 	//Change Position according to current Direction
 	Direction dir = mRobot->GetDirection();
-	Position MovePos = mPrevPos;
+	Position movePos = mPrevPos;
 	switch (dir) {
 	case Direction::NORTH:
 		//move up on y-axis
-		mPrevPos.second += mDistance;
+		movePos.second += mDistance;
 		break;
 	case Direction::EAST:
 		//move right on x-axis
-		mPrevPos.first += mDistance;
+		movePos.first += mDistance;
 		break;
 	case Direction::SOUTH:
 		//move down on y-axis
-		mPrevPos.second -= mDistance;
+		movePos.second -= mDistance;
 		break;
 	case Direction::WEST:
 		//move left on x-axis
-		mPrevPos.first -= mDistance;
+		movePos.first -= mDistance;
 		break;
 	}
+	mRobot->SetPos(movePos);
 }
 
 ///////////////////////////////////////////////////////////////////////////
