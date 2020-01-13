@@ -17,9 +17,9 @@ public:
 	virtual void Execute() override;
 	virtual void Undo() override;
 
-	void AddCmd(ICommand::SPtr cmd);
+	void AddCmd(ICommand::UPtr cmd);
 
 private:
-	std::list<ICommand::SPtr> mCommands;
+	std::list<ICommand::UPtr> mCommands;
 };
 #endif

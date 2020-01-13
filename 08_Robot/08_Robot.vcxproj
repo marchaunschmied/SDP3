@@ -22,6 +22,7 @@
     <ClCompile Include="CleaningRobot.cpp" />
     <ClCompile Include="CmdFactory.cpp" />
     <ClCompile Include="Command.cpp" />
+    <ClCompile Include="ControllUnit.cpp" />
     <ClCompile Include="Direction.cpp" />
     <ClCompile Include="Forward.cpp" />
     <ClCompile Include="Hexapod.cpp" />

@@ -14,7 +14,7 @@
 ///////////////////////////////////////////////////////////////////////////
 void MacroMovement::Execute()
 {
-	for (auto const cmd : mCommands)
+	for (auto const& cmd : mCommands)
 	{
 		cmd->Execute();
 	}
@@ -27,14 +27,14 @@ void MacroMovement::Undo()
 {
 	//Undo all Commands in reversed order to get right result
 	std::for_each(mCommands.crbegin(), mCommands.crend(), 
-				  [](auto const cmd) {cmd->Undo(); });
+				  [](auto const& cmd) {cmd->Undo(); });
 }
 
 
 ///////////////////////////////////////////////////////////////////////////
 //Adds a Command to the MacroMovement
 ///////////////////////////////////////////////////////////////////////////
-void MacroMovement::AddCmd(ICommand::SPtr cmd)
+void MacroMovement::AddCmd(ICommand::UPtr cmd)
 {
 	//don't add a nullpointer
 	if (cmd == nullptr)
@@ -43,6 +43,6 @@ void MacroMovement::AddCmd(ICommand::SPtr cmd)
 	}
 	else
 	{
-		mCommands.emplace_back(cmd);
+		mCommands.emplace_back(cmd.release());
 	}
 }

@@ -12,6 +12,7 @@
 #include "CleaningRobot.h"
 #include "CmdFactory.h"
 #include "MacroMovement.h"
+#include "ControllUnit.h"
 
 using namespace std;
 
@@ -28,29 +29,32 @@ int main() {
 	cleany->Info(cout);
 	
 	//make four turns counter clock wise
+	ControllUnit cont;
+	cont.AddCommand(fact.CreateTurnLeft(hexy));
+	cont.AddCommand(fact.CreateTurnLeft(hexy));
+	cont.AddCommand(fact.CreateTurnLeft(hexy));
+	cont.AddCommand(fact.CreateTurnLeft(hexy));
+	cont.AddCommand(fact.CreateTurnLeft(hexy));
 
-	ICommand::SPtr hexyDoLeft = fact.CreateTurnLeft(hexy);
-	ICommand::SPtr hexyDoRight = fact.CreateTurnRight(hexy);
-	hexyDoLeft->Execute();
-	cout << endl;
-	hexy->Info(cout);
-	
-	hexyDoLeft->Execute();
-	cout << endl;
-	hexy->Info(cout);
+	cont.Start();
 
-	hexyDoLeft->Execute();
-	cout << endl;
 	hexy->Info(cout);
+	cout << endl;
 
-	hexyDoLeft->Execute();
-	cout << endl;
+	cont.Undo(1);
 	hexy->Info(cout);
+	cout << endl;
 
-	//turn one back
-	hexyDoRight->Execute();
-	cout << endl;
+	cont.Undo(1);
 	hexy->Info(cout);
+	cout << endl;
+
+	cont.Reset();
+	cont.Undo(5);
+	hexy->Info(cout);
+	cout << endl;
+
+
 
 
 	cout << endl << "------------------------------------" << endl;
@@ -59,7 +63,7 @@ int main() {
 	cout << endl;
 	pody->Info(cout);
 
-	ICommand::SPtr podyDoForward = fact.CreateForward(pody, 50);
+	ICommand::UPtr podyDoForward = fact.CreateForward(pody, 50);
 
 
 	podyDoForward->Execute();
@@ -71,7 +75,7 @@ int main() {
 	cout << endl << "Move 50 to left" << endl;
 	pody->Info(cout);
 
-	ICommand::SPtr podyDoLeft = fact.CreateTurnLeft(pody);
+	ICommand::UPtr podyDoLeft = fact.CreateTurnLeft(pody);
 
 	podyDoLeft->Execute();
 	cout << endl << "Turn down" << endl;
