@@ -9,6 +9,8 @@
 
 #include "Direction.h"
 
+//cpp does not allow enum to string conversion. Therefore this
+//switch statement is needed
 std::ostream& operator<<(std::ostream& ost, Direction const& dir)
 {
 	switch (dir) {

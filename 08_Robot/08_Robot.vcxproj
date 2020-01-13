@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CleaningRobot.cpp" />
+    <ClCompile Include="Client.cpp" />
     <ClCompile Include="CmdFactory.cpp" />
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="ControllUnit.cpp" />
@@ -36,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CleaningRobot.h" />
+    <ClInclude Include="Client.h" />
     <ClInclude Include="CmdFactory.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="ControllUnit.h" />
@@ -106,6 +108,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Visual Leak Detector\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>

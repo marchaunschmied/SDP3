@@ -57,6 +57,9 @@
     <ClCompile Include="ControllUnit.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="Client.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Object.h">
@@ -105,6 +108,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="ControllUnit.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Client.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
