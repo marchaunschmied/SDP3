@@ -147,18 +147,19 @@ int main() {
 	macro1.AddCmd(fact.CreateTurnRight(wheely));
 	macro1.AddCmd(fact.CreateForward(wheely, 100));
 
-	//fail
-	MacroMovement::UPtr test = std::make_unique<MacroMovement>(macro1);
-
+	//create unique ptr on macro movement
+	//move is needed because, unique_ptr can not be copied
+	MacroMovement::UPtr test = std::make_unique<MacroMovement>(std::move(macro1));
+	
 	ControllUnit wheelyControll;
-	wheelyControll.AddCommand(test);
+	wheelyControll.AddCommand(std::move(test));
 
 	std::cout << std::endl << "Go 50 east, turn right and 100 south:" << std::endl;
-	pody->Info(std::cout);
+	wheely->Info(std::cout);
 	std::cout << std::endl;
 	wheelyControll.Start();
 	std::cout << std::endl;
-	pody->Info(std::cout);
+	wheely->Info(std::cout);
 
 	return 0;
 } 

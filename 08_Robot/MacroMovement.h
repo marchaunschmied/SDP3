@@ -19,9 +19,9 @@ public:
 
 	void AddCmd(ICommand::UPtr cmd);
 
-	MacroMovement() = default;
+	/*MacroMovement() = default;
 	MacroMovement(MacroMovement const& m) = default;
-
+	*/
 private:
 	std::list<ICommand::UPtr> mCommands;
 };
