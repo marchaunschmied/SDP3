@@ -9,9 +9,13 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 
+#include <list>
 #include "Object.h"
+#include "Robot.h"
 
 class Client : public Object {
+private:
+	std::list<Robot::SPtr> mRobots;
 public:
 	void TestRobot();
 };
