@@ -24,20 +24,21 @@ using namespace std;
 int main() {
 
 	Client tester;
-	tester.TestRobot();
 
-
-
-
+	tester.Print();
+	
 	CmdFactory fact;
 
 	Hexapod::SPtr hexy = std::make_shared<Hexapod>(std::make_pair(100, 100), "Hexy", Direction::NORTH);
 	WheelRobot::SPtr wheely = std::make_shared<WheelRobot>(std::make_pair(0, 0), "Wheely", Direction::EAST);
 	CleaningRobot::SPtr cleany = std::make_shared<CleaningRobot>(std::make_pair(-130, 270), "Cleany", Direction::SOUTH);
+	
+	//test client
+	tester.AddRobot(hexy);
+	tester.AddRobot(wheely);
+	tester.AddRobot(cleany);
 
-	hexy->Info(std::cout);
-	wheely->Info(std::cout);
-	cleany->Info(std::cout);
+	tester.Print();
 
 	//make five turns counter clock wise
 	std::cout << std::endl << "------------------------------------" << std::endl;
@@ -160,6 +161,6 @@ int main() {
 	wheelyControll.Start();
 	std::cout << std::endl;
 	wheely->Info(std::cout);
-
+	
 	return 0;
 } 

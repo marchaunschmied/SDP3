@@ -17,7 +17,8 @@ class Client : public Object {
 private:
 	std::list<Robot::SPtr> mRobots;
 public:
-	void TestRobot();
+	void AddRobot(Robot::SPtr robot);
+	void Print() const;
 };
 
 #endif

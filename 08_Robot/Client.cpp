@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 #include "Client.h"
 
 
@@ -19,13 +20,14 @@
 #include "MacroMovement.h"
 #include "ControllUnit.h"
 
-void Client::TestRobot(){
-	
-	/*mRobots.push_back(
-	Hexapod::SPtr hexy = std::make_shared<Hexapod>(std::make_pair(100, 100), "Hexy", Direction::NORTH);
-	WheelRobot::SPtr wheely = std::make_shared<WheelRobot>(std::make_pair(0, 0), "Wheely", Direction::EAST);
-	CleaningRobot::SPtr cleany = std::make_shared<CleaningRobot>(std::make_pair(-130, 270), "Cleany", Direction::SOUTH);
-	*/
+void Client::AddRobot(Robot::SPtr robot){
+	if (robot != nullptr) {
+		mRobots.push_back(robot);
+	}
+}
 
-
+void Client::Print() const{
+	for (Robot::SPtr r : mRobots) {
+		r->Info(std::cout);
+	}
 }
