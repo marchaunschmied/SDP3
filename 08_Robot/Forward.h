@@ -13,7 +13,7 @@
 
 class Forward : public Command {
 public:
-	using SPtr = std::shared_ptr<Forward>;
+	using UPtr = std::unique_ptr<Forward>;
 
 	virtual void Execute() override;
 	virtual void Undo() override;

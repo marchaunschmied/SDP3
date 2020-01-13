@@ -13,21 +13,26 @@
 //Changes the Direction of the Robot
 ///////////////////////////////////////////////////////////////////////////
 void Turn::Execute()
-{
-	//save previous Direction for Undo
-	mPrevDir = mRobot->GetDirection();
+{	
+	if (!mExecuted)
+	{
+		//save previous Direction for Undo
+		mPrevDir = mRobot->GetDirection();
+		//indicate that this command is already executed
+		mExecuted = true;
 
-	//calculate new direction
-	int newTurn = (mPrevDir + DoTurn()) % DIRECTION_SIZE;
-	//% operator does not work with negative values, you need to add
-	//the divison factor 
-	if (newTurn < 0) {
-		newTurn += DIRECTION_SIZE;
+		//calculate new direction
+		int newTurn = (mPrevDir + DoTurn()) % DIRECTION_SIZE;
+		//% operator does not work with negative values, you need to add
+		//the divison factor 
+		if (newTurn < 0) {
+			newTurn += DIRECTION_SIZE;
+		}
+		//cast new direction, "%" ensures the values are in the right range
+		Direction newDir = static_cast<Direction>(newTurn);
+
+		mRobot->SetDirection(newDir);
 	}
-	//cast new direction, "%" ensures the values are in the right range
-	Direction newDir = static_cast<Direction>(newTurn);
-	
-	mRobot->SetDirection(newDir);
 }
 
 
@@ -36,7 +41,12 @@ void Turn::Execute()
 ///////////////////////////////////////////////////////////////////////////
 void Turn::Undo()
 {
-	mRobot->SetDirection(mPrevDir);
+	if (mExecuted)
+	{
+		mRobot->SetDirection(mPrevDir);
+		mExecuted = false;
+	}
+	
 }
 ///////////////////////////////////////////////////////////////////////////
 //CTor forwards Robot to Command

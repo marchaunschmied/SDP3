@@ -19,5 +19,5 @@ TurnLeft::TurnLeft(Robot::SPtr robot): Turn{robot}
 ///////////////////////////////////////////////////////////////////////////
 int TurnLeft::DoTurn() const
 {
-	return -1;
+	return DIRECTION_SIZE - 1;
 }

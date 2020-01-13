@@ -37,6 +37,7 @@
     <ClInclude Include="CleaningRobot.h" />
     <ClInclude Include="CmdFactory.h" />
     <ClInclude Include="Command.h" />
+    <ClInclude Include="ControllUnit.h" />
     <ClInclude Include="Direction.h" />
     <ClInclude Include="Forward.h" />
     <ClInclude Include="Hexapod.h" />

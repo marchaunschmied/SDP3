@@ -12,7 +12,7 @@
 
 class TurnLeft : public Turn {
 public:
-	using SPtr = std::shared_ptr<TurnLeft>;
+	using UPtr = std::unique_ptr<TurnLeft>;
 	TurnLeft(Robot::SPtr robot);
 protected:
 	virtual int DoTurn() const override;

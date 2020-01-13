@@ -13,9 +13,10 @@
 
 class ICommand {
 public:
-	using SPtr = std::shared_ptr<ICommand>;
+	using UPtr = std::unique_ptr<ICommand>;
 	virtual void Execute() = 0;
 	virtual void Undo() = 0;
+	virtual ~ICommand() = default;
 protected:
 	ICommand() = default;
 };

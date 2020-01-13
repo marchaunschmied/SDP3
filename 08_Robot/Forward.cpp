@@ -16,31 +16,36 @@ std::string const WARNING_NEGATIVE = "WARNING: Distance has to be positive. 0 is
 ///////////////////////////////////////////////////////////////////////////
 void Forward::Execute()
 {
-	//save the position before movement
-	mPrevPos = mRobot->GetPosition();
+	if (!mExecuted)
+	{
+		//save the position before movement
+		mPrevPos = mRobot->GetPosition();
+		//indicate that this command is already executed
+		mExecuted = true;
 
-	//Change Position according to current Direction
-	Direction dir = mRobot->GetDirection();
-	Position movePos = mPrevPos;
-	switch (dir) {
-	case Direction::NORTH:
-		//move up on y-axis
-		movePos.second += mDistance;
-		break;
-	case Direction::EAST:
-		//move right on x-axis
-		movePos.first += mDistance;
-		break;
-	case Direction::SOUTH:
-		//move down on y-axis
-		movePos.second -= mDistance;
-		break;
-	case Direction::WEST:
-		//move left on x-axis
-		movePos.first -= mDistance;
-		break;
+		//Change Position according to current Direction
+		Direction dir = mRobot->GetDirection();
+		Position movePos = mPrevPos;
+		switch (dir) {
+		case Direction::NORTH:
+			//move up on y-axis
+			movePos.second += mDistance;
+			break;
+		case Direction::EAST:
+			//move right on x-axis
+			movePos.first += mDistance;
+			break;
+		case Direction::SOUTH:
+			//move down on y-axis
+			movePos.second -= mDistance;
+			break;
+		case Direction::WEST:
+			//move left on x-axis
+			movePos.first -= mDistance;
+			break;
+		}
+		mRobot->SetPos(movePos);
 	}
-	mRobot->SetPos(movePos);
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -48,7 +53,12 @@ void Forward::Execute()
 ///////////////////////////////////////////////////////////////////////////
 void Forward::Undo()
 {
-	mRobot->SetPos(mPrevPos);
+	if (mExecuted)
+	{
+		mRobot->SetPos(mPrevPos);
+		mExecuted = false;
+	}
+	
 }
 
 ///////////////////////////////////////////////////////////////////////////

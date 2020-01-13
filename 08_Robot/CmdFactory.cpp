@@ -7,17 +7,17 @@
 ///////////////////////////////////////////////////////////////////////////
 #include "CmdFactory.h"
 
-Forward::SPtr CmdFactory::CreateForward(Robot::SPtr robot, int const & distance)
+Forward::UPtr CmdFactory::CreateForward(Robot::SPtr robot, int const & distance)
 {
-	return std::make_shared<Forward>(robot,distance);
+	return std::make_unique<Forward>(robot,distance);
 }
 
-TurnLeft::SPtr CmdFactory::CreateTurnLeft(Robot::SPtr robot)
+TurnLeft::UPtr CmdFactory::CreateTurnLeft(Robot::SPtr robot)
 {
-	return std::make_shared<TurnLeft>(robot);
+	return std::make_unique<TurnLeft>(robot);
 }
 
-TurnRight::SPtr CmdFactory::CreateTurnRight(Robot::SPtr robot)
+TurnRight::UPtr CmdFactory::CreateTurnRight(Robot::SPtr robot)
 {
-	return std::make_shared<TurnRight>(robot);
+	return std::make_unique<TurnRight>(robot);
 }

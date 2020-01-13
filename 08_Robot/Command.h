@@ -21,6 +21,7 @@ public:
 protected:
 	Command(Robot::SPtr robot);
 	Robot::SPtr mRobot;
+	bool mExecuted = false;
 	
 };
 
