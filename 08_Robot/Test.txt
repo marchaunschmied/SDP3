@@ -1,0 +1,1 @@
+Hexapod:	 Pody, Pos(-100,250), Direction(NORTH)
